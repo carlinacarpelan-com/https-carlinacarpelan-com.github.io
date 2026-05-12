@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carlina Carpelan</title>
+  <title>Carlina</title>
 
   <style>
     body {
-      background: #111;
+      background: #0f0f0f;
       color: white;
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px;
+      margin: 0;
       line-height: 1.6;
     }
 
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
     h1 {
-      font-size: 4rem;
-      margin-bottom: 0;
+      font-size: 5rem;
+      margin-bottom: 10px;
     }
 
     h2 {
-      margin-top: 60px;
+      margin-top: 70px;
+      margin-bottom: 20px;
+      font-size: 2rem;
     }
 
     p {
-      opacity: 0.8;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
 
     a {
@@ -41,39 +47,117 @@
       opacity: 0.6;
     }
 
-    iframe {
-      margin-top: 20px;
+    .hero {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
       border-radius: 12px;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .links {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<h1>Carlina</h1>
+<div class="container">
 
-<p>
-DJ / Event Producer / Activist
-</p>
+  <section class="hero">
+    <h1>Carlina</h1>
 
-<p>
-<a href="https://soundcloud.com/carlina-carpelan" target="_blank">
-SoundCloud
-</a>
+    <p>
+      DJ / Event Producer / Activist
+    </p>
 
-<a href="https://instagram.com/" target="_blank">
-Instagram
-</a>
-</p>
+    <div class="links">
+      <a href="https://soundcloud.com/carlina-carpelan" target="_blank">
+        SoundCloud
+      </a>
 
-<h2>Videos</h2>
+      <a href="https://instagram.com/" target="_blank">
+        Instagram
+      </a>
 
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/wS99neblvKQ"
-title="YouTube video player"
-frameborder="0"
-allowfullscreen>
-</iframe>
+      <a href="mailto:you@example.com">
+        Contact
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bio</h2>
+
+    <p>
+      Write your artist bio here.
+      You can describe your sound, events, activism,
+      influences, cities you’ve played in, collectives,
+      and current projects.
+    </p>
+  </section>
+
+  <section>
+    <h2>Photos</h2>
+
+    <div class="gallery">
+      <img src="https://picsum.photos/600/800?1">
+      <img src="https://picsum.photos/600/800?2">
+    </div>
+  </section>
+
+  <section>
+    <h2>SoundCloud</h2>
+
+    <iframe
+      width="100%"
+      height="300"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/15182213&color=%23ff5500">
+    </iframe>
+  </section>
+
+  <section>
+    <h2>Videos</h2>
+
+    <iframe
+      height="315"
+      src="https://www.youtube.com/embed/wS99neblvKQ"
+      title="YouTube video player"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+
+  </section>
+
+</div>
 
 </body>
 </html>
