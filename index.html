@@ -1,226 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
 
-  <title>Carlina Carpelan</title>
+.photo-grid img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+}
 
-  <style>
+/* mobiili */
 
-    body {
-      margin: 0;
-      background: black;
-      color: white;
-      font-family: Calibri, sans-serif;
-      line-height: 1.7;
-    }
+@media (max-width: 900px) {
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 24px;
-    }
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
 
-    h1 {
-      font-size: 84px;
-      margin-bottom: 20px;
-    }
+  .photo-grid img {
+    height: auto;
+  }
 
-    .subtitle {
-      font-size: 28px;
-      color: #d0d0d0;
-      margin-bottom: 60px;
-    }
+}
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 60px;
-      margin-bottom: 100px;
-    }
+</style>
 
-    .links a {
-      color: white;
-      text-decoration: underline;
-      font-size: 28px;
-    }
 
-    h2 {
-      font-size: 48px;
-      margin-top: 100px;
-      margin-bottom: 30px;
-    }
+<h2>Promo Photos</h2>
 
-    p {
-      font-size: 22px;
-      color: #d0d0d0;
-    }
-
-    .bio {
-      max-width: 900px;
-      margin-bottom: 80px;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-      margin-bottom: 80px;
-      align-items: start;
-    }
-
-    .photo-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: grayscale(100%);
-    }
-
-    .soundcloud-wrapper {
-      margin-top: 40px;
-      margin-bottom: 80px;
-    }
-
-    iframe {
-      border: none;
-    }
-
-    .footer {
-      margin-top: 120px;
-      color: #666;
-      font-size: 18px;
-    }
-
-    @media (max-width: 768px) {
-
-      h1 {
-        font-size: 54px;
-      }
-
-      h2 {
-        font-size: 36px;
-      }
-
-      .subtitle {
-        font-size: 22px;
-      }
-
-      .links {
-        gap: 30px;
-      }
-
-      .links a {
-        font-size: 24px;
-      }
-
-      p {
-        font-size: 20px;
-      }
-
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <div class="container">
-
-    <h1>Carlina Carpelan</h1>
-
-    <div class="subtitle">
-      DJ / Event Producer / Activist
-    </div>
-
-    <div class="links">
-
-      <a href="https://soundcloud.com/carlina-carpelan" target="_blank">
-        SoundCloud
-      </a>
-
-      <a href="videos.html">
-        Videos
-      </a>
-
-      <a href="gigs.html">
-        Gigs
-      </a>
-
-      <a href="bookings.html">
-        Bookings
-      </a>
-
-    </div>
-
-    <h2>About</h2>
-
-    <div class="bio">
-
-      <p>
-        Snappy snares? You got it. Bad-to-the-bone analog techno bliss?
-        Look no further. Naughty tech grooves? They've got you covered.
-      </p>
-
-      <p>
-        Carlina Carpelan is a Helsinki-based DJ deeply rooted in Finland’s underground dance music scene,
-        active for years within the local club circuit.
-      </p>
-
-      <p>
-        Carlina has built a strong reputation for delivering high-energy sets that thrive on rhythm,
-        drive and raw physicality. Their sound explores the leftmost fields of electronic music:
-        analog-leaning, percussive and groove-focused, with a sharp ear for tension and release.
-      </p>
-
-      <p>
-        Carlina’s sets are immersive journeys guided by instinct, flow and a clear connection to the dance floor.
-        Whether playing outdoor festival stages or sweaty late-morning basement hours, they bring an unmistakable
-        intensity and momentum to every slot.
-      </p>
-
-      <p>
-        In recent years, Carlina has shared booths with international names such as DJ Stingray,
-        Wata Igarashi, Luke Slater and Jane Fitz, while also taking their sound beyond Finland to booths abroad.
-      </p>
-
-    </div>
-
-    <h2>Promo Photos</h2>
-
-    <div class="photo-grid">
+<div class="photo-grid">
 
   <img src="promo1-websafe.jpg" alt="Promo photo 1">
 
-      <img src="promo2.jpg" alt="Promo photo 2">
+  <img src="promo2.jpg" alt="Promo photo 2">
 
-      <img src="promo3.jpg" alt="Promo photo 3">
+  <img src="promo3.jpg" alt="Promo photo 3">
 
-    </div>
-
-    <h2>SoundCloud</h2>
-
-    <div class="soundcloud-wrapper">
-
-      <iframe
-        width="100%"
-        height="166"
-        scrolling="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan/hosselimix&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
-      </iframe>
-
-    </div>
-
-    <div class="footer">
-      ...
-    </div>
-
-  </div>
-
-</body>
-
-</html>
+</div>
