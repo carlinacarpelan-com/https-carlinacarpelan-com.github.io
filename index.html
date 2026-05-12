@@ -1,163 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Carlina Carpelan</title>
 
   <style>
     body {
-      background: #0f0f0f;
-      color: white;
       font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .container {
       max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #111111;
     }
 
-    h1 {
-      font-size: 5rem;
-      margin-bottom: 10px;
+    h1, h2 {
+      margin-top: 40px;
     }
 
-    h2 {
-      margin-top: 70px;
+    img {
+      width: 100%;
+      max-width: 700px;
       margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      opacity: 0.9;
+      border-radius: 12px;
     }
 
     a {
-      color: white;
+      color: #000;
+      font-weight: bold;
       text-decoration: none;
-      border-bottom: 1px solid white;
-      margin-right: 20px;
     }
 
     a:hover {
-      opacity: 0.6;
-    }
-
-    .hero {
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
+      text-decoration: underline;
     }
 
     iframe {
-      width: 100%;
-      border-radius: 12px;
       margin-top: 20px;
+      margin-bottom: 40px;
+      border-radius: 12px;
     }
 
-    .links {
-      margin-top: 30px;
-    }
-
-    @media (max-width: 700px) {
-      h1 {
-        font-size: 3rem;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+    .links a {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <h1>Carlina Carpelan</h1>
 
-  <section class="hero">
-    <h1>Carlina</h1>
+  <p>
+    DJ / Event Producer / Activist
+  </p>
 
-    <p>
-      DJ / Event Producer / Activist
-    </p>
+  <p>
+    Carlina Carpelan is a Helsinki-based DJ, event producer and activist.
+    Her sets blend emotional electronic music, underground club sounds and high-energy dance music.
+  </p>
 
-    <div class="links">
-      <a href="https://soundcloud.com/carlina-carpelan" target="_blank">
-        SoundCloud
-      </a>
+  <div class="links">
+    <a href="https://soundcloud.com/carlina-carpelan" target="_blank">
+      SoundCloud
+    </a>
 
-      <a href="https://instagram.com/" target="_blank">
-        Instagram
-      </a>
+    <a href="https://www.youtube.com/watch?v=wS99neblvKQ" target="_blank">
+      YouTube
+    </a>
+  </div>
 
-      <a href="mailto:you@example.com">
-        Contact
-      </a>
-    </div>
-  </section>
+  <h2>Artist Photos</h2>
 
-  <section>
-    <h2>Bio</h2>
+  <img src="https://via.placeholder.com/700x450" alt="Carlina Carpelan artist photo">
 
-    <p>
-      Write your artist bio here.
-      You can describe your sound, events, activism,
-      influences, cities you’ve played in, collectives,
-      and current projects.
-    </p>
-  </section>
+  <img src="https://via.placeholder.com/700x450" alt="Carlina Carpelan DJ photo">
 
-  <section>
-    <h2>Photos</h2>
+  <h2>SoundCloud</h2>
 
-    <div class="gallery">
-      <img src="https://picsum.photos/600/800?1">
-      <img src="https://picsum.photos/600/800?2">
-    </div>
-  </section>
+  <iframe
+    width="100%"
+    height="166"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan">
+  </iframe>
 
-  <section>
-    <h2>SoundCloud</h2>
+  <h2>Videos</h2>
 
-    <iframe
-      width="100%"
-      height="300"
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/15182213&color=%23ff5500">
-    </iframe>
-  </section>
-
-  <section>
-    <h2>Videos</h2>
-
-    <iframe
-      height="315"
-      src="https://www.youtube.com/embed/wS99neblvKQ"
-      title="YouTube video player"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-
-  </section>
-
-</div>
+  <iframe
+    width="100%"
+    height="500"
+    src="https://www.youtube.com/embed/wS99neblvKQ"
+    title="Carlina Carpelan YouTube video"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
 
 </body>
 </html>
