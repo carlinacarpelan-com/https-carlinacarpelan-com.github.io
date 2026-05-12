@@ -14,7 +14,7 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 80px 24px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     h1 {
@@ -32,6 +32,7 @@
     p {
       font-size: 24px;
       color: #d9d9d9;
+      margin-bottom: 28px;
     }
 
     a {
@@ -47,16 +48,70 @@
     }
 
     iframe {
-      width: 100%;
       border-radius: 12px;
       margin-top: 24px;
       margin-bottom: 40px;
+    }
+
+    .video {
+      width: 50%;
+      min-width: 320px;
+      height: 280px;
+    }
+
+    .soundcloud {
+      width: 100%;
+      height: 166px;
     }
 
     img {
       width: 100%;
       border-radius: 12px;
       margin-bottom: 24px;
+    }
+
+    .show {
+      border-top: 1px solid #444;
+      padding: 20px 0;
+    }
+
+    .date {
+      display: block;
+      font-size: 20px;
+      color: #999;
+      margin-bottom: 6px;
+    }
+
+    .event {
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .place {
+      display: block;
+      font-size: 22px;
+      color: #d9d9d9;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 56px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      .video {
+        width: 100%;
+        height: 240px;
+      }
     }
   </style>
 </head>
@@ -75,11 +130,7 @@
     </a>
 
     <a href="https://signaturedark.fi/agency/" target="_blank">
-      Agency
-    </a>
-
-    <a href="https://instagram.com/" target="_blank">
-      Instagram
+      Signature Dark Agency
     </a>
   </div>
 
@@ -95,9 +146,13 @@
     active for years within the local club circuit. Carlina has built a strong reputation for delivering
     high-energy sets that thrive on rhythm, drive and raw physicality. Their sound explores the leftmost
     fields of electronic music: analog-leaning, percussive and groove-focused, with a sharp ear for
-    tension and release. Carlina’s sets are immersive journeys guided by instinct, flow and a clear
-    connection to the dance floor. Whether playing outdoor festival stages or sweaty late-morning
-    basement hours, they bring an unmistakable intensity and momentum to every slot.
+    tension and release.
+  </p>
+
+  <p>
+    Carlina’s sets are immersive journeys guided by instinct, flow and a clear connection to the dance floor.
+    Whether playing outdoor festival stages or sweaty late-morning basement hours, they bring an unmistakable
+    intensity and momentum to every slot.
   </p>
 
   <p>
@@ -112,10 +167,30 @@
 
   <img src="https://via.placeholder.com/1200x700" alt="Carlina Carpelan DJ promo photo">
 
+  <h2>Upcoming Shows</h2>
+
+  <div class="show">
+    <span class="date">DD.MM.2026</span>
+    <span class="event">Event Name</span>
+    <span class="place">Venue / City</span>
+  </div>
+
+  <div class="show">
+    <span class="date">DD.MM.2026</span>
+    <span class="event">Event Name</span>
+    <span class="place">Venue / City</span>
+  </div>
+
+  <div class="show">
+    <span class="date">DD.MM.2026</span>
+    <span class="event">Event Name</span>
+    <span class="place">Venue / City</span>
+  </div>
+
   <h2>SoundCloud</h2>
 
   <iframe
-    height="166"
+    class="soundcloud"
     scrolling="no"
     frameborder="no"
     allow="autoplay"
@@ -125,7 +200,7 @@
   <h2>Videos</h2>
 
   <iframe
-    height="500"
+    class="video"
     src="https://www.youtube.com/embed/wS99neblvKQ"
     title="Carlina Carpelan YouTube video"
     frameborder="0"
