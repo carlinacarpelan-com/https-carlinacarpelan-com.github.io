@@ -8,148 +8,218 @@
   <title>Carlina Carpelan — DJ</title>
 
   <style>
+    :root {
+      --black: #000000;
+      --cream: #fff4ec;
+      --blue: #00a6ff;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #000;
-      color: white;
-      font-family: Calibri, sans-serif;
-      line-height: 1.7;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.25;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: auto;
-      padding: 80px 24px 120px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 620px;
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .hero-text {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     h1 {
-      font-size: 90px;
-      margin-bottom: 10px;
-      line-height: 0.95;
+      font-size: clamp(72px, 12vw, 170px);
+      line-height: 0.82;
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.08em;
     }
 
     .subtitle {
-      font-size: 28px;
-      color: #cfcfcf;
-      margin-bottom: 70px;
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      width: fit-content;
+      padding: 18px 48px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
     }
 
     .nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 42px;
-      margin-bottom: 90px;
+      gap: 14px;
+      margin-top: 40px;
     }
 
     .nav a {
-      color: white;
-      text-decoration: underline;
-      font-size: 24px;
+      color: var(--black);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 10px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      background: var(--black);
+      color: var(--blue);
+    }
+
+    .hero-patterns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .pattern {
+      min-height: 250px;
+    }
+
+    .burst {
+      background:
+        repeating-conic-gradient(from 0deg, var(--blue) 0deg 10deg, var(--black) 10deg 20deg);
+    }
+
+    .flower {
+      background:
+        radial-gradient(circle at 50% 50%, var(--black) 0 18%, transparent 19%),
+        repeating-conic-gradient(from 0deg, var(--black) 0deg 18deg, var(--cream) 18deg 36deg);
+    }
+
+    .blob {
+      background:
+        radial-gradient(circle at 0% 30%, var(--blue) 0 22%, transparent 23%),
+        radial-gradient(circle at 100% 60%, var(--blue) 0 26%, transparent 27%),
+        var(--cream);
+    }
+
+    section {
+      padding: 90px 40px;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--cream);
+      color: var(--black);
     }
 
     h2 {
-      font-size: 54px;
-      margin-top: 100px;
-      margin-bottom: 30px;
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.9;
+      margin: 0 0 50px;
+      letter-spacing: -0.07em;
     }
 
     p {
       font-size: 22px;
-      color: #d7d7d7;
       max-width: 900px;
+      margin: 0 0 22px;
     }
 
     .bio {
-      margin-bottom: 70px;
+      max-width: 940px;
     }
 
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 30px;
+      gap: 28px;
     }
 
     .photo-grid img {
       width: 100%;
-      height: 720px;
+      height: 620px;
       object-fit: cover;
       display: block;
-      background: #111;
+      filter: grayscale(100%);
+    }
+
+    .photo-grid img:hover {
+      filter: grayscale(0%);
+    }
+
+    .soundcloud iframe {
+      width: 100%;
+      border: 0;
+      margin-bottom: 28px;
+      border-radius: 0;
     }
 
     .video-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 30px;
+      gap: 28px;
     }
 
     .video-grid iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
-      border: none;
-    }
-
-    .soundcloud {
-      margin-top: 30px;
-    }
-
-    .soundcloud iframe {
-      width: 100%;
-      border: none;
+      border: 0;
+      background: var(--black);
     }
 
     .booking-box {
-      border: 1px solid #333;
-      padding: 40px;
-      margin-top: 30px;
-      max-width: 700px;
-    }
-
-    .booking-box p {
-      margin: 0 0 20px;
+      border: 1.5px solid currentColor;
+      border-radius: 999px;
+      padding: 38px 52px;
+      max-width: 760px;
     }
 
     .booking-email {
-      font-size: 28px;
-      color: white;
-      text-decoration: underline;
+      display: inline-block;
+      color: inherit;
+      font-size: 30px;
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 3px solid currentColor;
+      margin-bottom: 26px;
     }
 
     footer {
-      margin-top: 120px;
-      font-size: 16px;
-      color: #777;
+      padding: 40px;
+      background: var(--blue);
+      color: var(--black);
+      font-size: 18px;
+      font-weight: 800;
     }
 
     @media (max-width: 900px) {
-
-      h1 {
-        font-size: 58px;
+      .hero {
+        grid-template-columns: 1fr;
       }
 
-      h2 {
-        font-size: 38px;
+      .hero-patterns {
+        min-height: 420px;
       }
 
-      p {
-        font-size: 20px;
+      section {
+        padding: 70px 24px;
       }
 
-      .subtitle {
-        font-size: 22px;
-      }
-
-      .nav {
-        gap: 22px;
-      }
-
-      .nav a {
-        font-size: 20px;
-      }
-
-      .photo-grid {
+      .photo-grid,
+      .video-grid {
         grid-template-columns: 1fr;
       }
 
@@ -157,8 +227,8 @@
         height: auto;
       }
 
-      .video-grid {
-        grid-template-columns: 1fr;
+      .booking-box {
+        border-radius: 40px;
       }
     }
   </style>
@@ -168,31 +238,39 @@
 
   <div class="container">
 
-    <h1>
-      Carlina<br>
-      Carpelan
-    </h1>
+    <header class="hero">
+      <div class="hero-text">
+        <div>
+          <h1>Carlina<br>Carpelan</h1>
 
-    <div class="subtitle">
-      DJ / Event Producer / Activist
-    </div>
+          <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="gigs.html">Gigs</a>
+            <a href="#photos">Promo Photos</a>
+            <a href="#soundcloud">SoundCloud</a>
+            <a href="#videos">Videos</a>
+            <a href="#bookings">Bookings</a>
+          </div>
+        </div>
 
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="#about">About</a>
-      <a href="gigs.html">Gigs</a>
-      <a href="#photos">Promo Photos</a>
-      <a href="#soundcloud">SoundCloud</a>
-      <a href="#videos">Videos</a>
-      <a href="#bookings">Bookings</a>
-    </div>
+        <div class="subtitle">
+          DJ / Event Producer / Activist
+        </div>
+      </div>
+
+      <div class="hero-patterns">
+        <div class="pattern flower"></div>
+        <div class="pattern blob"></div>
+        <div class="pattern burst"></div>
+        <div class="pattern flower"></div>
+      </div>
+    </header>
 
     <section id="about">
-
       <h2>About</h2>
 
       <div class="bio">
-
         <p>
           Snappy snares? You got it. Bad-to-the-bone analog techno bliss?
           Look no further. Naughty tech grooves? They've got you covered.
@@ -220,154 +298,71 @@
           DJ Stingray, Wata Igarashi, Luke Slater and Jane Fitz,
           while also taking their sound beyond Finland to booths abroad.
         </p>
-
       </div>
-
     </section>
 
     <section id="photos">
-
       <h2>Promo Photos</h2>
 
       <div class="photo-grid">
-
         <img src="promo4.jpeg" alt="Promo photo 4">
-
         <img src="promo3.jpg" alt="Promo photo 3">
-
         <img src="promo1-websafe.jpg" alt="Promo photo 1">
-
         <img src="promo2.jpg" alt="Promo photo 2">
-
         <img src="promo8-websafe.jpg" alt="Promo photo 8">
-
         <img src="promo7.jpg" alt="Promo photo 7">
-
       </div>
-
     </section>
 
     <section id="soundcloud">
-
       <h2>SoundCloud</h2>
 
       <div class="soundcloud">
-
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan/hosselimix&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+        <iframe height="166" scrolling="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan/hosselimix&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
         </iframe>
 
-        <br><br>
-
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/elektorni/elektorniguestmix014-carlina-carpelan&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+        <iframe height="166" scrolling="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/elektorni/elektorniguestmix014-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
         </iframe>
 
-        <br><br>
-
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/naastelkaar-event/naastelkaar-mix-carlina-carpelan&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+        <iframe height="166" scrolling="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/naastelkaar-event/naastelkaar-mix-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
         </iframe>
 
-        <br><br>
-
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nollanolla-collective/puffcast-031-carlina-carpelan&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+        <iframe height="166" scrolling="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nollanolla-collective/puffcast-031-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
         </iframe>
-
       </div>
-
     </section>
 
     <section id="videos">
-
       <h2>Videos</h2>
 
       <div class="video-grid">
-
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/wS99neblvKQ"
-          title="Carlina Carpelan"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/i5eY34kWcso"
-          title="Diffractive Radio"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/GdHF_Qa-MdU"
-          title="mini."
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/BkqUtkkKx5c"
-          title="Pearl Rush"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-
+        <iframe src="https://www.youtube.com/embed/wS99neblvKQ" title="Carlina Carpelan" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/i5eY34kWcso" title="Diffractive Radio" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/GdHF_Qa-MdU" title="mini." allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/BkqUtkkKx5c" title="Pearl Rush" allowfullscreen></iframe>
       </div>
-
     </section>
 
     <section id="bookings">
-
       <h2>Bookings</h2>
 
       <div class="booking-box">
+        <p>Direct contact:</p>
 
-        <p>
-          Direct contact:
-        </p>
-
-        <a
-          class="booking-email"
-          href="mailto:carpelancarlina@gmail.com">
+        <a class="booking-email" href="mailto:carpelancarlina@gmail.com">
           carpelancarlina@gmail.com
         </a>
 
-        <p style="margin-top: 40px;">
-          Agency:
-        </p>
+        <p>Agency:</p>
 
-        <a
-          class="booking-email"
-          href="https://signaturedark.fi/agency/"
-          target="_blank">
+        <a class="booking-email" href="https://signaturedark.fi/agency/" target="_blank">
           Signature Dark
         </a>
-
       </div>
-
     </section>
 
     <footer>
