@@ -33,9 +33,7 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      min-height: 480px;
+      min-height: 340px;
       background: var(--blue);
       color: var(--black);
     }
@@ -44,7 +42,8 @@
       padding: 48px 40px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+      height: 100%;
     }
 
     h1 {
@@ -53,15 +52,6 @@
       margin: 0;
       font-weight: 900;
       letter-spacing: -0.08em;
-    }
-
-    .subtitle {
-      border: 1.5px solid var(--black);
-      border-radius: 999px;
-      width: fit-content;
-      padding: 18px 48px;
-      font-size: 22px;
-      font-weight: 700;
     }
 
     .nav {
@@ -87,56 +77,8 @@
       color: var(--blue);
     }
 
-    .hero-patterns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: var(--cream);
-      overflow: hidden;
-    }
-
-    .pattern {
-      min-height: 220px;
-    }
-
-    .burst {
-      background:
-        repeating-conic-gradient(
-          from 0deg,
-          var(--blue) 0deg 10deg,
-          var(--black) 10deg 20deg
-        );
-    }
-
-    .flower {
-      background:
-        radial-gradient(circle at 50% 50%,
-        var(--black) 0 18%,
-        transparent 19%),
-        repeating-conic-gradient(
-          from 0deg,
-          var(--black) 0deg 18deg,
-          var(--cream) 18deg 36deg
-        );
-    }
-
-    .blob {
-      background:
-        radial-gradient(circle at 0% 30%,
-        var(--blue) 0 22%,
-        transparent 23%),
-        radial-gradient(circle at 100% 60%,
-        var(--blue) 0 26%,
-        transparent 27%),
-        var(--cream);
-    }
-
     section {
       padding: 90px 40px;
-    }
-
-    section:nth-of-type(even) {
-      background: var(--cream);
-      color: var(--black);
     }
 
     h2 {
@@ -197,16 +139,12 @@
 
     @media (max-width: 900px) {
 
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-patterns {
-        min-height: 420px;
-      }
-
       section {
         padding: 70px 24px;
+      }
+
+      .hero-text {
+        padding: 40px 24px;
       }
 
       summary {
@@ -242,17 +180,6 @@
 
         </div>
 
-        <div class="subtitle">
-          Carlina Carpelan
-        </div>
-
-      </div>
-
-      <div class="hero-patterns">
-        <div class="pattern flower"></div>
-        <div class="pattern blob"></div>
-        <div class="pattern burst"></div>
-        <div class="pattern flower"></div>
       </div>
 
     </header>
@@ -399,4 +326,5 @@
   </div>
 
 </body>
+
 </html>
