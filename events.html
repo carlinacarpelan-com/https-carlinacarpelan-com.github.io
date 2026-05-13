@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Events — Carlina Carpelan</title>
+
+  <style>
+    :root {
+      --black: #000000;
+      --cream: #fff4ec;
+      --blue: #00a6ff;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.2;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: auto;
+    }
+
+    .hero {
+      min-height: 420px;
+      background: var(--blue);
+      color: var(--black);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-text {
+      padding: 48px 40px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: clamp(82px, 13vw, 190px);
+      line-height: 0.82;
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .links a {
+      color: var(--black);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 10px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .links a:hover {
+      background: var(--black);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 90px 40px;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    h2 {
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.9;
+      margin: 0 0 50px;
+      letter-spacing: -0.07em;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .event-card {
+      border: 1.5px solid currentColor;
+      padding: 28px;
+    }
+
+    .event-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: 1.5px solid currentColor;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    h3 {
+      font-size: 34px;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      font-size: 22px;
+      max-width: 900px;
+      margin: 0 0 22px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    section:nth-of-type(even) p {
+      color: rgba(0,0,0,0.82);
+    }
+
+    footer {
+      padding: 40px;
+      background: var(--blue);
+      color: var(--black);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 360px;
+      }
+
+      .hero-text {
+        padding: 40px 24px;
+      }
+
+      section {
+        padding: 70px 24px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="hero">
+      <div class="hero-text">
+
+        <h1>Events</h1>
+
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="dj.html">DJ</a>
+          <a href="activism.html">Activism</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+      </div>
+    </header>
+
+    <section>
+      <h2>Event Production</h2>
+
+      <div class="event-grid">
+
+        <div class="event-card">
+          <div class="event-image">Image here</div>
+          <h3>Event name</h3>
+          <p>
+            Event description here.
+          </p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-image">Image here</div>
+          <h3>Event name</h3>
+          <p>
+            Event description here.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Clubs & Nights</h2>
+
+      <div class="event-grid">
+
+        <div class="event-card">
+          <div class="event-image">Image here</div>
+          <h3>Event name</h3>
+          <p>
+            Event description here.
+          </p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-image">Image here</div>
+          <h3>Event name</h3>
+          <p>
+            Event description here.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Festivals & Collaborations</h2>
+
+      <div class="event-grid">
+
+        <div class="event-card">
+          <div class="event-image">Image here</div>
+          <h3>Event name</h3>
+          <p>
+            Event description here.
+          </p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-image">Image here</div>
+          <h3>Event name</h3>
+          <p>
+            Event description here.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      Carlina Carpelan
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
