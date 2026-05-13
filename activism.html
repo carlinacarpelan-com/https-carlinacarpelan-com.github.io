@@ -22,32 +22,23 @@
       margin: 0;
       background: var(--black);
       color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      overflow: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.2;
     }
 
     .container {
       width: 100%;
-      height: 100vh;
     }
 
     .hero {
-      width: 100%;
-      height: 100vh;
       background: var(--blue);
       color: var(--black);
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-text {
-      padding: 48px 40px;
-      width: 100%;
+      padding: 48px 40px 80px;
     }
 
     h1 {
-      font-size: clamp(82px, 13vw, 190px);
-      line-height: 0.82;
+      font-size: 42px;
+      line-height: 1;
       margin: 0;
       font-weight: 900;
       letter-spacing: -0.08em;
@@ -80,32 +71,36 @@
       transform: translateY(-2px);
     }
 
-    .intro {
+    main {
+      padding: 90px 40px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .text-block {
       max-width: 900px;
-      margin-top: 56px;
       font-size: 22px;
-      line-height: 1.7;
-      color: var(--black);
+      line-height: 1.45;
+      margin: 0;
+      color: var(--white);
       font-weight: 400;
     }
 
+    footer {
+      background: var(--blue);
+      color: var(--black);
+      padding: 36px 40px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
     @media (max-width: 900px) {
-
-      body {
-        overflow: auto;
-      }
-
       .hero {
-        min-height: 100vh;
-        height: auto;
-      }
-
-      .hero-text {
-        padding: 40px 24px;
+        padding: 40px 24px 64px;
       }
 
       h1 {
-        font-size: clamp(64px, 18vw, 120px);
+        font-size: 36px;
       }
 
       .links {
@@ -117,13 +112,19 @@
         padding: 10px 18px;
       }
 
-      .intro {
+      main {
+        padding: 70px 24px;
+      }
+
+      .text-block {
         font-size: 20px;
       }
+
+      footer {
+        padding: 28px 24px;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
@@ -132,39 +133,30 @@
 
     <header class="hero">
 
-      <div class="hero-text">
+      <h1>
+        Activism
+      </h1>
 
-        <h1>
-          Activism
-        </h1>
-
-        <div class="links">
-
-          <a href="index.html">
-            Home
-          </a>
-
-          <a href="dj.html">
-            DJ
-          </a>
-
-          <a href="events.html">
-            Events
-          </a>
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-        </div>
-
-        <p class="intro">
-          Nature advocate focusing on lobbying at Greenpeace, member of the anti-hierarchical and anti-transactional communal space Cosy Club, currently co-founding a new activist collective centered around the ideology of Planetary Care.
-        </p>
-
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="dj.html">DJ</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
       </div>
 
     </header>
+
+    <main>
+
+      <p class="text-block">
+        Nature advocate focusing on lobbying at Greenpeace, member of the anti-hierarchical and anti-transactional communal space Cosy Club, and currently co-founding a new activist collective centered around the ideology of Planetary Care.
+      </p>
+
+    </main>
+
+    <footer>
+      Carlina Carpelan
+    </footer>
 
   </div>
 
