@@ -1,131 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Videos — Carlina Carpelan</title>
 
   <style>
 
+    :root {
+      --black: #000000;
+      --blue: #A6C3CE;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background-color: black;
-      color: white;
-      font-family: Calibri, sans-serif;
-      line-height: 1.7;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 950px;
-      margin: auto;
-      padding: 80px 24px;
+      width: 100%;
+      min-height: 100vh;
     }
 
-    a {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .back {
-      display: inline-block;
-      margin-bottom: 50px;
-      font-size: 20px;
+    .hero {
+      background: var(--blue);
+      color: var(--black);
+      padding: 48px 40px 80px;
     }
 
     h1 {
-      font-size: 72px;
-      margin-bottom: 70px;
+      font-size: clamp(82px, 13vw, 190px);
+      line-height: 0.82;
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.08em;
     }
 
-    .video-block {
-      margin-bottom: 100px;
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 42px;
     }
 
-    iframe {
+    .links a {
+      color: var(--black);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 10px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .links a:hover {
+      background: var(--black);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .videos {
+      padding: 80px 40px 120px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .video-card iframe {
       width: 100%;
-      max-width: 720px;
-      height: 405px;
+      aspect-ratio: 16 / 9;
       border: none;
       display: block;
     }
 
     .video-title {
-      margin-top: 20px;
-      font-size: 24px;
-      color: #d0d0d0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--blue);
+      color: var(--black);
+      padding: 18px 20px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
     }
 
-    .note {
-      margin-top: 100px;
-      color: #777;
+    footer {
+      background: var(--blue);
+      color: var(--black);
+      padding: 36px 40px;
       font-size: 18px;
+      font-weight: 800;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
 
-      h1 {
-        font-size: 48px;
+      .hero {
+        padding: 40px 24px 64px;
       }
 
-      iframe {
-        height: 240px;
+      h1 {
+        font-size: clamp(64px, 18vw, 120px);
+      }
+
+      .links {
+        gap: 12px;
+      }
+
+      .links a {
+        font-size: 16px;
+        padding: 10px 18px;
+      }
+
+      .videos {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 100px;
+        gap: 28px;
+      }
+
+      .video-title {
+        font-size: 18px;
+      }
+
+      footer {
+        padding: 28px 24px;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
 
   <div class="container">
 
-    <a class="back" href="index.html">← Back</a>
+    <header class="hero">
 
-    <h1>Videos</h1>
+      <h1>
+        Videos
+      </h1>
 
-    <!-- VIDEO 1 -->
+      <div class="links">
 
-    <div class="video-block">
+        <a href="index.html">
+          Home
+        </a>
 
-      <iframe
-        src="https://www.youtube.com/embed/wS99neblvKQ"
-        title="Carlina Carpelan video"
-        allowfullscreen>
-      </iframe>
+        <a href="dj.html">
+          DJ
+        </a>
 
-      <div class="video-title">
-        IDA Invites — Carlina Carpelan
+        <a href="events.html">
+          Events
+        </a>
+
+        <a href="activism.html">
+          Activism
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
       </div>
 
-    </div>
+    </header>
 
-    <!-- ADD NEW VIDEOS BELOW -->
+    <section class="videos">
 
-    <!--
+      <div class="video-card">
 
-    COPY THIS BLOCK:
+        <iframe
+          src="https://www.youtube.com/embed/wS99neblvKQ"
+          allowfullscreen>
+        </iframe>
 
-    <div class="video-block">
+        <div class="video-title">
+          IDA Radio
+        </div>
 
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        allowfullscreen>
-      </iframe>
-
-      <div class="video-title">
-        Video title
       </div>
 
-    </div>
+      <div class="video-card">
 
-    -->
+        <iframe
+          src="https://www.youtube.com/embed/i5eY34kWcso"
+          allowfullscreen>
+        </iframe>
 
-    <div class="note">
-      More videos coming soon.
-    </div>
+        <div class="video-title">
+          Diffractive Radio
+        </div>
+
+      </div>
+
+      <div class="video-card">
+
+        <iframe
+          src="https://www.youtube.com/embed/GdHF_Qa-MdU"
+          allowfullscreen>
+        </iframe>
+
+        <div class="video-title">
+          Mini. w/ Suski b2b
+        </div>
+
+      </div>
+
+      <div class="video-card">
+
+        <iframe
+          src="https://www.youtube.com/embed/BkqUtkkKx5c"
+          allowfullscreen>
+        </iframe>
+
+        <div class="video-title">
+          Pearl Rush
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer>
+      Carlina Carpelan
+    </footer>
 
   </div>
 
 </body>
+
 </html>
