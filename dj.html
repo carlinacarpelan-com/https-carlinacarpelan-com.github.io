@@ -118,12 +118,21 @@
       height: 620px;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%);
-      transition: 0.25s ease;
+      filter:
+        grayscale(100%)
+        contrast(115%)
+        brightness(0.92);
+      transition:
+        filter 0.35s ease,
+        transform 0.35s ease;
     }
 
     .photo-grid img:hover {
-      filter: grayscale(0%);
+      filter:
+        grayscale(0%)
+        contrast(105%)
+        brightness(1);
+      transform: scale(1.015);
     }
 
     .soundcloud iframe,
