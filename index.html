@@ -24,7 +24,7 @@
       background: var(--black);
       color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
     .container {
@@ -33,18 +33,16 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      min-height: 620px;
+      min-height: 420px;
       background: var(--blue);
       color: var(--black);
+      display: flex;
+      align-items: center;
     }
 
     .hero-text {
       padding: 48px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      width: 100%;
     }
 
     h1 {
@@ -53,16 +51,6 @@
       margin: 0;
       font-weight: 900;
       letter-spacing: -0.08em;
-    }
-
-    .subtitle {
-      border: 1.5px solid var(--black);
-      border-radius: 999px;
-      width: fit-content;
-      padding: 18px 48px;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1;
     }
 
     .links {
@@ -80,40 +68,12 @@
       text-decoration: none;
       font-size: 18px;
       font-weight: 700;
+      transition: 0.2s ease;
     }
 
     .links a:hover {
       background: var(--black);
       color: var(--blue);
-    }
-
-    .hero-patterns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: var(--cream);
-      overflow: hidden;
-    }
-
-    .pattern {
-      min-height: 250px;
-    }
-
-    .burst {
-      background:
-        repeating-conic-gradient(from 0deg, var(--blue) 0deg 10deg, var(--black) 10deg 20deg);
-    }
-
-    .flower {
-      background:
-        radial-gradient(circle at 50% 50%, var(--black) 0 18%, transparent 19%),
-        repeating-conic-gradient(from 0deg, var(--black) 0deg 18deg, var(--cream) 18deg 36deg);
-    }
-
-    .blob {
-      background:
-        radial-gradient(circle at 0% 30%, var(--blue) 0 22%, transparent 23%),
-        radial-gradient(circle at 100% 60%, var(--blue) 0 26%, transparent 27%),
-        var(--cream);
     }
 
     section {
@@ -136,6 +96,11 @@
       font-size: 22px;
       max-width: 900px;
       margin: 0 0 22px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    section:nth-of-type(even) p {
+      color: rgba(0,0,0,0.82);
     }
 
     .bio {
@@ -154,6 +119,7 @@
       object-fit: cover;
       display: block;
       filter: grayscale(100%);
+      transition: 0.25s ease;
     }
 
     .photo-grid img:hover {
@@ -165,13 +131,22 @@
       border: 0;
     }
 
+    footer {
+      padding: 40px;
+      background: var(--blue);
+      color: var(--black);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
     @media (max-width: 900px) {
+
       .hero {
-        grid-template-columns: 1fr;
+        min-height: 360px;
       }
 
-      .hero-patterns {
-        min-height: 420px;
+      .hero-text {
+        padding: 40px 24px;
       }
 
       section {
@@ -185,8 +160,14 @@
       .photo-grid img {
         height: auto;
       }
+
+      p {
+        font-size: 20px;
+      }
     }
+
   </style>
+
 </head>
 
 <body>
@@ -194,36 +175,45 @@
   <div class="container">
 
     <header class="hero">
+
       <div class="hero-text">
-        <div>
-          <h1>Carlina<br>Carpelan</h1>
 
-          <div class="links">
-            <a href="dj.html">DJ</a>
-            <a href="https://soundcloud.com/carlina-carpelan" target="_blank">SoundCloud</a>
-            <a href="videos.html">Videos</a>
-            <a href="gigs.html">Gigs</a>
-            <a href="bookings.html">Bookings</a>
-          </div>
+        <h1>Carlina<br>Carpelan</h1>
+
+        <div class="links">
+
+          <a href="dj.html">
+            DJ
+          </a>
+
+          <a href="https://soundcloud.com/carlina-carpelan" target="_blank">
+            SoundCloud
+          </a>
+
+          <a href="videos.html">
+            Videos
+          </a>
+
+          <a href="gigs.html">
+            Gigs
+          </a>
+
+          <a href="bookings.html">
+            Bookings
+          </a>
+
         </div>
 
-        <div class="subtitle">
-          DJ / Event Producer / Activist
-        </div>
       </div>
 
-      <div class="hero-patterns">
-        <div class="pattern flower"></div>
-        <div class="pattern blob"></div>
-        <div class="pattern burst"></div>
-        <div class="pattern flower"></div>
-      </div>
     </header>
 
     <section id="about">
+
       <h2>About</h2>
 
       <div class="bio">
+
         <p>
           Snappy snares? You got it. Bad-to-the-bone analog techno bliss?
           Look no further. Naughty tech grooves? They've got you covered.
@@ -242,42 +232,62 @@
 
         <p>
           Carlina’s sets are immersive journeys guided by instinct, flow and a clear connection to the dance floor.
-          Whether playing outdoor festival stages or sweaty late-morning basement hours, they bring an unmistakable
-          intensity and momentum to every slot.
+          Whether playing outdoor festival stages or sweaty late-morning basement hours,
+          they bring an unmistakable intensity and momentum to every slot.
         </p>
 
         <p>
           In recent years, Carlina has shared booths with international names such as DJ Stingray,
-          Wata Igarashi, Luke Slater and Jane Fitz, while also taking their sound beyond Finland to booths abroad.
+          Wata Igarashi, Luke Slater and Jane Fitz,
+          while also taking their sound beyond Finland to booths abroad.
         </p>
+
       </div>
+
     </section>
 
     <section id="photos">
+
       <h2>Promo Photos</h2>
 
       <div class="photo-grid">
+
         <img src="promo4.jpeg" alt="Promo photo 4">
+
         <img src="promo3.jpg" alt="Promo photo 3">
+
         <img src="promo1-websafe.jpg" alt="Promo photo 1">
+
         <img src="promo2.jpg" alt="Promo photo 2">
+
         <img src="promo8-websafe.jpg" alt="Promo photo 8">
+
         <img src="promo7.jpg" alt="Promo photo 7">
+
       </div>
+
     </section>
 
     <section id="soundcloud">
+
       <h2>SoundCloud</h2>
 
       <div class="soundcloud-wrapper">
+
         <iframe
           height="166"
           scrolling="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan/hosselimix&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
         </iframe>
+
       </div>
+
     </section>
+
+    <footer>
+      Carlina Carpelan
+    </footer>
 
   </div>
 
