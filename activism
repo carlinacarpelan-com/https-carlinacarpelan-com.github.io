@@ -1,1 +1,169 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Activism — Carlina Carpelan</title>
+
+  <style>
+    :root {
+      --black: #000000;
+      --blue: #00a6ff;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .hero {
+      background: var(--blue);
+      color: var(--black);
+      padding: 48px 40px 80px;
+    }
+
+    h1 {
+      font-size: clamp(82px, 13vw, 190px);
+      line-height: 0.82;
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .links a {
+      color: var(--black);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 10px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .links a:hover {
+      background: var(--black);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    main {
+      padding: 90px 40px;
+      max-width: 1100px;
+    }
+
+    p {
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.05;
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--black);
+      padding: 36px 40px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 40px 24px 64px;
+      }
+
+      main {
+        padding: 70px 24px;
+      }
+
+      h1 {
+        font-size: clamp(64px, 18vw, 120px);
+      }
+
+      .links {
+        gap: 12px;
+      }
+
+      .links a {
+        font-size: 16px;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="hero">
+
+      <h1>
+        Activism
+      </h1>
+
+      <div class="links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="dj.html">
+          DJ
+        </a>
+
+        <a href="events.html">
+          Events
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </header>
+
+    <main>
+
+      <p>
+        Carlina Carpelan is involved in Metsäliike, works as a nature advocate focusing on lobbying at Greenpeace, and is currently co-founding a new activist collective centered around the ideology of Planetary Care.
+      </p>
+
+    </main>
+
+    <footer>
+      Carlina Carpelan
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
