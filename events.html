@@ -7,8 +7,9 @@
 
   <title>Events — Carlina Carpelan</title>
 
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700;800&display=swap" rel="stylesheet">
 
+  <style>
     :root {
       --black: #000000;
       --blue: #A6C3CE;
@@ -23,7 +24,7 @@
       margin: 0;
       background: var(--black);
       color: var(--white);
-      neuton-family: Arial, Helvetica, sans-serif;
+      font-family: 'Neuton', serif;
       line-height: 1.2;
     }
 
@@ -38,11 +39,11 @@
     }
 
     h1 {
-      neuton-size: clamp(82px, 13vw, 190px);
-      line-height: 0.82;
+      font-size: clamp(56px, 9vw, 120px);
+      line-height: 0.9;
       margin: 0;
-      neuton-weight: 900;
-      letter-spacing: -0.08em;
+      font-weight: 900;
+      letter-spacing: -0.06em;
     }
 
     .links {
@@ -58,8 +59,8 @@
       border-radius: 999px;
       padding: 10px 22px;
       text-decoration: none;
-      neuton-size: 18px;
-      neuton-weight: 700;
+      font-size: 18px;
+      font-weight: 700;
       transition:
         background 0.2s ease,
         color 0.2s ease,
@@ -93,7 +94,7 @@
 
     .event-card:hover {
       transform: translateY(-4px);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .event-image {
@@ -104,8 +105,8 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 22px;
-      neuton-size: 18px;
-      neuton-weight: 700;
+      font-size: 18px;
+      font-weight: 700;
       opacity: 0.7;
       overflow: hidden;
     }
@@ -118,14 +119,14 @@
     }
 
     h2 {
-      neuton-size: 42px;
+      font-size: 42px;
       margin: 0 0 18px;
       letter-spacing: -0.05em;
-      neuton-weight: 900;
+      font-weight: 900;
     }
 
     p {
-      neuton-size: 22px;
+      font-size: 22px;
       line-height: 1.45;
       margin: 0;
       opacity: 0.82;
@@ -135,12 +136,11 @@
       background: var(--blue);
       color: var(--black);
       padding: 36px 40px;
-      neuton-size: 18px;
-      neuton-weight: 800;
+      font-size: 18px;
+      font-weight: 800;
     }
 
     @media (max-width: 900px) {
-
       .hero {
         padding: 40px 24px 64px;
       }
@@ -150,7 +150,7 @@
       }
 
       h1 {
-        neuton-size: clamp(64px, 18vw, 120px);
+        font-size: clamp(48px, 16vw, 88px);
       }
 
       .event-grid {
@@ -162,22 +162,23 @@
       }
 
       .links a {
-        neuton-size: 16px;
+        font-size: 16px;
         padding: 10px 18px;
       }
 
       h2 {
-        neuton-size: 32px;
+        font-size: 32px;
       }
 
       p {
-        neuton-size: 20px;
+        font-size: 20px;
       }
 
+      footer {
+        padding: 28px 24px;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
@@ -200,8 +201,8 @@
           DJ
         </a>
 
-        <a href="activism.html">
-          Activism
+        <a href="activism-and-voluntary.html">
+          Activism & Voluntary
         </a>
 
         <a href="contact.html">
@@ -217,7 +218,6 @@
       <div class="event-grid">
 
         <article class="event-card">
-
           <div class="event-image">
             IMAGE HERE
           </div>
@@ -229,11 +229,9 @@
           <p>
             Event description here.
           </p>
-
         </article>
 
         <article class="event-card">
-
           <div class="event-image">
             IMAGE HERE
           </div>
@@ -245,11 +243,9 @@
           <p>
             Event description here.
           </p>
-
         </article>
 
         <article class="event-card">
-
           <div class="event-image">
             IMAGE HERE
           </div>
@@ -261,11 +257,9 @@
           <p>
             Event description here.
           </p>
-
         </article>
 
         <article class="event-card">
-
           <div class="event-image">
             IMAGE HERE
           </div>
@@ -277,7 +271,6 @@
           <p>
             Event description here.
           </p>
-
         </article>
 
       </div>
