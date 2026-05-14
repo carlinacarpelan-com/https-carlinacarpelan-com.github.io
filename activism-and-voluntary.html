@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Activism and Voluntary Work</title>
+  <title>Activism and Voluntary Work — Carlina Carpelan</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700;800&display=swap" rel="stylesheet">
 
@@ -79,10 +79,15 @@
       background: var(--black);
     }
 
+    .activism-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
     .activism-card {
       border: 2px solid var(--white);
-      padding: 40px;
-      max-width: 1200px;
+      padding: 36px;
       transition:
         transform 0.25s ease,
         background 0.25s ease;
@@ -93,12 +98,24 @@
       background: rgba(255, 255, 255, 0.03);
     }
 
+    h2 {
+      font-size: 42px;
+      margin: 0 0 20px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
     p {
       font-size: 22px;
       line-height: 1.45;
       margin: 0;
       opacity: 0.82;
       font-weight: 700;
+    }
+
+    .wide {
+      grid-column: span 2;
     }
 
     footer {
@@ -132,8 +149,20 @@
         padding: 70px 24px;
       }
 
+      .activism-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        grid-column: span 1;
+      }
+
       .activism-card {
         padding: 28px;
+      }
+
+      h2 {
+        font-size: 32px;
       }
 
       p {
@@ -184,11 +213,67 @@
 
     <main class="activism">
 
-      <div class="activism-card">
+      <div class="activism-grid">
 
-        <p>
-          Nature advocate focusing on lobbying at Greenpeace, member of the anti-hierarchical and anti-transactional communal space Cosy Club, and currently co-founding a new activist collective centered around the ideology of Planetary Care.
-        </p>
+        <article class="activism-card">
+
+          <h2>
+            Greenpeace
+          </h2>
+
+          <p>
+            Nature advocacy and lobbying work focusing on climate justice, biodiversity and systemic environmental change through Greenpeace.
+          </p>
+
+        </article>
+
+        <article class="activism-card">
+
+          <h2>
+            Cosy Club
+          </h2>
+
+          <p>
+            Member of the anti-hierarchical and anti-transactional communal space Cosy Club, centered around collective care, culture and alternative social structures.
+          </p>
+
+        </article>
+
+        <article class="activism-card">
+
+          <h2>
+            Murroskoalitio
+          </h2>
+
+          <p>
+            Participating in systemic transformation work through Murroskoalitio, focusing on ecological transition, solidarity and post-growth futures.
+          </p>
+
+        </article>
+
+        <article class="activism-card">
+
+          <h2>
+            New Collective
+          </h2>
+
+          <p>
+            Currently co-founding a new activist collective centered around the ideology of Planetary Care and new forms of collaborative political imagination.
+          </p>
+
+        </article>
+
+        <article class="activism-card wide">
+
+          <h2>
+            Other Activism & Voluntary Work
+          </h2>
+
+          <p>
+            Additional involvement includes Luontomarssi, Metsämarssi, Elokapina and volunteer support person work through the Helsinki social services system.
+          </p>
+
+        </article>
 
       </div>
 
