@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Activism & voluntary work</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #000000;
+      --blue: #A6C3CE;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Neuton', Georgia, serif;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .hero {
+      background: var(--blue);
+      color: var(--black);
+      padding: 48px 40px 80px;
+    }
+
+    h1 {
+      font-size: clamp(82px, 13vw, 190px);
+      line-height: 0.82;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -0.08em;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .links a {
+      color: var(--black);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 10px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .links a:hover {
+      background: var(--black);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .activism {
+      padding: 90px 40px;
+      background: var(--black);
+    }
+
+    .activism-card {
+      border: 2px solid var(--white);
+      padding: 40px;
+      max-width: 1200px;
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .activism-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    p {
+      font-size: 28px;
+      line-height: 1.35;
+      margin: 0;
+      opacity: 0.82;
+      font-weight: 700;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--black);
+      padding: 36px 40px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 40px 24px 64px;
+      }
+
+      h1 {
+        font-size: clamp(64px, 18vw, 120px);
+      }
+
+      .links {
+        gap: 12px;
+      }
+
+      .links a {
+        font-size: 16px;
+        padding: 10px 18px;
+      }
+
+      .activism {
+        padding: 70px 24px;
+      }
+
+      .activism-card {
+        padding: 28px;
+      }
+
+      p {
+        font-size: 22px;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="hero">
+
+      <h1>
+        Activism
+      </h1>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="dj.html">DJ</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </header>
+
+    <main class="activism">
+
+      <div class="activism-card">
+        <p>
+          Nature advocate focusing on lobbying at Greenpeace, member of the anti-hierarchical and anti-transactional communal space Cosy Club, and currently co-founding a new activist collective centered around the ideology of Planetary Care.
+        </p>
+      </div>
+
+    </main>
+
+    <footer>
+      Carlina Carpelan
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
