@@ -8,7 +8,6 @@
   <title>Activism — Carlina Carpelan</title>
 
   <style>
-
     :root {
       --black: #000000;
       --blue: #A6C3CE;
@@ -23,7 +22,7 @@
       margin: 0;
       background: var(--black);
       color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Times New Roman", Times, serif;
       line-height: 1.2;
     }
 
@@ -38,11 +37,10 @@
     }
 
     h1 {
-      font-size: clamp(82px, 13vw, 190px);
-      line-height: 0.82;
+      font-size: 32px;
+      line-height: 1;
       margin: 0;
       font-weight: 900;
-      letter-spacing: -0.08em;
     }
 
     .links {
@@ -80,14 +78,7 @@
     .activism-card {
       border: 2px solid var(--white);
       padding: 40px;
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .activism-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.03);
+      max-width: 1200px;
     }
 
     p {
@@ -95,6 +86,7 @@
       line-height: 1.45;
       margin: 0;
       opacity: 0.82;
+      font-weight: 700;
     }
 
     footer {
@@ -106,7 +98,6 @@
     }
 
     @media (max-width: 900px) {
-
       .hero {
         padding: 40px 24px 64px;
       }
@@ -116,7 +107,7 @@
       }
 
       h1 {
-        font-size: clamp(64px, 18vw, 120px);
+        font-size: 32px;
       }
 
       .links {
@@ -128,22 +119,19 @@
         padding: 10px 18px;
       }
 
-      p {
-        font-size: 20px;
-      }
-
       .activism-card {
         padding: 28px;
+      }
+
+      p {
+        font-size: 20px;
       }
 
       footer {
         padding: 28px 24px;
       }
-
     }
-
   </style>
-
 </head>
 
 <body>
@@ -152,28 +140,13 @@
 
     <header class="hero">
 
-      <h1>
-        Activism
-      </h1>
+      <h1>Activism</h1>
 
       <div class="links">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="dj.html">
-          DJ
-        </a>
-
-        <a href="events.html">
-          Events
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
+        <a href="index.html">Home</a>
+        <a href="dj.html">DJ</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
       </div>
 
     </header>
@@ -181,11 +154,9 @@
     <main class="activism">
 
       <div class="activism-card">
-
         <p>
           Nature advocate focusing on lobbying at Greenpeace, member of the anti-hierarchical and anti-transactional communal space Cosy Club, and currently co-founding a new activist collective centered around the ideology of Planetary Care.
         </p>
-
       </div>
 
     </main>
