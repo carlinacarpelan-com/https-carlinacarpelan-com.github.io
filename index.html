@@ -40,32 +40,40 @@
       background: var(--blue);
     }
 
+    /* DESKTOP LAYOUT */
+
     .hero-text {
       width: 50%;
       min-height: 100vh;
-      background: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 40px;
       position: relative;
+      background: var(--blue);
       overflow: visible;
     }
 
-    .brand-area {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      position: relative;
-      z-index: 20;
+    .logo {
+      position: absolute;
+      left: 92px;
+      top: 43%;
+      transform: translateY(-50%);
+      width: 430px;
+      max-width: calc(100% - 140px);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .menu {
-      position: relative;
-      width: 62px;
-      height: 62px;
+      position: absolute;
+      left: 92px;
+      top: calc(43% + 12px);
+      width: 320px;
+      height: 320px;
       z-index: 9999;
-      flex-shrink: 0;
     }
 
     .menu-button {
@@ -130,18 +138,6 @@
       display: block;
     }
 
-    .logo {
-      width: 430px;
-      max-width: calc(100vw - 180px);
-      pointer-events: none;
-    }
-
-    .logo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
     .hero-image {
       width: 50%;
       min-height: 100vh;
@@ -155,6 +151,8 @@
       object-fit: cover;
       display: block;
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
@@ -170,15 +168,29 @@
           28px
           22px
           8px;
+        display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .brand-area {
+      /* MOBILE: LOGO + SPIRAL SIDE BY SIDE */
+      .mobile-brand {
+        display: flex;
+        align-items: center;
         gap: 10px;
       }
 
+      .logo {
+        position: static;
+        transform: none;
+        width: 270px;
+        max-width: 72vw;
+      }
+
       .menu {
+        position: relative;
+        left: auto;
+        top: auto;
         width: 58px;
         height: 58px;
       }
@@ -200,11 +212,6 @@
       .dropdown a {
         font-size: 15px;
         padding: 14px 18px;
-      }
-
-      .logo {
-        width: 270px;
-        max-width: 72vw;
       }
 
       .hero-image {
@@ -232,7 +239,7 @@
 
       <div class="hero-text">
 
-        <div class="brand-area">
+        <div class="mobile-brand">
 
           <nav class="menu">
 
