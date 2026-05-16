@@ -54,7 +54,7 @@
     .logo {
       width: 100%;
       max-width: 520px;
-      margin-bottom: 28px;
+      margin-bottom: 1.5cm;
     }
 
     .logo img {
@@ -67,10 +67,7 @@
       position: relative;
       width: fit-content;
       z-index: 1000;
-    }
-
-    .menu input {
-      display: none;
+      margin-left: 0;
     }
 
     .menu-button {
@@ -89,8 +86,8 @@
 
     .dropdown {
       position: absolute;
-      top: 64px;
-      left: 0;
+      top: 0;
+      left: 66px;
       background: var(--black);
       border-radius: 18px;
       min-width: 240px;
@@ -118,7 +115,7 @@
     }
 
     .menu:hover .dropdown,
-    .menu input:checked ~ .dropdown {
+    .dropdown:hover {
       display: block;
     }
 
@@ -153,7 +150,7 @@
 
       .logo {
         max-width: 340px;
-        margin-bottom: 24px;
+        margin-bottom: 28px;
       }
 
       .menu-button,
@@ -163,7 +160,8 @@
       }
 
       .dropdown {
-        top: 56px;
+        top: 0;
+        left: 56px;
         min-width: 220px;
       }
 
@@ -194,11 +192,9 @@
 
         <nav class="menu">
 
-          <input type="checkbox" id="menu-toggle">
-
-          <label class="menu-button" for="menu-toggle">
+          <a class="menu-button" href="#" aria-label="Open menu">
             <img src="spiral.png" alt="Menu">
-          </label>
+          </a>
 
           <div class="dropdown">
 
