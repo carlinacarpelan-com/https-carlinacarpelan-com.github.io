@@ -24,27 +24,27 @@
       margin: 0;
       background: var(--blue);
       font-family: 'Alata', sans-serif;
-      overflow: hidden;
+      overflow: auto;
     }
 
     .container {
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     .hero {
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       background: var(--blue);
     }
 
     .hero-text {
       width: 50%;
-      height: 100vh;
+      min-height: 100vh;
       position: relative;
-      overflow: visible;
       background: var(--blue);
+      padding: 40px 40px 220px;
     }
 
     .logo {
@@ -54,8 +54,8 @@
       transform: translateY(-50%);
       width: 430px;
       max-width: calc(100% - 140px);
-      z-index: 1;
       pointer-events: none;
+      z-index: 1;
     }
 
     .logo img {
@@ -72,10 +72,6 @@
       z-index: 9999;
     }
 
-    .menu-toggle {
-      display: none;
-    }
-
     .menu-button {
       width: 62px;
       height: 62px;
@@ -83,6 +79,9 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      background: transparent;
+      border: 0;
+      padding: 0;
     }
 
     .menu-button img {
@@ -94,15 +93,15 @@
 
     .dropdown {
       position: absolute;
-      top: 66px;
+      top: 68px;
       left: 0;
       width: 300px;
-      max-height: calc(100vh - 250px);
-      overflow-y: auto;
       background: var(--black);
       border-radius: 22px;
       display: none;
       z-index: 10000;
+      overflow: hidden;
+      padding: 8px 0 22px;
       box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
     }
 
@@ -118,7 +117,6 @@
 
     .dropdown a:last-child {
       border-bottom: none;
-      margin-bottom: 18px;
     }
 
     .dropdown a:hover {
@@ -127,51 +125,46 @@
     }
 
     .menu:hover .dropdown,
-    .menu:focus-within .dropdown,
-    .menu-toggle:checked ~ .dropdown {
+    .menu:focus-within .dropdown {
       display: block;
     }
 
     .hero-image {
       width: 50%;
-      height: 100vh;
+      min-height: 100vh;
       overflow: hidden;
     }
 
     .hero-image img {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       object-fit: cover;
       display: block;
+      position: sticky;
+      top: 0;
     }
 
     @media (max-width: 900px) {
-      body {
-        overflow: auto;
-      }
-
       .hero {
         flex-direction: column;
-        height: auto;
-        min-height: 100vh;
       }
 
       .hero-text {
         width: 100%;
-        height: 62vh;
-        min-height: 520px;
+        min-height: 620px;
+        padding: 32px 24px 260px;
       }
 
       .logo {
         left: 32px;
-        top: 36%;
+        top: 34%;
         width: 300px;
         max-width: calc(100% - 64px);
       }
 
       .menu {
         left: 32px;
-        top: calc(36% + 92px);
+        top: calc(34% + 96px);
       }
 
       .menu-button {
@@ -185,9 +178,9 @@
       }
 
       .dropdown {
-        top: 60px;
+        top: 62px;
         width: 260px;
-        max-height: 300px;
+        padding-bottom: 18px;
       }
 
       .dropdown a {
@@ -197,7 +190,12 @@
 
       .hero-image {
         width: 100%;
+        min-height: 46vh;
+      }
+
+      .hero-image img {
         height: 46vh;
+        position: static;
       }
     }
   </style>
@@ -217,11 +215,9 @@
 
         <nav class="menu">
 
-          <input class="menu-toggle" type="checkbox" id="menu-toggle">
-
-          <label class="menu-button" for="menu-toggle">
+          <button class="menu-button" type="button" aria-label="Open menu">
             <img src="spiral.png" alt="Menu">
-          </label>
+          </button>
 
           <div class="dropdown">
             <a href="index.html">Home</a>
