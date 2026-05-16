@@ -7,7 +7,7 @@
 
   <title>Carlina Carpelan</title>
 
-  <link href="https://alatas.googleapis.com/css2?family=alata:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,7 +24,7 @@
       margin: 0;
       background: var(--black);
       color: var(--white);
-      alata-family: 'alata', serif;
+      font-family: 'Alata', sans-serif;
       overflow: hidden;
     }
 
@@ -40,18 +40,43 @@
       color: var(--black);
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
     }
 
     .hero-text {
       padding: 48px 40px;
+      width: 50%;
+      z-index: 2;
+    }
+
+    .hero-image {
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-image img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%);
+      transition:
+        filter 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
     }
 
     h1 {
-      alata-size: clamp(82px, 13vw, 190px);
+      font-size: clamp(82px, 13vw, 190px);
       line-height: 0.82;
       margin: 0;
-      alata-weight: 900;
+      font-weight: 400;
       letter-spacing: -0.08em;
     }
 
@@ -68,8 +93,8 @@
       border-radius: 999px;
       padding: 10px 22px;
       text-decoration: none;
-      alata-size: 18px;
-      alata-weight: 700;
+      font-size: 18px;
+      font-weight: 400;
       transition:
         background 0.2s ease,
         color 0.2s ease,
@@ -89,16 +114,23 @@
       }
 
       .hero {
-        min-height: 100vh;
+        flex-direction: column;
         height: auto;
+        min-height: 100vh;
       }
 
       .hero-text {
+        width: 100%;
         padding: 40px 24px;
       }
 
+      .hero-image {
+        width: 100%;
+        height: 50vh;
+      }
+
       h1 {
-        alata-size: clamp(64px, 18vw, 120px);
+        font-size: clamp(64px, 18vw, 120px);
       }
 
       .links {
@@ -106,7 +138,7 @@
       }
 
       .links a {
-        alata-size: 16px;
+        font-size: 16px;
         padding: 10px 18px;
       }
 
@@ -148,6 +180,12 @@
           </a>
 
         </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img src="promo7.jpg" alt="Carlina Carpelan">
 
       </div>
 
