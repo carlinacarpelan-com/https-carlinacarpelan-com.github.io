@@ -151,28 +151,23 @@
       z-index: 1;
     }
 
-    /* LEFT SIDE FADE — SAME AS BEFORE */
+    /* SOFTER + SHORTER LEFT FADE */
     .hero-image::before {
       content: "";
       position: absolute;
       top: 0;
-      left: -2px;
-      width: 48%;
+      left: 0;
+      width: 26%;
       height: 100%;
       z-index: 2;
       pointer-events: none;
       background:
         linear-gradient(
           to right,
-          var(--blue) 0%,
-          rgba(166,195,206,0.99) 10%,
-          rgba(166,195,206,0.96) 18%,
-          rgba(166,195,206,0.88) 28%,
-          rgba(166,195,206,0.72) 40%,
-          rgba(166,195,206,0.52) 54%,
-          rgba(166,195,206,0.30) 68%,
-          rgba(166,195,206,0.12) 82%,
-          rgba(166,195,206,0.03) 94%,
+          rgba(166,195,206,0.92) 0%,
+          rgba(166,195,206,0.66) 24%,
+          rgba(166,195,206,0.28) 56%,
+          rgba(166,195,206,0.08) 82%,
           rgba(166,195,206,0) 100%
         );
     }
@@ -188,12 +183,12 @@
         linear-gradient(
           to bottom,
           rgba(166,195,206,0) 0%,
-          rgba(166,195,206,0) 52%,
-          rgba(166,195,206,0.06) 66%,
-          rgba(166,195,206,0.16) 76%,
-          rgba(166,195,206,0.34) 86%,
-          rgba(166,195,206,0.62) 94%,
-          rgba(166,195,206,0.92) 100%
+          rgba(166,195,206,0) 46%,
+          rgba(166,195,206,0.04) 62%,
+          rgba(166,195,206,0.12) 74%,
+          rgba(166,195,206,0.28) 84%,
+          rgba(166,195,206,0.52) 92%,
+          rgba(166,195,206,0.96) 100%
         );
     }
 
@@ -251,17 +246,14 @@
         height: 46vh;
       }
 
-      /* MOBILE VERSION ALREADY GOOD */
       .hero-image::before {
         width: 100%;
-        height: 36%;
+        height: 30%;
         background:
           linear-gradient(
             to bottom,
-            var(--blue) 0%,
-            rgba(166,195,206,0.96) 14%,
-            rgba(166,195,206,0.74) 34%,
-            rgba(166,195,206,0.34) 58%,
+            rgba(166,195,206,0.92) 0%,
+            rgba(166,195,206,0.54) 42%,
             rgba(166,195,206,0) 100%
           );
       }
