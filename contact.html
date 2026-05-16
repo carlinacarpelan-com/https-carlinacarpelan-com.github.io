@@ -34,19 +34,21 @@
       min-height: 100vh;
     }
 
+    /* HEADER */
+
     .hero {
       width: 100%;
-      min-height: 56vh;
+      min-height: 38vh;
       display: flex;
     }
 
     /* LEFT SIDE */
 
     .hero-left {
-      width: 72%;
+      width: 34%;
       background: var(--blue);
       position: relative;
-      min-height: 56vh;
+      min-height: 38vh;
       overflow: visible;
     }
 
@@ -55,8 +57,8 @@
       left: 92px;
       top: 42%;
       transform: translateY(-50%);
-      width: 430px;
-      max-width: calc(100% - 140px);
+      width: 390px;
+      max-width: calc(100% - 120px);
       z-index: 2;
       pointer-events: none;
     }
@@ -67,14 +69,14 @@
       height: auto;
     }
 
-    /* SPIRAL MENU */
+    /* MENU */
 
     .menu {
       position: absolute;
       left: 92px;
-      top: calc(42% + 10px);
+      top: calc(42% + 4px);
       width: 320px;
-      height: 320px;
+      height: 220px;
       z-index: 9999;
     }
 
@@ -143,23 +145,26 @@
     /* RIGHT SIDE */
 
     .hero-right {
-      width: 28%;
+      width: 66%;
       background: var(--cream);
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 40px;
+      justify-content: flex-start;
+      padding: 36px 70px;
     }
 
     .contact-title {
-      width: 220px;
-      max-width: 100%;
+      background: var(--cream);
+      padding: 12px 18px;
+      border-radius: 10px;
     }
 
     .contact-title img {
-      width: 100%;
+      width: 260px;
+      max-width: 100%;
       display: block;
       height: auto;
+      background: var(--cream);
     }
 
     /* CONTENT */
@@ -167,7 +172,7 @@
     .content {
       background: var(--black);
       padding:
-        32px
+        26px
         40px
         80px;
     }
@@ -204,11 +209,11 @@
 
       .hero-left {
         width: 100%;
-        min-height: 18vh;
+        min-height: 16vh;
         padding:
-          26px
           22px
-          10px;
+          22px
+          6px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -223,8 +228,8 @@
       .logo {
         position: static;
         transform: none;
-        width: 260px;
-        max-width: 72vw;
+        width: 250px;
+        max-width: 70vw;
       }
 
       .menu {
@@ -256,16 +261,17 @@
 
       .hero-right {
         width: 100%;
-        padding: 26px 22px;
+        padding: 20px 22px;
+        justify-content: center;
       }
 
-      .contact-title {
+      .contact-title img {
         width: 180px;
       }
 
       .content {
         padding:
-          24px
+          22px
           22px
           60px;
       }
