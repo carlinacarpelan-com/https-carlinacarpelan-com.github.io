@@ -39,15 +39,54 @@
       background: var(--blue);
       color: var(--black);
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      align-items: stretch;
       overflow: hidden;
     }
 
     .hero-text {
-      padding: 48px 40px;
       width: 50%;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: clamp(72px, 10vw, 150px);
+      line-height: 0.86;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: -0.08em;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+      position: relative;
       z-index: 2;
+    }
+
+    .links a {
+      color: var(--black);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 10px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 400;
+      background: transparent;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .links a:hover {
+      background: var(--black);
+      color: var(--blue);
+      transform: translateY(-2px);
     }
 
     .hero-image {
@@ -61,50 +100,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%);
-      transition:
-        filter 0.3s ease,
-        transform 0.3s ease;
-    }
-
-    .hero-image img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.02);
-    }
-
-    h1 {
-      font-size: clamp(82px, 13vw, 190px);
-      line-height: 0.82;
-      margin: 0;
-      font-weight: 400;
-      letter-spacing: -0.08em;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 42px;
-    }
-
-    .links a {
-      color: var(--black);
-      border: 1.5px solid var(--black);
-      border-radius: 999px;
-      padding: 10px 22px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 400;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .links a:hover {
-      background: var(--black);
-      color: var(--blue);
-      transform: translateY(-2px);
+      filter: none;
     }
 
     @media (max-width: 900px) {
@@ -124,17 +120,13 @@
         padding: 40px 24px;
       }
 
-      .hero-image {
-        width: 100%;
-        height: 50vh;
-      }
-
       h1 {
-        font-size: clamp(64px, 18vw, 120px);
+        font-size: clamp(56px, 17vw, 96px);
       }
 
       .links {
         gap: 12px;
+        margin-top: 32px;
       }
 
       .links a {
@@ -142,10 +134,12 @@
         padding: 10px 18px;
       }
 
+      .hero-image {
+        width: 100%;
+        height: 50vh;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
@@ -184,9 +178,7 @@
       </div>
 
       <div class="hero-image">
-
         <img src="promo7.jpg" alt="Carlina Carpelan">
-
       </div>
 
     </header>
