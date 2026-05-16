@@ -69,9 +69,9 @@
     .menu {
       position: absolute;
       left: 92px;
-      top: calc(43% + 18px);
+      top: calc(43% + 8px);
       width: 320px;
-      height: 420px;
+      height: 320px;
       z-index: 9999;
     }
 
@@ -92,6 +92,11 @@
       height: 52px;
       object-fit: contain;
       display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-button:hover img {
+      transform: rotate(360deg);
     }
 
     .dropdown {
@@ -114,7 +119,7 @@
       text-decoration: none;
       padding: 17px 24px;
       font-size: 17px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       white-space: nowrap;
       transition:
         background 0.2s ease,
@@ -157,12 +162,12 @@
 
       .hero-text {
         width: 100%;
-        min-height: 28vh;
+        min-height: 22vh;
       }
 
       .logo {
         left: 50%;
-        top: 28%;
+        top: 24%;
         transform: translate(-50%, -50%);
         width: 260px;
         max-width: 72%;
@@ -171,19 +176,19 @@
       .menu {
         left: 50%;
         transform: translateX(-50%);
-        top: calc(28% + 52px);
+        top: calc(24% + 28px);
         width: 260px;
-        height: 260px;
+        height: 220px;
       }
 
       .menu-button {
-        width: 52px;
-        height: 52px;
+        width: 62px;
+        height: 62px;
       }
 
       .menu-button img {
-        width: 42px;
-        height: 42px;
+        width: 52px;
+        height: 52px;
       }
 
       .dropdown {
@@ -197,12 +202,12 @@
 
       .hero-image {
         width: 100%;
-        min-height: 72vh;
+        min-height: 78vh;
       }
 
       .hero-image img {
         width: 100%;
-        height: 72vh;
+        height: 78vh;
         object-fit: cover;
       }
 
