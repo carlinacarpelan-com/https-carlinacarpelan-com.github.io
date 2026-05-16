@@ -7,13 +7,14 @@
 
   <title>Events — Carlina Carpelan</title>
 
-  <link href="https://alatas.googleapis.com/css2?family=alata:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   <style>
 
     :root {
       --black: #000000;
       --blue: #A6C3CE;
+      --cream: #F3EFE6;
       --white: #ffffff;
     }
 
@@ -24,57 +25,150 @@
     body {
       margin: 0;
       background: var(--black);
+      font-family: 'Alata', sans-serif;
+      overflow-x: hidden;
       color: var(--white);
-      alata-family: 'alata', serif;
-      line-height: 1.2;
     }
 
     .container {
       width: 100%;
+      min-height: 100vh;
     }
+
+    /* HEADER */
 
     .hero {
-      background: var(--blue);
-      color: var(--black);
-      padding: 48px 40px 80px;
-    }
-
-    h1 {
-      alata-size: 42px;
-      line-height: 1;
-      margin: 0;
-      alata-weight: 800;
-    }
-
-    .links {
+      width: 100%;
+      min-height: 38vh;
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 42px;
     }
 
-    .links a {
-      color: var(--black);
-      border: 1.5px solid var(--black);
-      border-radius: 999px;
-      padding: 10px 22px;
+    /* LEFT SIDE */
+
+    .hero-left {
+      width: 34%;
+      background: var(--blue);
+      position: relative;
+      min-height: 38vh;
+      overflow: visible;
+    }
+
+    .logo {
+      position: absolute;
+      left: 92px;
+      top: 42%;
+      transform: translateY(-50%);
+      width: 390px;
+      max-width: calc(100% - 120px);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* MENU */
+
+    .menu {
+      position: absolute;
+      left: 92px;
+      top: calc(42% + 4px);
+      width: 320px;
+      height: 220px;
+      z-index: 9999;
+    }
+
+    .menu-button {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-button:hover img {
+      transform: rotate(360deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 300px;
+      background: var(--black);
+      border-radius: 22px;
+      display: none;
+      overflow: hidden;
+      padding: 8px 0 16px;
+      box-shadow: 0 14px 45px rgba(0,0,0,0.3);
+    }
+
+    .dropdown a {
+      display: block;
+      color: var(--blue);
       text-decoration: none;
-      alata-size: 18px;
-      alata-weight: 700;
+      padding: 17px 24px;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       transition:
         background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+        color 0.2s ease;
     }
 
-    .links a:hover {
-      background: var(--black);
-      color: var(--blue);
-      transform: translateY(-2px);
+    .dropdown a:last-child {
+      border-bottom: none;
     }
+
+    .dropdown a:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .menu:hover .dropdown {
+      display: block;
+    }
+
+    /* RIGHT SIDE */
+
+    .hero-right {
+      width: 66%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 70px;
+    }
+
+    .events-title img {
+      width: 240px;
+      max-width: 100%;
+      display: block;
+      height: auto;
+      background: transparent;
+    }
+
+    /* EVENTS */
 
     .events {
-      padding: 90px 40px;
+      padding:
+        36px
+        40px
+        90px;
       background: var(--black);
     }
 
@@ -105,8 +199,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 22px;
-      alata-size: 18px;
-      alata-weight: 700;
+      font-size: 18px;
       opacity: 0.7;
       overflow: hidden;
     }
@@ -119,15 +212,15 @@
     }
 
     h2 {
-      alata-size: 42px;
+      font-size: 42px;
       margin: 0 0 18px;
       letter-spacing: -0.03em;
-      alata-weight: 800;
       line-height: 1;
+      font-weight: 400;
     }
 
     p {
-      alata-size: 22px;
+      font-size: 22px;
       line-height: 1.45;
       margin: 0;
       opacity: 0.82;
@@ -137,43 +230,97 @@
       background: var(--blue);
       color: var(--black);
       padding: 36px 40px;
-      alata-size: 18px;
-      alata-weight: 800;
+      font-size: 18px;
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
       .hero {
-        padding: 40px 24px 64px;
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .hero-left {
+        width: 100%;
+        min-height: 16vh;
+        padding:
+          22px
+          22px
+          6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        position: static;
+        transform: none;
+        width: 250px;
+        max-width: 70vw;
+      }
+
+      .menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 248px;
+      }
+
+      .dropdown a {
+        font-size: 15px;
+        padding: 14px 18px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 18px 22px;
+        justify-content: center;
+      }
+
+      .events-title img {
+        width: 170px;
       }
 
       .events {
-        padding: 70px 24px;
-      }
-
-      h1 {
-        alata-size: 36px;
+        padding:
+          26px
+          22px
+          70px;
       }
 
       .event-grid {
         grid-template-columns: 1fr;
       }
 
-      .links {
-        gap: 12px;
-      }
-
-      .links a {
-        alata-size: 16px;
-        padding: 10px 18px;
-      }
-
       h2 {
-        alata-size: 32px;
+        font-size: 32px;
       }
 
       p {
-        alata-size: 20px;
+        font-size: 20px;
       }
 
       footer {
@@ -192,27 +339,55 @@
 
     <header class="hero">
 
-      <h1>
-        Events
-      </h1>
+      <div class="hero-left">
 
-      <div class="links">
+        <div class="mobile-brand">
 
-        <a href="index.html">
-          Home
-        </a>
+          <nav class="menu">
 
-        <a href="dj.html">
-          DJ
-        </a>
+            <button class="menu-button" type="button">
+              <img src="spiral.png" alt="Menu">
+            </button>
 
-        <a href="activism-and-voluntary.html">
-          Activism & Voluntary
-        </a>
+            <div class="dropdown">
 
-        <a href="contact.html">
-          Contact
-        </a>
+              <a href="index.html">
+                Home
+              </a>
+
+              <a href="dj.html">
+                DJ
+              </a>
+
+              <a href="events.html">
+                Events
+              </a>
+
+              <a href="activism-and-voluntary.html">
+                Activism & Voluntary
+              </a>
+
+              <a href="contact.html">
+                Contact
+              </a>
+
+            </div>
+
+          </nav>
+
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-right">
+
+        <div class="events-title">
+          <img src="events.png" alt="Events">
+        </div>
 
       </div>
 
