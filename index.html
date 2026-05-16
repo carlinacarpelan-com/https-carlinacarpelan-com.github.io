@@ -5,12 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Activism and Voluntary Work — Carlina Carpelan</title>
+  <title>Carlina Carpelan</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   <style>
-
     :root {
       --black: #000000;
       --blue: #A6C3CE;
@@ -26,58 +25,38 @@
       background: var(--black);
       color: var(--white);
       font-family: 'Alata', sans-serif;
-      line-height: 1.2;
+      overflow: hidden;
     }
 
     .container {
       width: 100%;
+      height: 100vh;
     }
 
     .hero {
+      width: 100%;
+      height: 100vh;
       background: var(--blue);
       color: var(--black);
-      padding: 32px 36px 56px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      width: 50%;
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .left-side {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      width: 100%;
-      max-width: 320px;
-      flex-shrink: 0;
-    }
-
-    .logo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    h1 {
-      font-size: clamp(24px, 3.2vw, 42px);
-      line-height: 1;
-      margin: 0;
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      max-width: 520px;
     }
 
     .menu {
-      position: relative;
+      position: absolute;
+      top: 32px;
+      left: 36px;
+      z-index: 10;
     }
 
     .menu-button {
@@ -96,13 +75,12 @@
 
     .dropdown {
       position: absolute;
-      top: 60px;
-      right: 0;
+      top: 58px;
+      left: 0;
       background: var(--black);
-      border: 1.5px solid var(--black);
       border-radius: 18px;
       overflow: hidden;
-      min-width: 220px;
+      min-width: 230px;
       display: none;
       z-index: 100;
     }
@@ -132,79 +110,52 @@
       display: block;
     }
 
-    .activism {
-      padding: 80px 36px;
-      background: var(--black);
+    .logo {
+      width: 100%;
+      max-width: 520px;
+      margin-bottom: 24px;
+      margin-top: 48px;
     }
 
-    .activism-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .activism-card {
-      border: 2px solid var(--white);
-      padding: 32px;
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+    .hero-image {
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    .activism-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    h2 {
-      font-size: 34px;
-      margin: 0 0 18px;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.45;
-      margin: 0;
-      opacity: 0.82;
-      font-weight: 400;
-    }
-
-    .wide {
-      grid-column: span 2;
-    }
-
-    footer {
-      background: var(--blue);
-      color: var(--black);
-      padding: 28px 36px;
-      font-size: 16px;
-      font-weight: 400;
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 900px) {
 
+      body {
+        overflow: auto;
+      }
+
       .hero {
-        padding: 28px 20px 44px;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
       }
 
-      .hero-top {
-        align-items: flex-start;
+      .hero-text {
+        width: 100%;
+        padding: 28px 20px;
       }
 
-      .left-side {
-        gap: 18px;
-      }
-
-      .logo {
-        max-width: 220px;
-      }
-
-      h1 {
-        font-size: 26px;
-        max-width: 100%;
+      .menu {
+        top: 28px;
+        left: 20px;
       }
 
       .menu-button img {
@@ -213,8 +164,8 @@
       }
 
       .dropdown {
-        top: 52px;
-        min-width: 190px;
+        top: 50px;
+        min-width: 210px;
       }
 
       .dropdown a {
@@ -222,32 +173,15 @@
         padding: 14px 18px;
       }
 
-      .activism {
-        padding: 56px 20px;
+      .logo {
+        max-width: 340px;
+        margin-top: 56px;
+        margin-bottom: 22px;
       }
 
-      .activism-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .wide {
-        grid-column: span 1;
-      }
-
-      .activism-card {
-        padding: 24px;
-      }
-
-      h2 {
-        font-size: 28px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-
-      footer {
-        padding: 24px 20px;
+      .hero-image {
+        width: 100%;
+        height: 46vh;
       }
 
     }
@@ -262,22 +196,7 @@
 
     <header class="hero">
 
-      <div class="hero-top">
-
-        <div class="left-side">
-
-          <div class="logo">
-
-            <img src="handwritten.png" alt="Carlina Carpelan logo">
-
-          </div>
-
-          <h1>
-            Activism and<br>
-            Voluntary Work
-          </h1>
-
-        </div>
+      <div class="hero-text">
 
         <div class="menu">
 
@@ -313,91 +232,21 @@
 
         </div>
 
+        <div class="logo">
+
+          <img src="handwritten.png" alt="Carlina Carpelan logo">
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img src="promo7.jpg" alt="Carlina Carpelan">
+
       </div>
 
     </header>
-
-    <main class="activism">
-
-      <div class="activism-grid">
-
-        <section class="activism-card">
-
-          <h2>
-            Greenpeace
-          </h2>
-
-          <p>
-            Nature advocacy and lobbying work focusing on climate justice,
-            biodiversity and systemic environmental change through Greenpeace.
-          </p>
-
-        </section>
-
-        <section class="activism-card">
-
-          <h2>
-            Cosy Club
-          </h2>
-
-          <p>
-            An active member of the anti-hierarchical and anti-transactional communal
-            space Cosy Club, centered around collective care, culture and
-            alternative social structures.
-          </p>
-
-        </section>
-
-        <section class="activism-card">
-
-          <h2>
-            Murroskoalitio
-          </h2>
-
-          <p>
-            Participating in systemic transformation work through
-            Murroskoalitio, focusing on ecological transition,
-            solidarity and post-growth futures.
-          </p>
-
-        </section>
-
-        <section class="activism-card">
-
-          <h2>
-            New Collective
-          </h2>
-
-          <p>
-            Currently co-founding a new activist collective centered around
-            the ideology of Planetary Care and new forms of collaborative
-            political imagination.
-          </p>
-
-        </section>
-
-        <section class="activism-card wide">
-
-          <h2>
-            Other Activism & Voluntary Work
-          </h2>
-
-          <p>
-            Additional and past involvement includes an internship at Greenpeace,
-            Metsäliike trainings, organizing Luontomarssi & Metsämarssi,
-            participation in Elokapina, and volunteer support person work
-            through the Helsinki social services system.
-          </p>
-
-        </section>
-
-      </div>
-
-    </main>
-
-    <footer>
-      Carlina Carpelan
-    </footer>
 
   </div>
 
