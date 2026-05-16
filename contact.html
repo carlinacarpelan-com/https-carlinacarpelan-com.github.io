@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --black: #000000;
       --blue: #A6C3CE;
@@ -22,9 +23,10 @@
 
     body {
       margin: 0;
-      background: var(--cream);
+      background: var(--black);
       font-family: 'Alata', sans-serif;
       overflow-x: hidden;
+      color: var(--black);
     }
 
     .container {
@@ -34,52 +36,46 @@
 
     .hero {
       width: 100%;
-      min-height: 100vh;
-      background: var(--cream);
-      color: var(--black);
+      min-height: 56vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 40px;
     }
 
-    .hero-content {
-      width: 100%;
-      max-width: 1200px;
-    }
+    /* LEFT SIDE */
 
-    .top-row {
-      display: flex;
-      align-items: center;
-      gap: 34px;
-      margin-bottom: 70px;
+    .hero-left {
+      width: 72%;
+      background: var(--blue);
+      position: relative;
+      min-height: 56vh;
+      overflow: visible;
     }
 
     .logo {
+      position: absolute;
+      left: 92px;
+      top: 42%;
+      transform: translateY(-50%);
       width: 430px;
-      max-width: 42vw;
+      max-width: calc(100% - 140px);
+      z-index: 2;
       pointer-events: none;
     }
 
-    .logo img,
-    .page-title img {
+    .logo img {
       width: 100%;
-      height: auto;
       display: block;
+      height: auto;
     }
 
-    .page-title {
-      width: 300px;
-      max-width: 32vw;
-      pointer-events: none;
-    }
+    /* SPIRAL MENU */
 
     .menu {
-      position: relative;
+      position: absolute;
+      left: 92px;
+      top: calc(42% + 10px);
       width: 320px;
       height: 320px;
       z-index: 9999;
-      margin-bottom: 52px;
     }
 
     .menu-button {
@@ -88,9 +84,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
       background: transparent;
       border: none;
+      cursor: pointer;
       padding: 0;
     }
 
@@ -108,16 +104,15 @@
 
     .dropdown {
       position: absolute;
-      top: 52px;
+      top: 58px;
       left: 0;
       width: 300px;
       background: var(--black);
       border-radius: 22px;
       display: none;
-      z-index: 10000;
       overflow: hidden;
       padding: 8px 0 16px;
-      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 14px 45px rgba(0,0,0,0.3);
     }
 
     .dropdown a {
@@ -145,15 +140,46 @@
       display: block;
     }
 
+    /* RIGHT SIDE */
+
+    .hero-right {
+      width: 28%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .contact-title {
+      width: 220px;
+      max-width: 100%;
+    }
+
+    .contact-title img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* CONTENT */
+
+    .content {
+      background: var(--black);
+      padding:
+        32px
+        40px
+        80px;
+    }
+
     .email-button {
       display: inline-block;
-      color: var(--black);
-      border: 1.5px solid var(--black);
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
       border-radius: 999px;
       text-decoration: none;
-      padding: 24px 40px;
-      font-size: clamp(24px, 3vw, 46px);
-      font-weight: 400;
+      padding: 24px 42px;
+      font-size: clamp(24px, 3vw, 44px);
       letter-spacing: -0.03em;
       transition:
         background 0.2s ease,
@@ -162,38 +188,51 @@
     }
 
     .email-button:hover {
-      background: var(--black);
-      color: var(--cream);
+      background: var(--blue);
+      color: var(--black);
       transform: translateY(-2px);
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
       .hero {
-        min-height: 100vh;
-        padding: 38px 24px;
-        align-items: flex-start;
+        flex-direction: column;
+        min-height: auto;
       }
 
-      .top-row {
+      .hero-left {
+        width: 100%;
+        min-height: 18vh;
+        padding:
+          26px
+          22px
+          10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-brand {
+        display: flex;
+        align-items: center;
         gap: 12px;
-        margin-bottom: 28px;
       }
 
       .logo {
+        position: static;
+        transform: none;
         width: 260px;
-        max-width: 62vw;
-      }
-
-      .page-title {
-        width: 120px;
-        max-width: 28vw;
+        max-width: 72vw;
       }
 
       .menu {
-        width: 260px;
-        height: 260px;
-        margin-bottom: 24px;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
       }
 
       .menu-button {
@@ -207,12 +246,28 @@
       }
 
       .dropdown {
-        width: 250px;
+        width: 248px;
       }
 
       .dropdown a {
         font-size: 15px;
         padding: 14px 18px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 26px 22px;
+      }
+
+      .contact-title {
+        width: 180px;
+      }
+
+      .content {
+        padding:
+          24px
+          22px
+          60px;
       }
 
       .email-button {
@@ -223,7 +278,9 @@
       }
 
     }
+
   </style>
+
 </head>
 
 <body>
@@ -232,47 +289,71 @@
 
     <header class="hero">
 
-      <div class="hero-content">
+      <div class="hero-left">
 
-        <div class="top-row">
+        <div class="mobile-brand">
+
+          <nav class="menu">
+
+            <button class="menu-button" type="button">
+              <img src="spiral.png" alt="Menu">
+            </button>
+
+            <div class="dropdown">
+
+              <a href="index.html">
+                Home
+              </a>
+
+              <a href="dj.html">
+                DJ
+              </a>
+
+              <a href="events.html">
+                Events
+              </a>
+
+              <a href="activism-and-voluntary.html">
+                Activism & Voluntary
+              </a>
+
+              <a href="contact.html">
+                Contact
+              </a>
+
+            </div>
+
+          </nav>
 
           <div class="logo">
             <img src="handwritten.png" alt="Carlina Carpelan">
           </div>
 
-          <div class="page-title">
-            <img src="contact.png" alt="Contact">
-          </div>
-
         </div>
 
-        <nav class="menu">
+      </div>
 
-          <button class="menu-button" type="button">
-            <img src="spiral.png" alt="Menu">
-          </button>
+      <div class="hero-right">
 
-          <div class="dropdown">
-
-            <a href="index.html">Home</a>
-            <a href="dj.html">DJ</a>
-            <a href="events.html">Events</a>
-            <a href="activism-and-voluntary.html">Activism & Voluntary</a>
-            <a href="contact.html">Contact</a>
-
-          </div>
-
-        </nav>
-
-        <a
-          class="email-button"
-          href="mailto:contact@carlinacarpelan.com">
-          contact@carlinacarpelan.com
-        </a>
+        <div class="contact-title">
+          <img src="contact.png" alt="Contact">
+        </div>
 
       </div>
 
     </header>
+
+    <main class="content">
+
+      <a
+        class="email-button"
+        href="mailto:contact@carlinacarpelan.com">
+
+        contact@carlinacarpelan.com
+
+      </a>
+
+    </main>
 
   </div>
 
