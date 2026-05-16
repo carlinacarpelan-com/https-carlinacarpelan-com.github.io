@@ -7,13 +7,13 @@
 
   <title>Contact — Carlina Carpelan</title>
 
-  <link href="https://alatas.googleapis.com/css2?family=alata:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --black: #000000;
       --blue: #A6C3CE;
-      --white: #ffffff;
+      --cream: #F3EFE6;
     }
 
     * {
@@ -22,120 +22,208 @@
 
     body {
       margin: 0;
-      background: var(--black);
-      color: var(--white);
-      alata-family: 'alata', serif;
-      overflow: hidden;
+      background: var(--cream);
+      font-family: 'Alata', sans-serif;
+      overflow-x: hidden;
     }
 
     .container {
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     .hero {
       width: 100%;
-      height: 100vh;
-      background: var(--blue);
+      min-height: 100vh;
+      background: var(--cream);
       color: var(--black);
       display: flex;
       align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
     }
 
-    .hero-text {
-      padding: 48px 40px;
+    .hero-content {
       width: 100%;
+      max-width: 1200px;
     }
 
-    h1 {
-      alata-size: 42px;
-      line-height: 1;
-      margin: 0;
-      alata-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .links {
+    .top-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 42px;
-      margin-bottom: 90px;
+      align-items: center;
+      gap: 34px;
+      margin-bottom: 70px;
     }
 
-    .links a,
+    .logo {
+      width: 430px;
+      max-width: 42vw;
+      pointer-events: none;
+    }
+
+    .logo img,
+    .page-title img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .page-title {
+      width: 300px;
+      max-width: 32vw;
+      pointer-events: none;
+    }
+
+    .menu {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      z-index: 9999;
+      margin-bottom: 52px;
+    }
+
+    .menu-button {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-button:hover img {
+      transform: rotate(360deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 52px;
+      left: 0;
+      width: 300px;
+      background: var(--black);
+      border-radius: 22px;
+      display: none;
+      z-index: 10000;
+      overflow: hidden;
+      padding: 8px 0 16px;
+      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown a {
+      display: block;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 17px 24px;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .menu:hover .dropdown {
+      display: block;
+    }
+
     .email-button {
+      display: inline-block;
       color: var(--black);
       border: 1.5px solid var(--black);
       border-radius: 999px;
       text-decoration: none;
-      alata-weight: 700;
+      padding: 24px 40px;
+      font-size: clamp(24px, 3vw, 46px);
+      font-weight: 400;
+      letter-spacing: -0.03em;
       transition:
         background 0.2s ease,
         color 0.2s ease,
         transform 0.2s ease;
     }
 
-    .links a {
-      padding: 10px 22px;
-      alata-size: 18px;
-    }
-
-    .links a:hover,
     .email-button:hover {
       background: var(--black);
-      color: var(--blue);
+      color: var(--cream);
       transform: translateY(-2px);
-    }
-
-    .email-button {
-      display: inline-block;
-      padding: 28px 48px;
-      alata-size: clamp(28px, 4vw, 54px);
-      alata-weight: 800;
-      letter-spacing: -0.03em;
     }
 
     @media (max-width: 900px) {
 
-      body {
-        overflow: auto;
-      }
-
       .hero {
         min-height: 100vh;
-        height: auto;
+        padding: 38px 24px;
+        align-items: flex-start;
       }
 
-      .hero-text {
-        padding: 40px 24px;
-      }
-
-      h1 {
-        alata-size: 36px;
-      }
-
-      .links {
+      .top-row {
         gap: 12px;
-        margin-bottom: 70px;
+        margin-bottom: 28px;
       }
 
-      .links a {
-        alata-size: 16px;
-        padding: 10px 18px;
+      .logo {
+        width: 260px;
+        max-width: 62vw;
+      }
+
+      .page-title {
+        width: 120px;
+        max-width: 28vw;
+      }
+
+      .menu {
+        width: 260px;
+        height: 260px;
+        margin-bottom: 24px;
+      }
+
+      .menu-button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 250px;
+      }
+
+      .dropdown a {
+        font-size: 15px;
+        padding: 14px 18px;
       }
 
       .email-button {
         width: 100%;
         text-align: center;
-        alata-size: 24px;
-        padding: 24px 20px;
+        font-size: 22px;
+        padding: 20px 18px;
       }
 
     }
-
   </style>
-
 </head>
 
 <body>
@@ -144,38 +232,42 @@
 
     <header class="hero">
 
-      <div class="hero-text">
+      <div class="hero-content">
 
-        <h1>
-          Contact
-        </h1>
+        <div class="top-row">
 
-        <div class="links">
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
 
-          <a href="index.html">
-            Home
-          </a>
-
-          <a href="dj.html">
-            DJ
-          </a>
-
-          <a href="events.html">
-            Events
-          </a>
-
-          <a href="activism-and-voluntary.html">
-            Activism & Voluntary
-          </a>
+          <div class="page-title">
+            <img src="contact.png" alt="Contact">
+          </div>
 
         </div>
+
+        <nav class="menu">
+
+          <button class="menu-button" type="button">
+            <img src="spiral.png" alt="Menu">
+          </button>
+
+          <div class="dropdown">
+
+            <a href="index.html">Home</a>
+            <a href="dj.html">DJ</a>
+            <a href="events.html">Events</a>
+            <a href="activism-and-voluntary.html">Activism & Voluntary</a>
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+        </nav>
 
         <a
           class="email-button"
           href="mailto:contact@carlinacarpelan.com">
-
           contact@carlinacarpelan.com
-
         </a>
 
       </div>
