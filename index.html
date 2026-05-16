@@ -44,7 +44,8 @@
       min-height: 100vh;
       position: relative;
       background: var(--blue);
-      padding: 40px 40px 220px;
+      padding: 40px;
+      overflow: visible;
     }
 
     .logo {
@@ -54,8 +55,8 @@
       transform: translateY(-50%);
       width: 430px;
       max-width: calc(100% - 140px);
-      pointer-events: none;
       z-index: 1;
+      pointer-events: none;
     }
 
     .logo img {
@@ -67,8 +68,9 @@
     .menu {
       position: absolute;
       left: 92px;
-      top: calc(43% + 115px);
-      width: fit-content;
+      top: calc(43% + 45px);
+      width: 320px;
+      height: 420px;
       z-index: 9999;
     }
 
@@ -80,7 +82,7 @@
       justify-content: center;
       cursor: pointer;
       background: transparent;
-      border: 0;
+      border: none;
       padding: 0;
     }
 
@@ -93,7 +95,7 @@
 
     .dropdown {
       position: absolute;
-      top: 68px;
+      top: 52px;
       left: 0;
       width: 300px;
       background: var(--black);
@@ -113,6 +115,9 @@
       font-size: 17px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       white-space: nowrap;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .dropdown a:last-child {
@@ -124,8 +129,7 @@
       color: var(--black);
     }
 
-    .menu:hover .dropdown,
-    .menu:focus-within .dropdown {
+    .menu:hover .dropdown {
       display: block;
     }
 
@@ -145,14 +149,15 @@
     }
 
     @media (max-width: 900px) {
+
       .hero {
         flex-direction: column;
       }
 
       .hero-text {
         width: 100%;
-        min-height: 620px;
-        padding: 32px 24px 260px;
+        min-height: 640px;
+        padding: 32px 24px;
       }
 
       .logo {
@@ -164,7 +169,9 @@
 
       .menu {
         left: 32px;
-        top: calc(34% + 96px);
+        top: calc(34% + 75px);
+        width: 280px;
+        height: 380px;
       }
 
       .menu-button {
@@ -178,9 +185,7 @@
       }
 
       .dropdown {
-        top: 62px;
         width: 260px;
-        padding-bottom: 18px;
       }
 
       .dropdown a {
@@ -197,8 +202,11 @@
         height: 46vh;
         position: static;
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
@@ -215,16 +223,32 @@
 
         <nav class="menu">
 
-          <button class="menu-button" type="button" aria-label="Open menu">
+          <button class="menu-button" type="button">
             <img src="spiral.png" alt="Menu">
           </button>
 
           <div class="dropdown">
-            <a href="index.html">Home</a>
-            <a href="dj.html">DJ</a>
-            <a href="events.html">Events</a>
-            <a href="activism-and-voluntary.html">Activism & Voluntary</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="index.html">
+              Home
+            </a>
+
+            <a href="dj.html">
+              DJ
+            </a>
+
+            <a href="events.html">
+              Events
+            </a>
+
+            <a href="activism-and-voluntary.html">
+              Activism & Voluntary
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
           </div>
 
         </nav>
@@ -232,7 +256,9 @@
       </div>
 
       <div class="hero-image">
+
         <img src="promo7.jpg" alt="Carlina Carpelan">
+
       </div>
 
     </header>
