@@ -7,11 +7,14 @@
 
   <title>DJ — Carlina Carpelan</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
   <style>
+
     :root {
       --black: #000000;
-      --cream: #fff4ec;
       --blue: #A6C3CE;
+      --cream: #F3EFE6;
       --white: #ffffff;
     }
 
@@ -22,62 +25,148 @@
     body {
       margin: 0;
       background: var(--black);
+      font-family: 'Alata', sans-serif;
+      overflow-x: hidden;
       color: var(--white);
-      alata-family: Arial, Helvetica, sans-serif;
       line-height: 1.2;
     }
 
     .container {
-      max-width: 1280px;
-      margin: auto;
+      width: 100%;
+      min-height: 100vh;
     }
+
+    /* HEADER */
 
     .hero {
-      min-height: 420px;
+      width: 100%;
+      min-height: 38vh;
+      display: flex;
+    }
+
+    /* LEFT */
+
+    .hero-left {
+      width: 34%;
       background: var(--blue);
-      color: var(--black);
+      position: relative;
+      min-height: 38vh;
+      overflow: visible;
+    }
+
+    .logo {
+      position: absolute;
+      left: 92px;
+      top: 42%;
+      transform: translateY(-50%);
+      width: 390px;
+      max-width: calc(100% - 120px);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* MENU */
+
+    .menu {
+      position: absolute;
+      left: 92px;
+      top: calc(42% + 4px);
+      width: 320px;
+      height: 220px;
+      z-index: 9999;
+    }
+
+    .menu-button {
+      width: 62px;
+      height: 62px;
       display: flex;
       align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
     }
 
-    .hero-text {
-      padding: 48px 40px;
-      width: 100%;
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.6s ease;
     }
 
-    h1 {
-      alata-size: clamp(72px, 12vw, 170px);
-      line-height: 0.82;
-      margin: 0;
-      alata-weight: 900;
-      letter-spacing: -0.08em;
+    .menu-button:hover img {
+      transform: rotate(360deg);
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 40px;
-    }
-
-    .nav a {
-      color: var(--black);
-      border: 1.5px solid var(--black);
-      border-radius: 999px;
-      padding: 10px 22px;
-      text-decoration: none;
-      alata-size: 18px;
-      alata-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .nav a:hover {
+    .dropdown {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 300px;
       background: var(--black);
-      color: var(--blue);
+      border-radius: 22px;
+      display: none;
+      overflow: hidden;
+      padding: 8px 0 16px;
+      box-shadow: 0 14px 45px rgba(0,0,0,0.3);
     }
+
+    .dropdown a {
+      display: block;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 17px 24px;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .menu:hover .dropdown {
+      display: block;
+    }
+
+    /* RIGHT */
+
+    .hero-right {
+      width: 66%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 70px;
+    }
+
+    .dj-title img {
+      width: 150px;
+      max-width: 100%;
+      display: block;
+      height: auto;
+      background: transparent;
+    }
+
+    /* SECTIONS */
 
     section {
-      padding: 90px 40px;
+      padding: 70px 40px;
     }
 
     section:nth-of-type(even) {
@@ -86,17 +175,19 @@
     }
 
     h2 {
-      alata-size: clamp(48px, 8vw, 96px);
-      line-height: 0.9;
-      margin: 0 0 50px;
-      letter-spacing: -0.07em;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.92;
+      margin: 0 0 42px;
+      letter-spacing: -0.05em;
+      font-weight: 400;
     }
 
     p {
-      alata-size: 22px;
+      font-size: 22px;
       max-width: 900px;
       margin: 0 0 22px;
       color: rgba(255,255,255,0.82);
+      line-height: 1.45;
     }
 
     section:nth-of-type(even) p {
@@ -106,6 +197,8 @@
     .bio {
       max-width: 940px;
     }
+
+    /* PHOTOS */
 
     .photo-grid {
       display: grid;
@@ -118,22 +211,16 @@
       height: 620px;
       object-fit: cover;
       display: block;
-      filter:
-        grayscale(100%)
-        contrast(115%)
-        brightness(0.92);
       transition:
-        filter 0.35s ease,
-        transform 0.35s ease;
+        transform 0.35s ease,
+        filter 0.35s ease;
     }
 
     .photo-grid img:hover {
-      filter:
-        grayscale(0%)
-        contrast(105%)
-        brightness(1);
       transform: scale(1.015);
     }
+
+    /* SOUNDCLOUD */
 
     .soundcloud iframe,
     .video-grid iframe {
@@ -145,6 +232,8 @@
       margin-bottom: 28px;
     }
 
+    /* VIDEOS */
+
     .video-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -155,12 +244,14 @@
       aspect-ratio: 16 / 9;
     }
 
+    /* BOOKINGS */
+
     .booking-box {
       max-width: 760px;
     }
 
     .booking-box p {
-      alata-size: 22px;
+      font-size: 22px;
       margin-bottom: 16px;
     }
 
@@ -168,32 +259,93 @@
       display: inline-block;
       color: inherit;
       text-decoration: none;
-      alata-size: 30px;
-      alata-weight: 800;
+      font-size: 30px;
       border-bottom: 3px solid currentColor;
       margin-bottom: 40px;
+      transition: opacity 0.2s ease;
+    }
+
+    .booking-email:hover {
+      opacity: 0.65;
     }
 
     footer {
-      padding: 40px;
+      padding: 36px 40px;
       background: var(--blue);
       color: var(--black);
-      alata-size: 18px;
-      alata-weight: 800;
+      font-size: 18px;
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
       .hero {
-        min-height: 360px;
+        flex-direction: column;
+        min-height: auto;
       }
 
-      .hero-text {
-        padding: 40px 24px;
+      .hero-left {
+        width: 100%;
+        min-height: 16vh;
+        padding: 22px 22px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        position: static;
+        transform: none;
+        width: 250px;
+        max-width: 70vw;
+      }
+
+      .menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 248px;
+      }
+
+      .dropdown a {
+        font-size: 15px;
+        padding: 14px 18px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 18px 22px;
+        justify-content: center;
+      }
+
+      .dj-title img {
+        width: 110px;
       }
 
       section {
-        padding: 70px 24px;
+        padding: 56px 22px;
       }
 
       .photo-grid,
@@ -205,10 +357,23 @@
         height: auto;
       }
 
+      h2 {
+        font-size: 42px;
+      }
+
       p,
       .booking-box p {
-        alata-size: 20px;
+        font-size: 20px;
       }
+
+      .booking-email {
+        font-size: 24px;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+
     }
 
   </style>
@@ -221,26 +386,40 @@
 
     <header class="hero">
 
-      <div class="hero-text">
+      <div class="hero-left">
 
-        <h1>DJ —<br>Carlina Carpelan</h1>
+        <div class="mobile-brand">
 
-        <div class="nav">
+          <nav class="menu">
 
-          <a href="index.html">Home</a>
+            <button class="menu-button" type="button">
+              <img src="spiral.png" alt="Menu">
+            </button>
 
-          <a href="#about">About</a>
+            <div class="dropdown">
 
-          <a href="gigs.html">Gigs</a>
+              <a href="index.html">Home</a>
+              <a href="dj.html">DJ</a>
+              <a href="events.html">Events</a>
+              <a href="activism-and-voluntary.html">Activism & Voluntary</a>
+              <a href="contact.html">Contact</a>
 
-          <a href="#photos">Promo Photos</a>
+            </div>
 
-          <a href="#soundcloud">SoundCloud</a>
+          </nav>
 
-          <a href="#videos">Videos</a>
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
 
-          <a href="#bookings">Bookings</a>
+        </div>
 
+      </div>
+
+      <div class="hero-right">
+
+        <div class="dj-title">
+          <img src="dj.png" alt="DJ">
         </div>
 
       </div>
@@ -292,15 +471,10 @@
       <div class="photo-grid">
 
         <img src="promo4.jpeg" alt="Promo photo 4">
-
         <img src="promo3.jpg" alt="Promo photo 3">
-
         <img src="promo1-websafe.jpg" alt="Promo photo 1">
-
         <img src="promo2.jpg" alt="Promo photo 2">
-
         <img src="promo8-websafe.jpg" alt="Promo photo 8">
-
         <img src="promo7.jpg" alt="Promo photo 7">
 
       </div>
@@ -391,8 +565,10 @@
 
         <a
           class="booking-email"
-          href="mailto:carpelancarlina@gmail.com">
-          carpelancarlina@gmail.com
+          href="mailto:contact@carlinacarpelan.com">
+
+          contact@carlinacarpelan.com
+
         </a>
 
         <p>
@@ -403,7 +579,9 @@
           class="booking-email"
           href="https://signaturedark.fi/agency/"
           target="_blank">
+
           Signature Dark
+
         </a>
 
       </div>
