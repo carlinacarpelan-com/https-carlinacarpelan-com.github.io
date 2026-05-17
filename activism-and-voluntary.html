@@ -14,6 +14,7 @@
     :root {
       --black: #000000;
       --blue: #A6C3CE;
+      --cream: #F3EFE6;
       --white: #ffffff;
     }
 
@@ -24,85 +25,155 @@
     body {
       margin: 0;
       background: var(--black);
-      color: var(--white);
       font-family: 'Alata', sans-serif;
+      overflow-x: hidden;
+      color: var(--white);
       line-height: 1.2;
     }
 
     .container {
       width: 100%;
+      min-height: 100vh;
     }
+
+    /* HEADER */
 
     .hero {
-      background: var(--blue);
-      color: var(--black);
-      padding: 32px 36px 56px;
+      width: 100%;
+      min-height: 38vh;
+      display: flex;
     }
 
-    .hero-top {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
+    /* LEFT SIDE */
+
+    .hero-left {
+      width: 34%;
+      background: var(--blue);
+      position: relative;
+      min-height: 38vh;
+      overflow: visible;
     }
 
     .logo {
-      width: 100%;
-      max-width: 320px;
-      flex-shrink: 0;
+      position: absolute;
+      left: 92px;
+      top: 42%;
+      transform: translateY(-50%);
+      width: 390px;
+      max-width: calc(100% - 120px);
+      z-index: 2;
+      pointer-events: none;
     }
 
     .logo img {
       width: 100%;
+      display: block;
       height: auto;
+    }
+
+    /* MENU */
+
+    .menu {
+      position: absolute;
+      left: 92px;
+      top: calc(42% + 4px);
+      width: 320px;
+      height: 220px;
+      z-index: 9999;
+    }
+
+    .menu-button {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-button:hover img {
+      transform: rotate(360deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 300px;
+      background: var(--black);
+      border-radius: 22px;
+      display: none;
+      overflow: hidden;
+      padding: 8px 0 16px;
+      box-shadow: 0 14px 45px rgba(0,0,0,0.3);
+    }
+
+    .dropdown a {
+      display: block;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 17px 24px;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .menu:hover .dropdown {
       display: block;
     }
 
-    h1 {
-      font-size: clamp(24px, 3.2vw, 42px);
-      line-height: 1;
-      margin: 0;
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      max-width: 520px;
-    }
+    /* RIGHT SIDE */
 
-    .links {
+    .hero-right {
+      width: 66%;
+      background: var(--cream);
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 70px;
     }
 
-    .links a {
-      color: var(--black);
-      border: 1.5px solid var(--black);
-      border-radius: 999px;
-      padding: 9px 20px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 400;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    .activism-title img {
+      width: 340px;
+      max-width: 100%;
+      display: block;
+      height: auto;
+      background: transparent;
     }
 
-    .links a:hover {
-      background: var(--black);
-      color: var(--blue);
-      transform: translateY(-2px);
-    }
+    /* CONTENT */
 
     .activism {
-      padding: 80px 36px;
+      padding: 36px 40px 90px;
       background: var(--black);
     }
 
     .activism-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      gap: 32px;
     }
 
     .activism-card {
@@ -115,11 +186,11 @@
 
     .activism-card:hover {
       transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255,255,255,0.03);
     }
 
     h2 {
-      font-size: 34px;
+      font-size: 38px;
       margin: 0 0 18px;
       font-weight: 400;
       line-height: 1;
@@ -127,11 +198,10 @@
     }
 
     p {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.45;
       margin: 0;
       opacity: 0.82;
-      font-weight: 400;
     }
 
     .wide {
@@ -141,42 +211,80 @@
     footer {
       background: var(--blue);
       color: var(--black);
-      padding: 28px 36px;
-      font-size: 16px;
-      font-weight: 400;
+      padding: 36px 40px;
+      font-size: 18px;
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
       .hero {
-        padding: 28px 20px 44px;
+        flex-direction: column;
+        min-height: auto;
       }
 
-      .hero-top {
-        gap: 18px;
+      .hero-left {
+        width: 100%;
+        min-height: 16vh;
+        padding: 22px 22px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
 
       .logo {
-        max-width: 220px;
+        position: static;
+        transform: none;
+        width: 250px;
+        max-width: 70vw;
       }
 
-      h1 {
-        font-size: 26px;
-        max-width: 100%;
+      .menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
       }
 
-      .links {
-        gap: 10px;
-        margin-top: 28px;
+      .menu-button {
+        width: 58px;
+        height: 58px;
       }
 
-      .links a {
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 248px;
+      }
+
+      .dropdown a {
         font-size: 15px;
-        padding: 9px 16px;
+        padding: 14px 18px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 18px 22px;
+        justify-content: center;
+      }
+
+      .activism-title img {
+        width: 250px;
       }
 
       .activism {
-        padding: 56px 20px;
+        padding: 26px 22px 70px;
       }
 
       .activism-grid {
@@ -192,15 +300,15 @@
       }
 
       h2 {
-        font-size: 28px;
+        font-size: 30px;
       }
 
       p {
-        font-size: 18px;
+        font-size: 19px;
       }
 
       footer {
-        padding: 24px 20px;
+        padding: 28px 24px;
       }
 
     }
@@ -215,38 +323,41 @@
 
     <header class="hero">
 
-      <div class="hero-top">
+      <div class="hero-left">
 
-        <div class="logo">
+        <div class="mobile-brand">
 
-          <img src="handwritten.png" alt="Carlina Carpelan logo">
+          <nav class="menu">
+
+            <button class="menu-button" type="button">
+              <img src="spiral.png" alt="Menu">
+            </button>
+
+            <div class="dropdown">
+
+              <a href="index.html">Home</a>
+              <a href="dj.html">DJ</a>
+              <a href="events.html">Events</a>
+              <a href="activism-and-voluntary.html">Activism & Voluntary</a>
+              <a href="contact.html">Contact</a>
+
+            </div>
+
+          </nav>
+
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
 
         </div>
 
-        <h1>
-          Activism and<br>
-          Voluntary Work
-        </h1>
-
       </div>
 
-      <div class="links">
+      <div class="hero-right">
 
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="dj.html">
-          DJ
-        </a>
-
-        <a href="events.html">
-          Events
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
+        <div class="activism-title">
+          <img src="activismvoluntary.png" alt="Activism and Voluntary Work">
+        </div>
 
       </div>
 
