@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>HYTKY Vinyl Workshop — Carlina Carpelan</title>
+  <title>Record Workshop with HYTKY ry — Carlina Carpelan</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
@@ -115,6 +114,13 @@
       padding: 17px 24px;
       font-size: 17px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
     }
 
     .dropdown a:hover {
@@ -129,19 +135,20 @@
     .hero-right {
       width: 66%;
       background: var(--cream);
+      color: var(--black);
       display: flex;
       align-items: center;
       justify-content: flex-start;
       padding: 30px 70px;
     }
 
-    .event-title {
-      color: var(--black);
-      font-size: clamp(40px, 7vw, 110px);
+    h1 {
+      font-size: clamp(40px, 7vw, 96px);
       line-height: 0.9;
       letter-spacing: -0.05em;
       font-weight: 400;
       margin: 0;
+      max-width: 900px;
     }
 
     main {
@@ -196,7 +203,9 @@
       padding: 12px 22px;
       text-decoration: none;
       font-size: 18px;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .back-link:hover {
@@ -212,6 +221,7 @@
     }
 
     @media (max-width: 900px) {
+
       .hero {
         flex-direction: column;
       }
@@ -267,7 +277,7 @@
 
       .hero-right {
         width: 100%;
-        padding: 22px;
+        padding: 24px 22px;
         justify-content: center;
         text-align: center;
       }
@@ -292,6 +302,7 @@
       footer {
         padding: 28px 24px;
       }
+
     }
   </style>
 </head>
@@ -329,7 +340,7 @@
     </div>
 
     <div class="hero-right">
-      <h1 class="event-title">Vinyl<br>Workshop</h1>
+      <h1>Record Workshop with HYTKY ry</h1>
     </div>
 
   </header>
@@ -339,28 +350,32 @@
     <div class="event-layout">
 
       <div class="event-poster">
-        <img src="VINYL WORKSHOP.jpg" alt="HYTKY Vinyl Workshop poster">
+        <img src="VINYL WORKSHOP (4) (1).jpg" alt="HYTKY Vinyl Workshop poster">
       </div>
 
       <section class="event-info">
 
-        <h2>HYTKY Vinyl Workshop</h2>
+        <h2>Record Workshop with HYTKY ry</h2>
 
         <p>
-          Hands-on introduction to the basics of vinyl DJ’ing by DJ’s Eippi and Carlina Carpelan.
+          Free beginner-friendly workshop focused on playing vinyl records,
+          organized together with HYTKY ry.
         </p>
 
         <p>
-          Saturday 10.2.<br>
+          Hands-on introduction to the basics of vinyl DJ’ing by DJ’s Eippi
+          and Carlina Carpelan.
+        </p>
+
+        <p>
+          Saturday 10.5.<br>
           14–19<br>
           HYTKY HQ
         </p>
 
-        <p>
-          Limited spots available.
-        </p>
-
-        <a class="back-link" href="events.html">Back to Events</a>
+        <a class="back-link" href="events.html">
+          Back to Events
+        </a>
 
       </section>
 
