@@ -160,14 +160,18 @@
       background: transparent;
     }
 
-    /* EVENTS */
+    /* SECTIONS */
 
     .events-section {
       padding: 42px 40px 80px;
-      background: var(--black);
     }
 
-    .events-section.upcoming {
+    .upcoming {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .past {
       background: var(--cream);
       color: var(--black);
     }
@@ -189,6 +193,9 @@
     .event-card {
       border: 2px solid currentColor;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
       transition:
         transform 0.25s ease,
         opacity 0.25s ease;
@@ -204,6 +211,7 @@
       width: 100%;
       aspect-ratio: 4 / 3;
       overflow: hidden;
+      background: var(--black);
     }
 
     .event-image img {
@@ -240,7 +248,7 @@
       opacity: 0.82;
     }
 
-    .upcoming .event-info p {
+    .past .event-info p {
       color: rgba(0,0,0,0.82);
     }
 
@@ -391,7 +399,7 @@
 
     </header>
 
-    <!-- UPCOMING -->
+    <!-- UPCOMING EVENTS -->
 
     <section class="events-section upcoming">
 
@@ -402,14 +410,14 @@
 
       <div class="event-grid">
 
-        <article class="event-card">
+        <a class="event-card" href="hytkyrecordworkshop.html">
 
           <div class="event-image">
 
-            <img src="promo7.jpg" alt="Upcoming event">
+            <img src="VINYL WORKSHOP.jpg" alt="HYTKY Vinyl Workshop">
 
             <div class="event-name">
-              Event Name
+              Vinyl Workshop
             </div>
 
           </div>
@@ -417,42 +425,20 @@
           <div class="event-info">
 
             <p>
-              Date / Venue / City
+              Sat 10.2. / HYTKY HQ
             </p>
 
           </div>
 
-        </article>
-
-        <article class="event-card">
-
-          <div class="event-image">
-
-            <img src="promo8-websafe.jpg" alt="Upcoming event">
-
-            <div class="event-name">
-              Event Name
-            </div>
-
-          </div>
-
-          <div class="event-info">
-
-            <p>
-              Date / Venue / City
-            </p>
-
-          </div>
-
-        </article>
+        </a>
 
       </div>
 
     </section>
 
-    <!-- PAST -->
+    <!-- PAST EVENTS -->
 
-    <section class="events-section">
+    <section class="events-section past">
 
       <h2 class="section-title">
         Past<br>
