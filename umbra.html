@@ -1,1 +1,408 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Umbra — Carlina Carpelan</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --black: #000000;
+      --blue: #A6C3CE;
+      --cream: #F3EFE6;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      font-family: 'Alata', sans-serif;
+      overflow-x: hidden;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .hero {
+      width: 100%;
+      min-height: 38vh;
+      display: flex;
+    }
+
+    .hero-left {
+      width: 34%;
+      background: var(--blue);
+      position: relative;
+      min-height: 38vh;
+      overflow: visible;
+    }
+
+    .logo {
+      position: absolute;
+      left: 92px;
+      top: 42%;
+      transform: translateY(-50%);
+      width: 390px;
+      max-width: calc(100% - 120px);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* MENU */
+
+    .menu {
+      position: absolute;
+      left: 92px;
+      top: calc(42% + 4px);
+      width: 320px;
+      height: 220px;
+      z-index: 9999;
+    }
+
+    .menu-button {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-button:hover img {
+      transform: rotate(360deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 300px;
+      background: var(--black);
+      border-radius: 22px;
+      display: none;
+      overflow: hidden;
+      padding: 8px 0 16px;
+      box-shadow: 0 14px 45px rgba(0,0,0,0.3);
+    }
+
+    .dropdown a {
+      display: block;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 17px 24px;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .menu:hover .dropdown {
+      display: block;
+    }
+
+    /* HERO RIGHT */
+
+    .hero-right {
+      width: 66%;
+      background: var(--cream);
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 70px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 110px);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* CONTENT */
+
+    main {
+      padding: 40px;
+    }
+
+    .intro {
+      max-width: 920px;
+      margin-bottom: 60px;
+    }
+
+    .intro p {
+      font-size: 24px;
+      line-height: 1.45;
+      opacity: 0.85;
+      margin: 0 0 24px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border: 2px solid var(--white);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .links a,
+    .back-link {
+      display: inline-block;
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+      border-radius: 999px;
+      padding: 12px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .links a:hover,
+    .back-link:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .back-link {
+      margin-top: 32px;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--black);
+      padding: 36px 40px;
+      font-size: 18px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-left {
+        width: 100%;
+        min-height: 16vh;
+        padding: 22px 22px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        position: static;
+        transform: none;
+        width: 250px;
+        max-width: 70vw;
+      }
+
+      .menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 248px;
+      }
+
+      .dropdown a {
+        font-size: 15px;
+        padding: 14px 18px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 24px 22px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      main {
+        padding: 26px 22px 70px;
+      }
+
+      .intro p {
+        font-size: 20px;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="hero">
+
+    <div class="hero-left">
+
+      <div class="mobile-brand">
+
+        <nav class="menu">
+
+          <button class="menu-button" type="button">
+            <img src="spiral.png" alt="Menu">
+          </button>
+
+          <div class="dropdown">
+
+            <a href="index.html">Home</a>
+            <a href="dj.html">DJ</a>
+            <a href="events.html">Events</a>
+            <a href="activism-and-voluntary.html">Activism & Voluntary</a>
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+        </nav>
+
+        <div class="logo">
+          <img src="handwritten.png" alt="Carlina Carpelan">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <h1>
+        Umbra
+      </h1>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <p>
+        Umbra is a Kaiku club residency curated by Carlina Carpelan in 2026,
+        focusing on hypnotic, leftfield and groove-driven electronic music.
+      </p>
+
+      <p>
+        The residency brings together carefully selected local and international
+        artists, creating immersive nights centered around deep listening,
+        physical rhythm and underground club culture.
+      </p>
+
+    </section>
+
+    <section class="image-grid">
+
+      <img src="umbra.jpg" alt="Umbra event image">
+      <img src="umbra2.jpg" alt="Umbra event image">
+
+    </section>
+
+    <section class="links">
+
+      <a href="https://ra.co/events/1941206" target="_blank">
+        Resident Advisor Event I
+      </a>
+
+      <a href="https://ra.co/events/1985062" target="_blank">
+        Resident Advisor Event II
+      </a>
+
+    </section>
+
+    <a class="back-link" href="events.html">
+      Back to Events
+    </a>
+
+  </main>
+
+  <footer>
+    Carlina Carpelan
+  </footer>
+
+</body>
+
+</html>
