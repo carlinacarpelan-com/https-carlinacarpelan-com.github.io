@@ -10,470 +10,519 @@
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   <style>
-
     :root {
-      --black:#000;
-      --blue:#A6C3CE;
-      --cream:#F3EFE6;
-      --white:#fff;
+      --black: #000;
+      --blue: #A6C3CE;
+      --cream: #F3EFE6;
+      --white: #fff;
     }
 
-    *{
-      box-sizing:border-box;
+    * {
+      box-sizing: border-box;
     }
 
-    body{
-      margin:0;
-      background:var(--black);
-      color:var(--white);
-      font-family:'Alata',sans-serif;
-      overflow-x:hidden;
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Alata', sans-serif;
+      overflow-x: hidden;
     }
 
-    .container{
-      width:100%;
-      min-height:100vh;
+    .container {
+      width: 100%;
+      min-height: 100vh;
     }
 
-    .hero{
-      width:100%;
-      min-height:38vh;
-      display:flex;
+    .hero {
+      width: 100%;
+      min-height: 38vh;
+      display: flex;
     }
 
-    .hero-left{
-      width:34%;
-      min-height:38vh;
-      background:var(--blue);
-      position:relative;
-      overflow:visible;
+    .hero-left {
+      width: 34%;
+      min-height: 38vh;
+      background: var(--blue);
+      position: relative;
+      overflow: visible;
     }
 
-    .logo{
-      position:absolute;
-      left:92px;
-      top:42%;
-      transform:translateY(-50%);
-      width:390px;
-      max-width:calc(100% - 120px);
-      z-index:2;
-      pointer-events:none;
+    .logo {
+      position: absolute;
+      left: 92px;
+      top: 42%;
+      transform: translateY(-50%);
+      width: 390px;
+      max-width: calc(100% - 120px);
+      z-index: 2;
+      pointer-events: none;
     }
 
-    .logo img{
-      width:100%;
-      display:block;
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .menu{
-      position:absolute;
-      left:92px;
-      top:calc(42% + 4px);
-      width:320px;
-      height:220px;
-      z-index:9999;
+    .menu {
+      position: absolute;
+      left: 92px;
+      top: calc(42% + 4px);
+      width: 320px;
+      height: 220px;
+      z-index: 9999;
     }
 
-    .menu-button{
-      width:62px;
-      height:62px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:none;
-      background:none;
-      cursor:pointer;
-      padding:0;
+    .menu-button {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
     }
 
-    .menu-button img{
-      width:52px;
-      height:52px;
-      transition:.6s;
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      display: block;
+      object-fit: contain;
+      transition: transform 0.6s ease;
     }
 
-    .menu-button:hover img{
-      transform:rotate(360deg);
+    .menu-button:hover img,
+    .menu-button:focus-visible img {
+      transform: rotate(360deg);
     }
 
-    .dropdown{
-      position:absolute;
-      top:58px;
-      left:0;
-      width:300px;
-      background:var(--black);
-      border-radius:22px;
-      display:none;
-      overflow:hidden;
-      padding:8px 0 16px;
-      box-shadow:0 14px 45px rgba(0,0,0,.3);
+    .dropdown {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 300px;
+      background: var(--black);
+      border-radius: 22px;
+      display: none;
+      overflow: hidden;
+      padding: 8px 0 16px;
+      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
     }
 
-    .dropdown a{
-      display:block;
-      color:var(--blue);
-      text-decoration:none;
-      padding:17px 24px;
-      font-size:17px;
-      border-bottom:1px solid rgba(255,255,255,.08);
+    .dropdown a {
+      display: block;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 17px 24px;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .dropdown a:hover{
-      background:var(--blue);
-      color:var(--black);
+    .dropdown a:last-child {
+      border-bottom: none;
     }
 
-    .menu:hover .dropdown{
-      display:block;
+    .dropdown a:hover,
+    .dropdown a:focus-visible {
+      background: var(--blue);
+      color: var(--black);
     }
 
-    .hero-right{
-      width:66%;
-      background:var(--cream);
-      display:flex;
-      align-items:center;
-      padding:30px 70px;
+    .menu:hover .dropdown,
+    .menu:focus-within .dropdown {
+      display: block;
     }
 
-    .events-title img{
-      width:240px;
+    .hero-right {
+      width: 66%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      padding: 30px 70px;
     }
 
-    .events-section{
-      padding:42px 40px 80px;
+    .events-title img {
+      width: 240px;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .upcoming{
-      background:var(--black);
-      color:white;
+    .events-section {
+      padding: 42px 40px 80px;
     }
 
-    .past{
-      background:var(--cream);
-      color:black;
+    .upcoming {
+      background: var(--black);
+      color: var(--white);
     }
 
-    .section-title{
-      margin:0 0 42px;
-      font-size:clamp(42px,6vw,82px);
-      line-height:.9;
-      font-weight:400;
+    .past {
+      background: var(--cream);
+      color: var(--black);
     }
 
-    .event-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:32px;
+    .section-title {
+      margin: 0 0 42px;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.9;
+      font-weight: 400;
     }
 
-    .event-card{
-      display:block;
-      text-decoration:none;
-      color:inherit;
-      border:2px solid currentColor;
-      overflow:hidden;
-      transition:.25s;
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
     }
 
-    .event-card:hover{
-      transform:translateY(-4px);
+    .event-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 2px solid currentColor;
+      overflow: hidden;
+      transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
     }
 
-    .event-image{
-      position:relative;
-      aspect-ratio:1/1;
-      overflow:hidden;
+    .event-card:hover,
+    .event-card:focus-visible {
+      transform: translateY(-4px);
+      opacity: 0.92;
     }
 
-    .event-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .event-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--black);
     }
 
-    .event-name{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-      color:white;
-      background:rgba(0,0,0,.28);
-      font-size:clamp(28px,3vw,52px);
-      backdrop-filter:blur(2px);
+    .event-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .event-info{
-      padding:24px;
+    .event-name {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--white);
+      background: rgba(0, 0, 0, 0.28);
+      font-size: clamp(28px, 3vw, 52px);
+      line-height: 0.95;
+      backdrop-filter: blur(2px);
     }
 
-    .event-info p{
-      margin:0;
-      font-size:20px;
+    .event-info {
+      padding: 24px;
     }
 
-    footer{
-      background:var(--blue);
-      color:black;
-      padding:36px 40px;
+    .event-info p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.45;
     }
 
-    @media(max-width:900px){
+    footer {
+      background: var(--blue);
+      color: var(--black);
+      padding: 36px 40px;
+      font-size: 18px;
+    }
 
-      .hero{
-        flex-direction:column;
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
       }
 
       .hero-left,
-      .hero-right{
-        width:100%;
+      .hero-right {
+        width: 100%;
       }
 
-      .hero-left{
-        min-height:16vh;
-        padding:22px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
+      .hero-left {
+        min-height: 16vh;
+        padding: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .mobile-brand{
-        display:flex;
-        gap:12px;
-        align-items:center;
+      .mobile-brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
       }
 
-      .logo{
-        position:static;
-        transform:none;
-        width:250px;
+      .logo {
+        position: static;
+        transform: none;
+        width: 250px;
+        max-width: 70vw;
       }
 
-      .menu{
-        position:relative;
-        left:auto;
-        top:auto;
-        width:58px;
-        height:58px;
+      .menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
       }
 
-      .menu-button{
-        width:58px;
-        height:58px;
+      .menu-button {
+        width: 58px;
+        height: 58px;
       }
 
-      .menu-button img{
-        width:48px;
-        height:48px;
+      .menu-button img {
+        width: 48px;
+        height: 48px;
       }
 
-      .dropdown{
-        width:248px;
+      .dropdown {
+        width: 248px;
       }
 
-      .hero-right{
-        padding:20px;
-        justify-content:center;
+      .dropdown a {
+        padding: 14px 18px;
+        font-size: 15px;
       }
 
-      .events-title img{
-        width:170px;
+      .hero-right {
+        padding: 20px;
+        justify-content: center;
       }
 
-      .event-grid{
-        grid-template-columns:1fr;
+      .events-title img {
+        width: 170px;
       }
 
+      .events-section {
+        padding: 28px 22px 70px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<header class="hero">
+    <header class="hero">
 
-<div class="hero-left">
+      <div class="hero-left">
 
-<div class="mobile-brand">
+        <div class="mobile-brand">
 
-<nav class="menu">
+          <nav class="menu" aria-label="Main navigation">
 
-<button class="menu-button">
-<img src="spiral.png" alt="">
-</button>
+            <button class="menu-button" type="button" aria-label="Open menu">
+              <img src="spiral.png" alt="">
+            </button>
 
-<div class="dropdown">
+            <div class="dropdown">
+              <a href="index.html">Home</a>
+              <a href="dj.html">DJ</a>
+              <a href="events.html">Events</a>
+              <a href="contact.html">Contact</a>
+            </div>
 
-<a href="index.html">Home</a>
-<a href="dj.html">DJ</a>
-<a href="events.html">Events</a>
-<a href="contact.html">Contact</a>
+          </nav>
 
-</div>
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
 
-</nav>
+        </div>
 
-<div class="logo">
-<img src="handwritten.png" alt="Carlina Carpelan">
-</div>
+      </div>
 
-</div>
+      <div class="hero-right">
 
-</div>
+        <div class="events-title">
+          <img src="events_transparent.png" alt="Events">
+        </div>
 
-<div class="hero-right">
+      </div>
 
-<div class="events-title">
-<img src="events_transparent.png" alt="Events">
-</div>
+    </header>
 
-</div>
+    <main>
 
-</header>
+      <section class="events-section upcoming">
 
-<section class="events-section upcoming">
+        <h2 class="section-title">
+          Upcoming<br>Events
+        </h2>
 
-<h2 class="section-title">
-Upcoming<br>Events
-</h2>
+        <div class="event-grid">
 
-<div class="event-grid">
-</div>
+          <a class="event-card" href="hoivafest.html">
+                        <div class="event-image">
+              <img src="hoivafest.jpg" alt="Hoiva Fest">
 
-</section>
+              <div class="event-name">
+                Hoiva Fest
+              </div>
+            </div>
 
-<section class="events-section past">
+            <div class="event-info">
+              <p>10.–11.10.2026 · Lapinlahti, Helsinki</p>
+            </div>
 
-<h2 class="section-title">
-Past<br>Events
-</h2>
+          </a>
 
-<div class="event-grid">
+        </div>
 
-<a class="event-card" href="kaantopoytaopenair.html">
+      </section>
 
-<div class="event-image">
-<img src="kaantopoyta.png" alt="Kääntöpöytä Open Air">
-<div class="event-name">
-Kääntöpöytä Open Air
-</div>
-</div>
+      <section class="events-section past">
 
-<div class="event-info">
-<p>27 June 2026 · Helsinki</p>
-</div>
+        <h2 class="section-title">
+          Past<br>Events
+        </h2>
 
-</a>
+        <div class="event-grid">
 
-<a class="event-card" href="virevare.html">
+          <a class="event-card" href="kaantopoytaopenair.html">
 
-<div class="event-image">
-<img src="virevare.jpeg" alt="vire•väre">
-<div class="event-name">
-vire•väre
-</div>
-</div>
+            <div class="event-image">
+              <img src="kaantopoyta.png" alt="Kääntöpöytä Open Air">
 
-<div class="event-info">
-<p>Lapinlahti / Helsinki</p>
-</div>
+              <div class="event-name">
+                Kääntöpöytä Open Air
+              </div>
+            </div>
 
-</a>
+            <div class="event-info">
+              <p>27 June 2026 · Helsinki</p>
+            </div>
 
-<a class="event-card" href="helsinkiday.html">
+          </a>
 
-<div class="event-image">
-<img src="helsinkiday.png" alt="Urban! Folks! United!">
-<div class="event-name">
-Urban!<br>Folks!<br>United!
-</div>
-</div>
+          <a class="event-card" href="virevare.html">
 
-<div class="event-info">
-<p>Helsinki Day</p>
-</div>
+            <div class="event-image">
+              <img src="virevare.jpeg" alt="vire•väre">
 
-</a>
-<a class="event-card" href="pause.html">
+              <div class="event-name">
+                vire•väre
+              </div>
+            </div>
 
-  <div class="event-image">
-    <img src="pause3flyer.jpg" alt="Pause">
+            <div class="event-info">
+              <p>Omenapuutalo / Lapinlahti, Helsinki</p>
+            </div>
 
-    <div class="event-name">
-      Pause
+          </a>
+
+          <a class="event-card" href="helsinkiday.html">
+
+            <div class="event-image">
+              <img src="helsinkiday.png" alt="Urban! Folks! United!">
+
+              <div class="event-name">
+                Urban!<br>Folks!<br>United!
+              </div>
+            </div>
+
+            <div class="event-info">
+              <p>Kääntöpöytä / Helsinki Day 2026</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="pause.html">
+
+            <div class="event-image">
+              <img src="pause3flyer.jpg" alt="Pause">
+
+              <div class="event-name">
+                Pause
+              </div>
+            </div>
+
+            <div class="event-info">
+              <p>Cosy Club / Helsinki</p>
+            </div>
+
+          </a>
+                    <a class="event-card" href="recordworkshop.html">
+
+            <div class="event-image">
+              <img src="vinylworkshop.jpg" alt="Vinyl Workshop">
+
+              <div class="event-name">
+                Vinyl Workshop
+              </div>
+            </div>
+
+            <div class="event-info">
+              <p>HYTKY HQ / Helsinki</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="vinylsale.html">
+
+            <div class="event-image">
+              <img src="recordsale.jpg" alt="Record Sale">
+
+              <div class="event-name">
+                Record Sale
+              </div>
+            </div>
+
+            <div class="event-info">
+              <p>Record Sale</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="umbra.html">
+
+            <div class="event-image">
+              <img src="umbra.jpg" alt="Umbra">
+
+              <div class="event-name">
+                Umbra
+              </div>
+            </div>
+
+            <div class="event-info">
+              <p>Kaiku Residency 2026</p>
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+      <footer>
+        Carlina Carpelan
+      </footer>
+
     </div>
-  </div>
 
-  <div class="event-info">
-    <p>Cosy Club / Helsinki</p>
-  </div>
-
-</a>
-
-<a class="event-card" href="recordworkshop.html">
-
-  <div class="event-image">
-    <img src="vinylworkshop.jpg" alt="Vinyl Workshop">
-
-    <div class="event-name">
-      Vinyl Workshop
-    </div>
-  </div>
-
-  <div class="event-info">
-    <p>HYTKY HQ / Helsinki</p>
-  </div>
-
-</a>
-
-<a class="event-card" href="vinylsale.html">
-
-  <div class="event-image">
-    <img src="recordsale.jpg" alt="Record Sale">
-
-    <div class="event-name">
-      Record Sale
-    </div>
-  </div>
-
-  <div class="event-info">
-    <p>Record Sale</p>
-  </div>
-
-</a>
-
-<a class="event-card" href="umbra.html">
-
-  <div class="event-image">
-    <img src="umbra.jpg" alt="Umbra">
-
-    <div class="event-name">
-      Umbra
-    </div>
-  </div>
-
-  <div class="event-info">
-    <p>Kaiku Residency 2026</p>
-  </div>
-
-</a>
-
-</div>
-
-</section>
-
-<footer>
-  Carlina Carpelan
-</footer>
-
-</div>
-
-</body>
+  </body>
 
 </html>
