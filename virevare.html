@@ -64,8 +64,6 @@
       display: block;
     }
 
-    /* MENU */
-
     .menu {
       position: absolute;
       left: 92px;
@@ -109,7 +107,7 @@
       overflow: hidden;
       background: var(--black);
       border-radius: 22px;
-      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 14px 45px rgba(0,0,0,.3);
     }
 
     .dropdown a {
@@ -118,10 +116,8 @@
       color: var(--blue);
       text-decoration: none;
       font-size: 17px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      transition: background .2s ease,color .2s ease;
     }
 
     .dropdown a:last-child {
@@ -138,8 +134,6 @@
       display: block;
     }
 
-    /* HERO RIGHT */
-
     .hero-right {
       width: 66%;
       padding: 30px 70px;
@@ -153,13 +147,11 @@
     h1 {
       max-width: 900px;
       margin: 0;
-      font-size: clamp(40px, 7vw, 96px);
-      line-height: 0.9;
-      letter-spacing: -0.05em;
+      font-size: clamp(40px,7vw,96px);
+      line-height: .9;
+      letter-spacing: -.05em;
       font-weight: 400;
     }
-
-    /* CONTENT */
 
     main {
       padding: 40px;
@@ -168,7 +160,7 @@
 
     .event-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: start;
     }
@@ -180,8 +172,8 @@
 
     .event-poster img {
       width: 100%;
-      height: auto;
       display: block;
+      height: auto;
     }
 
     .event-info {
@@ -191,9 +183,9 @@
 
     h2 {
       margin: 0 0 28px;
-      font-size: clamp(34px, 5vw, 70px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
+      font-size: clamp(34px,5vw,70px);
+      line-height: .95;
+      letter-spacing: -.04em;
       font-weight: 400;
     }
 
@@ -201,40 +193,25 @@
       margin: 0 0 22px;
       font-size: 22px;
       line-height: 1.45;
-      opacity: 0.82;
+      opacity: .82;
     }
 
     .event-details {
       margin-top: 32px;
       padding-top: 26px;
-      border-top: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .event-details p {
-      margin-bottom: 14px;
+      border-top: 1px solid rgba(255,255,255,.25);
     }
 
     .event-link,
     .back-link {
       display: inline-block;
       padding: 12px 22px;
+      border: 1.5px solid var(--blue);
+      border-radius: 999px;
       color: var(--blue);
       text-decoration: none;
       font-size: 18px;
-      border: 1.5px solid var(--blue);
-      border-radius: 999px;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .event-link {
-      margin-top: 18px;
-      margin-right: 10px;
-    }
-
-    .back-link {
-      margin-top: 18px;
+      transition: .2s;
     }
 
     .event-link:hover,
@@ -242,215 +219,201 @@
       background: var(--blue);
       color: var(--black);
     }
-
-    footer {
-      padding: 36px 40px;
-      background: var(--blue);
-      color: var(--black);
-      font-size: 18px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-      }
-
-      .hero-left {
-        width: 100%;
-        min-height: 16vh;
-        padding: 22px 22px 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .mobile-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .logo {
-        position: static;
-        transform: none;
-        width: 250px;
-        max-width: 70vw;
-      }
-
-      .menu {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 58px;
-        height: 58px;
-      }
-
-      .menu-button {
-        width: 58px;
-        height: 58px;
-      }
-
-      .menu-button img {
-        width: 48px;
-        height: 48px;
-      }
-
-      .dropdown {
-        width: 248px;
-      }
-
-      .dropdown a {
-        padding: 14px 18px;
-        font-size: 15px;
-      }
-
-      .hero-right {
-        width: 100%;
-        padding: 24px 22px;
-        justify-content: center;
-        text-align: center;
-      }
-
-      main {
-        padding: 26px 22px 70px;
-      }
-
-      .event-layout {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .event-poster {
-        padding: 14px;
-      }
-
-      .event-info {
-        padding: 24px;
-      }
-
-      p {
-        font-size: 20px;
-      }
-
-      footer {
-        padding: 28px 24px;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <header class="hero">
+<header class="hero">
 
-    <div class="hero-left">
+<div class="hero-left">
 
-      <div class="mobile-brand">
+<div class="mobile-brand">
 
-        <nav class="menu">
+<nav class="menu">
 
-          <button
-            class="menu-button"
-            type="button"
-            aria-label="Open menu"
-          >
-            <img src="spiral.png" alt="">
-          </button>
+<button class="menu-button" type="button" aria-label="Open menu">
+<img src="spiral.png" alt="">
+</button>
 
-          <div class="dropdown">
-            <a href="index.html">Home</a>
-            <a href="dj.html">DJ</a>
-            <a href="events.html">Events</a>
-            <a href="contact.html">Contact</a>
-          </div>
+<div class="dropdown">
+<a href="index.html">Home</a>
+<a href="dj.html">DJ</a>
+<a href="events.html">Events</a>
+<a href="contact.html">Contact</a>
+</div>
 
-        </nav>
+</nav>
 
-        <div class="logo">
-          <img src="handwritten.png" alt="Carlina Carpelan">
-        </div>
+<div class="logo">
+<img src="handwritten.png" alt="Carlina Carpelan">
+</div>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-    <div class="hero-right">
-      <h1>vire•väre</h1>
-    </div>
+<div class="hero-right">
+<h1>vire•väre</h1>
+</div>
 
-  </header>
+</header>
 
-  <main>
+<main>
 
-    <div class="event-layout">
+<div class="event-layout">
 
-      <div class="event-poster">
+<div class="event-poster">
 
-        <img
-          src="virevare.jpg"
-          alt="vire•väre ambient music event"
-        >
+<img src="virevare.jpeg" alt="vire•väre">
 
-      </div>
+</div>
 
-      <section class="event-info">
+<section class="event-info">
 
-        <h2>vire•väre</h2>
+<h2>vire•väre</h2>
 
-        <p>
-          An ambient music event held at Omenapuutalo in the historic
-          Lapinlahti hospital area on 15 June 2026.
-        </p>
+<p>
+An ambient music event held at Omenapuutalo in the historic Lapinlahti hospital area on 15 June 2026.
+</p>
 
-        <p>
-          The event was organised in collaboration with Pro Lapinlahti
-          mielenterveysseura ry.
-        </p>
+<p>
+The event was organised in collaboration with Pro Lapinlahti mielenterveysseura ry.
+</p>
 
-        <div class="event-details">
+<div class="event-details">
 
-          <p>
-            <strong>Location:</strong><br>
-            Omenapuutalo, Lapinlahti, Helsinki
-          </p>
+<p>
+<strong>Location:</strong><br>
+Omenapuutalo, Lapinlahti, Helsinki
+</p>
 
-          <p>
-            <strong>Date:</strong><br>
-            15 June 2026
-          </p>
+<p>
+<strong>Date:</strong><br>
+15 June 2026
+</p>
+<p>
+<strong>In collaboration with:</strong><br>
+Pro Lapinlahti mielenterveysseura ry
+</p>
 
-          <p>
-            <strong>In collaboration with:</strong><br>
-            Pro Lapinlahti mielenterveysseura ry
-          </p>
+</div>
 
-        </div>
+<a
+  class="event-link"
+  href="https://lapinlahdenlahde.fi/tapahtumat/vire-vare/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View Event
+</a>
 
-        <a
-          class="event-link"
-          href="https://lapinlahdenlahde.fi/tapahtumat/vire-vare/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Event
-        </a>
+<a class="back-link" href="events.html">
+  Back to Events
+</a>
 
-        <a class="back-link" href="events.html">
-          Back to Events
-        </a>
+</section>
 
-      </section>
+</div>
 
-    </div>
+</main>
 
-  </main>
+<footer>
+  Carlina Carpelan
+</footer>
 
-  <footer>
-    Carlina Carpelan
-  </footer>
+<style>
+
+@media (max-width:900px){
+
+.hero{
+flex-direction:column;
+}
+
+.hero-left{
+width:100%;
+min-height:16vh;
+padding:22px 22px 6px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.mobile-brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+position:static;
+transform:none;
+width:250px;
+max-width:70vw;
+}
+
+.menu{
+position:relative;
+left:auto;
+top:auto;
+width:58px;
+height:58px;
+}
+
+.menu-button{
+width:58px;
+height:58px;
+}
+
+.menu-button img{
+width:48px;
+height:48px;
+}
+
+.dropdown{
+width:248px;
+}
+
+.dropdown a{
+padding:14px 18px;
+font-size:15px;
+}
+
+.hero-right{
+width:100%;
+padding:24px 22px;
+justify-content:center;
+text-align:center;
+}
+
+main{
+padding:26px 22px 70px;
+}
+
+.event-layout{
+grid-template-columns:1fr;
+gap:24px;
+}
+
+.event-poster{
+padding:14px;
+}
+
+.event-info{
+padding:24px;
+}
+
+p{
+font-size:20px;
+}
+
+footer{
+padding:28px 24px;
+}
+
+}
+
+</style>
 
 </body>
-
 </html>
