@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,10 +7,12 @@
 
   <title>Pause — Carlina Carpelan</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-
     :root {
       --black: #000000;
       --blue: #A6C3CE;
@@ -40,10 +41,10 @@
 
     .hero-left {
       width: 34%;
-      background: var(--blue);
-      position: relative;
       min-height: 38vh;
+      position: relative;
       overflow: visible;
+      background: var(--blue);
     }
 
     .logo {
@@ -59,8 +60,8 @@
 
     .logo img {
       width: 100%;
-      display: block;
       height: auto;
+      display: block;
     }
 
     /* MENU */
@@ -80,10 +81,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 0;
     }
 
     .menu-button img {
@@ -103,19 +104,19 @@
       top: 58px;
       left: 0;
       width: 300px;
-      background: var(--black);
-      border-radius: 22px;
+      padding: 8px 0 16px;
       display: none;
       overflow: hidden;
-      padding: 8px 0 16px;
+      background: var(--black);
+      border-radius: 22px;
       box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
     }
 
     .dropdown a {
       display: block;
+      padding: 17px 24px;
       color: var(--blue);
       text-decoration: none;
-      padding: 17px 24px;
       font-size: 17px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       transition:
@@ -132,85 +133,113 @@
       color: var(--black);
     }
 
-    .menu:hover .dropdown {
+    .menu:hover .dropdown,
+    .menu:focus-within .dropdown {
       display: block;
     }
 
-    /* RIGHT */
+    /* HERO RIGHT */
 
     .hero-right {
       width: 66%;
-      background: var(--cream);
-      color: var(--black);
+      padding: 30px 70px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 30px 70px;
+      background: var(--cream);
+      color: var(--black);
     }
 
     h1 {
+      max-width: 900px;
+      margin: 0;
       font-size: clamp(40px, 7vw, 96px);
       line-height: 0.9;
       letter-spacing: -0.05em;
       font-weight: 400;
-      margin: 0;
-      max-width: 900px;
     }
 
     /* CONTENT */
 
     main {
-      background: var(--black);
       padding: 40px;
+      background: var(--black);
     }
 
-    .event-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .event-info {
+      max-width: 1100px;
+      margin-bottom: 40px;
+      padding: 36px;
+      border: 2px solid var(--white);
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(34px, 5vw, 70px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 400;
+    }
+
+    p {
+      max-width: 920px;
+      margin: 0 0 22px;
+      font-size: 22px;
+      line-height: 1.45;
+      opacity: 0.82;
+    }
+
+    /* PAUSE IMAGE ROWS */
+
+    .pause-gallery {
+      display: flex;
+      flex-direction: column;
       gap: 40px;
+    }
+
+    .pause-edition {
+      padding: 20px;
+      border: 2px solid var(--white);
+    }
+
+    .pause-edition h3 {
+      margin: 0 0 20px;
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .image-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
       align-items: start;
     }
 
-    .event-poster {
-      border: 2px solid var(--white);
-      padding: 20px;
+    .image-pair figure {
+      margin: 0;
     }
 
-    .event-poster img {
+    .image-pair img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    .event-info {
-      border: 2px solid var(--white);
-      padding: 36px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 5vw, 70px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      font-weight: 400;
-      margin: 0 0 28px;
-    }
-
-    p {
-      font-size: 22px;
-      line-height: 1.45;
-      margin: 0 0 22px;
-      opacity: 0.82;
+    .image-pair figcaption {
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.65;
     }
 
     .back-link {
       display: inline-block;
-      margin-top: 24px;
-      color: var(--blue);
-      border: 1.5px solid var(--blue);
-      border-radius: 999px;
+      margin-top: 40px;
       padding: 12px 22px;
+      color: var(--blue);
       text-decoration: none;
       font-size: 18px;
+      border: 1.5px solid var(--blue);
+      border-radius: 999px;
       transition:
         background 0.2s ease,
         color 0.2s ease;
@@ -222,16 +251,15 @@
     }
 
     footer {
+      padding: 36px 40px;
       background: var(--blue);
       color: var(--black);
-      padding: 36px 40px;
       font-size: 18px;
     }
 
     /* MOBILE */
 
     @media (max-width: 900px) {
-
       .hero {
         flex-direction: column;
       }
@@ -281,8 +309,8 @@
       }
 
       .dropdown a {
-        font-size: 15px;
         padding: 14px 18px;
+        font-size: 15px;
       }
 
       .hero-right {
@@ -296,11 +324,6 @@
         padding: 26px 22px 70px;
       }
 
-      .event-layout {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
       .event-info {
         padding: 24px;
       }
@@ -309,14 +332,38 @@
         font-size: 20px;
       }
 
+      .pause-gallery {
+        gap: 24px;
+      }
+
+      .pause-edition {
+        padding: 14px;
+      }
+
+      .pause-edition h3 {
+        font-size: 26px;
+      }
+
+      .image-pair {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .image-pair figcaption {
+        font-size: 14px;
+      }
+
       footer {
         padding: 28px 24px;
       }
-
     }
 
+    @media (max-width: 560px) {
+      .image-pair {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
-
 </head>
 
 <body>
@@ -329,17 +376,19 @@
 
         <nav class="menu">
 
-          <button class="menu-button" type="button">
-            <img src="spiral.png" alt="Menu">
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+          >
+            <img src="spiral.png" alt="">
           </button>
 
           <div class="dropdown">
-
             <a href="index.html">Home</a>
             <a href="dj.html">DJ</a>
             <a href="events.html">Events</a>
             <a href="contact.html">Contact</a>
-
           </div>
 
         </nav>
@@ -353,48 +402,120 @@
     </div>
 
     <div class="hero-right">
-
-      <h1>
-        Pause
-      </h1>
-
+      <h1>Pause</h1>
     </div>
 
   </header>
 
   <main>
 
-    <div class="event-layout">
+    <section class="event-info">
 
-      <div class="event-poster">
+      <h2>Pause</h2>
 
-        <img src="pause.jpg" alt="Pause-tapahtuman juliste">
+      <p>
+        Pause was a co-created experimental ambient live music event featuring
+        guided meditation and mindfulness exercises.
+      </p>
 
-      </div>
+      <p>
+        Three editions of the popular event were held at Cosy Club, a
+        community space in Helsinki.
+      </p>
 
-      <section class="event-info">
+    </section>
 
-        <h2>
-          Pause
-        </h2>
+    <section class="pause-gallery" aria-label="Pause event materials">
 
-        <p>
-          Kokeellisen ambient-live-musiikin co-creation-tapahtuma, jossa oli
-          ohjattuja meditaatioita ja mindfulness-harjoituksia.
-        </p>
+      <article class="pause-edition">
 
-        <p>
-          Suositun tapahtuman kolme osaa järjestettiin Cosy club
-          -yhteisötilassa.
-        </p>
+        <h3>Pause 1</h3>
 
-        <a class="back-link" href="events.html">
-          Back to Events
-        </a>
+        <div class="image-pair">
 
-      </section>
+          <figure>
+            <img
+              src="pause1flyer.jpg"
+              alt="Pause 1 event flyer"
+              loading="lazy"
+            >
+            <figcaption>Flyer</figcaption>
+          </figure>
 
-    </div>
+          <figure>
+            <img
+              src="pause1program.jpg"
+              alt="Pause 1 event program"
+              loading="lazy"
+            >
+            <figcaption>Program</figcaption>
+          </figure>
+
+        </div>
+
+      </article>
+
+      <article class="pause-edition">
+
+        <h3>Pause 2</h3>
+
+        <div class="image-pair">
+
+          <figure>
+            <img
+              src="pause2flyer.jpg"
+              alt="Pause 2 event flyer"
+              loading="lazy"
+            >
+            <figcaption>Flyer</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="pause2program.jpg"
+              alt="Pause 2 event program"
+              loading="lazy"
+            >
+            <figcaption>Program</figcaption>
+          </figure>
+
+        </div>
+
+      </article>
+
+      <article class="pause-edition">
+
+        <h3>Pause 3</h3>
+
+        <div class="image-pair">
+
+          <figure>
+            <img
+              src="pause3flyer.jpg"
+              alt="Pause 3 event flyer"
+              loading="lazy"
+            >
+            <figcaption>Flyer</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="pause3program.jpg"
+              alt="Pause 3 event program"
+              loading="lazy"
+            >
+            <figcaption>Program</figcaption>
+          </figure>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <a class="back-link" href="events.html">
+      Back to Events
+    </a>
 
   </main>
 
