@@ -1,490 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Events — Carlina Carpelan</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root {
-      --black: #000000;
-      --blue: #A6C3CE;
-      --cream: #F3EFE6;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--black);
-      font-family: 'Alata', sans-serif;
-      overflow-x: hidden;
-      color: var(--white);
-    }
-
-    .container {
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    .hero {
-      width: 100%;
-      min-height: 38vh;
-      display: flex;
-    }
-
-    .hero-left {
-      width: 34%;
-      background: var(--blue);
-      position: relative;
-      min-height: 38vh;
-      overflow: visible;
-    }
-
-    .logo {
-      position: absolute;
-      left: 92px;
-      top: 42%;
-      transform: translateY(-50%);
-      width: 390px;
-      max-width: calc(100% - 120px);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .logo img {
-      width: 100%;
-      display: block;
-      height: auto;
-    }
-
-    .menu {
-      position: absolute;
-      left: 92px;
-      top: calc(42% + 4px);
-      width: 320px;
-      height: 220px;
-      z-index: 9999;
-    }
-
-    .menu-button {
-      width: 62px;
-      height: 62px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .menu-button img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .menu-button:hover img {
-      transform: rotate(360deg);
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 58px;
-      left: 0;
-      width: 300px;
-      background: var(--black);
-      border-radius: 22px;
-      display: none;
-      overflow: hidden;
-      padding: 8px 0 16px;
-      box-shadow: 0 14px 45px rgba(0,0,0,0.3);
-    }
-
-    .dropdown a {
-      display: block;
-      color: var(--blue);
-      text-decoration: none;
-      padding: 17px 24px;
-      font-size: 17px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .dropdown a:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown a:hover {
-      background: var(--blue);
-      color: var(--black);
-    }
-
-    .menu:hover .dropdown {
-      display: block;
-    }
-
-    .hero-right {
-      width: 66%;
-      background: var(--cream);
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 30px 70px;
-    }
-
-    .events-title img {
-      width: 240px;
-      max-width: 100%;
-      display: block;
-      height: auto;
-      background: transparent;
-    }
-
-    .events-section {
-      padding: 42px 40px 80px;
-    }
-
-    .upcoming {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .past {
-      background: var(--cream);
-      color: var(--black);
-    }
-
-    .section-title {
-      font-size: clamp(42px, 6vw, 82px);
-      line-height: 0.9;
-      margin: 0 0 42px;
-      letter-spacing: -0.05em;
-      font-weight: 400;
-    }
-
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-
-    .event-card {
-      border: 2px solid currentColor;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-    }
-
-    .event-card:hover {
-      transform: translateY(-4px);
-      opacity: 0.92;
-    }
-
-    .event-image {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: var(--black);
-    }
-
-    .event-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .event-name {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.28);
-      color: var(--white);
-      font-size: clamp(28px, 3vw, 52px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      backdrop-filter: blur(2px);
-    }
-
-    .event-info {
-      padding: 24px;
-    }
-
-    .event-info p {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.45;
-      opacity: 0.82;
-    }
-
-    .past .event-info p {
-      color: rgba(0,0,0,0.82);
-    }
-
-    footer {
-      background: var(--blue);
-      color: var(--black);
-      padding: 36px 40px;
-      font-size: 18px;
-    }
-
-    @media (max-width: 900px) {
-
-      .hero {
-        flex-direction: column;
-        min-height: auto;
-      }
-
-      .hero-left {
-        width: 100%;
-        min-height: 16vh;
-        padding: 22px 22px 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .mobile-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .logo {
-        position: static;
-        transform: none;
-        width: 250px;
-        max-width: 70vw;
-      }
-
-      .menu {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 58px;
-        height: 58px;
-      }
-
-      .menu-button {
-        width: 58px;
-        height: 58px;
-      }
-
-      .menu-button img {
-        width: 48px;
-        height: 48px;
-      }
-
-      .dropdown {
-        width: 248px;
-      }
-
-      .dropdown a {
-        font-size: 15px;
-        padding: 14px 18px;
-      }
-
-      .hero-right {
-        width: 100%;
-        padding: 18px 22px;
-        justify-content: center;
-      }
-
-      .events-title img {
-        width: 170px;
-      }
-
-      .events-section {
-        padding: 28px 22px 70px;
-      }
-
-      .event-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        font-size: 42px;
-      }
-
-      .event-name {
-        font-size: 34px;
-      }
-
-      footer {
-        padding: 28px 24px;
-      }
-
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<header class="hero">
-
-<div class="hero-left">
-
-<div class="mobile-brand">
-
-<nav class="menu">
-
-<button class="menu-button" type="button">
-<img src="spiral.png" alt="Menu">
-</button>
-
-<div class="dropdown">
-
-<a href="index.html">Home</a>
-<a href="dj.html">DJ</a>
-<a href="events.html">Events</a>
-<a href="contact.html">Contact</a>
-
-</div>
-
-</nav>
-
-<div class="logo">
-<img src="handwritten.png" alt="Carlina Carpelan">
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="events-title">
-<img src="events_transparent.png" alt="Events">
-</div>
-
-</div>
-
-</header>
-
-<section class="events-section upcoming">
-
-<h2 class="section-title">
-Upcoming<br>
-Events
-</h2>
-
-<div class="event-grid">
-
-</div>
-
-</section>
-
 <section class="events-section past">
 
-<h2 class="section-title">
-Past<br>
-Events
-</h2>
+  <h2 class="section-title">
+    Past<br>
+    Events
+  </h2>
 
-<div class="event-grid">
-          <a class="event-card" href="recordworkshop.html">
+  <div class="event-grid">
 
-          <div class="event-image">
+    <a class="event-card" href="pause.html">
 
-            <img src="vinylworkshop.jpg" alt="Vinyl Workshop">
+      <div class="event-image">
 
-            <div class="event-name">
-              Vinyl Workshop
-            </div>
+        <img src="pause.jpg" alt="Pause">
 
-          </div>
-
-          <div class="event-info">
-
-            <p>
-              HYTKY HQ / Helsinki
-            </p>
-
-          </div>
-
-        </a>
-
-        <a class="event-card" href="vinylsale.html">
-
-          <div class="event-image">
-
-            <img src="recordsale.jpg" alt="Record Sale">
-
-            <div class="event-name">
-              Record Sale
-            </div>
-
-          </div>
-
-          <div class="event-info">
-
-            <p>
-              Record Sale
-            </p>
-
-          </div>
-
-        </a>
-
-        <a class="event-card" href="umbra.html">
-
-          <div class="event-image">
-
-            <img src="umbra.jpg" alt="Umbra">
-
-            <div class="event-name">
-              Umbra
-            </div>
-
-          </div>
-
-          <div class="event-info">
-
-            <p>
-              Kaiku Residency 2026
-            </p>
-
-          </div>
-
-        </a>
+        <div class="event-name">
+          Pause
+        </div>
 
       </div>
 
-    </section>
+      <div class="event-info">
 
-    <footer>
-      Carlina Carpelan
-    </footer>
+        <p>
+          Ambient co-creation, meditation &amp; mindfulness
+        </p>
+
+      </div>
+
+    </a>
+
+    <a class="event-card" href="recordworkshop.html">
+
+      <div class="event-image">
+
+        <img src="vinylworkshop.jpg" alt="Vinyl Workshop">
+
+        <div class="event-name">
+          Vinyl Workshop
+        </div>
+
+      </div>
+
+      <div class="event-info">
+
+        <p>
+          HYTKY HQ / Helsinki
+        </p>
+
+      </div>
+
+    </a>
+
+    <a class="event-card" href="vinylsale.html">
+
+      <div class="event-image">
+
+        <img src="recordsale.jpg" alt="Record Sale">
+
+        <div class="event-name">
+          Record Sale
+        </div>
+
+      </div>
+
+      <div class="event-info">
+
+        <p>
+          Record Sale
+        </p>
+
+      </div>
+
+    </a>
+
+    <a class="event-card" href="umbra.html">
+
+      <div class="event-image">
+
+        <img src="umbra.jpg" alt="Umbra">
+
+        <div class="event-name">
+          Umbra
+        </div>
+
+      </div>
+
+      <div class="event-info">
+
+        <p>
+          Kaiku Residency 2026
+        </p>
+
+      </div>
+
+    </a>
 
   </div>
 
-</body>
-
-</html>
+</section>
