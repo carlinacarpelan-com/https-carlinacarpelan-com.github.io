@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Gigs — Carlina Carpelan</title>
 
@@ -11,7 +11,7 @@
     :root {
       --black: #000000;
       --cream: #fff4ec;
-      --blue: #A6C3CE;
+      --blue: #a6c3ce;
       --white: #ffffff;
     }
 
@@ -19,17 +19,22 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--black);
       color: var(--white);
-      alata-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.2;
     }
 
     .container {
+      width: 100%;
       max-width: 1280px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     .hero {
@@ -39,18 +44,18 @@
     }
 
     .hero-text {
+      min-height: 340px;
       padding: 48px 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 100%;
     }
 
     h1 {
-      alata-size: clamp(72px, 12vw, 160px);
-      line-height: 0.82;
       margin: 0;
-      alata-weight: 900;
+      font-size: clamp(72px, 12vw, 160px);
+      font-weight: 900;
+      line-height: 0.82;
       letter-spacing: -0.08em;
     }
 
@@ -67,95 +72,133 @@
       border-radius: 999px;
       padding: 10px 22px;
       text-decoration: none;
-      alata-size: 18px;
-      alata-weight: 700;
-      transition: 0.2s ease;
+      font-size: 18px;
+      font-weight: 700;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
     }
 
-    .nav a:hover {
+    .nav a:hover,
+    .nav a:focus-visible {
       background: var(--black);
       color: var(--blue);
     }
 
-    section {
+    main {
       padding: 90px 40px;
     }
 
     h2 {
-      alata-size: clamp(48px, 8vw, 96px);
-      line-height: 0.9;
       margin: 0 0 40px;
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.9;
       letter-spacing: -0.07em;
+    }
+
+    .year-heading {
+      margin: 0 0 28px;
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .upcoming {
+      margin-bottom: 80px;
+    }
+
+    .gig-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .gig-list li {
+      margin-bottom: 14px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 24px;
+    }
+
+    .past-current-year {
+      margin-bottom: 42px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     details {
       margin-bottom: 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
       padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     summary {
-      cursor: pointer;
-      alata-size: 34px;
-      alata-weight: 900;
-      list-style: none;
       margin-bottom: 24px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 34px;
+      font-weight: 900;
     }
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    summary::marker {
+      display: none;
+      content: "";
     }
 
-    li {
-      alata-size: 24px;
-      margin-bottom: 14px;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .upcoming {
-      margin-bottom: 70px;
+    summary:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 6px;
     }
 
     .note {
       margin-top: 80px;
-      alata-size: 18px;
-      opacity: 0.6;
+      font-size: 18px;
       letter-spacing: 0.04em;
+      opacity: 0.6;
     }
 
     footer {
       padding: 40px;
       background: var(--blue);
       color: var(--black);
-      alata-size: 18px;
-      alata-weight: 800;
+      font-size: 18px;
+      font-weight: 800;
     }
 
     @media (max-width: 900px) {
-
-      section {
-        padding: 70px 24px;
+      .hero,
+      .hero-text {
+        min-height: 280px;
       }
 
       .hero-text {
         padding: 40px 24px;
       }
 
-      summary {
-        alata-size: 28px;
+      main {
+        padding: 70px 24px;
       }
 
-      li {
-        alata-size: 20px;
+      .nav a {
+        padding: 9px 18px;
+        font-size: 16px;
+      }
+
+      .year-heading,
+      summary {
+        font-size: 28px;
+      }
+
+      .gig-list li {
+        font-size: 20px;
+      }
+
+      footer {
+        padding: 32px 24px;
       }
     }
-
   </style>
 </head>
 
@@ -164,171 +207,250 @@
   <div class="container">
 
     <header class="hero">
-
       <div class="hero-text">
 
-        <div>
+        <h1>Gigs</h1>
 
-          <h1>Gigs</h1>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="dj.html">DJ</a>
+          <a href="videos.html">Videos</a>
+          <a href="bookings.html">Bookings</a>
+        </nav>
 
-          <div class="nav">
-            <a href="index.html">Home</a>
-            <a href="dj.html">DJ</a>
-            <a href="videos.html">Videos</a>
-            <a href="bookings.html">Bookings</a>
-          </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="upcoming">
+
+        <h2>Upcoming</h2>
+
+        <h3 class="year-heading">🌀2026</h3>
+
+        <ul class="gig-list">
+          <li>18.9. Grotesk</li>
+          <li>5.9. Signature Dark label night, WHS</li>
+          <li>15.8. Marski</li>
+          <li>8.8. Æther</li>
+        </ul>
+
+      </section>
+
+      <section class="past">
+
+        <h2>Past</h2>
+
+        <div class="past-current-year">
+
+          <h3 class="year-heading">🌀2026</h3>
+
+          <ul class="gig-list">
+            <li>31.7. Kaiku</li>
+            <li>31.7. The Bull and the firm</li>
+            <li>11.7. b2b Sakral i/o, Bar Tÿpo</li>
+            <li>2.7. Grotesk</li>
+            <li>27.6. b2b una @ Kääntöpöytä Open air</li>
+            <li>27.6. Private event</li>
+            <li>21.6. VUM</li>
+            <li>14.6. vire•väre @ Omenapuutalo</li>
+            <li>13.6. b2b Jeku @ Post bar</li>
+            <li>11.6. Grotesk</li>
+            <li>5.6. Sakral i/o @ Room Æ, Kaiku</li>
+            <li>29.5. Stidilä</li>
+            <li>22.5. b2b una @ Cozy Night Inn 6 yrs</li>
+            <li>16.5. Kaiku</li>
+            <li>15.5. Grotesk</li>
+            <li>30.4. Darkroom @ Kuudeslinja</li>
+            <li>25.4. b2b Norri @ Stidilä</li>
+            <li>11.4. Kaiku</li>
+            <li>11.4. Signature dark label night @ WHS</li>
+            <li>3.4. Grotesk</li>
+            <li>21.3. b2b DJ JVS @ Post bar</li>
+            <li>20.3. Grotesk</li>
+            <li>14.3. Pause @ Cosy club</li>
+            <li>7.3. b2b HiToshi @ Bassiani x Kaiku</li>
+            <li>7.3. Private party</li>
+            <li>6.3. Bar Tÿpo</li>
+            <li>14.2. Grotesk</li>
+            <li>14.2. Valentine’s day dance @ Merkaba</li>
+            <li>13.2. Stidilä</li>
+            <li>10.2. Pearl rush @ IDA, idaidaida.net</li>
+            <li>29.1. Mini. @ IDA, idaidaida.net</li>
+            <li>23.1. b2b Jaan (EE) @ RADC / Post bar</li>
+            <li>6.1. Pause / Cosy club</li>
+          </ul>
 
         </div>
 
-      </div>
+        <details>
+          <summary>🌀2025</summary>
 
-    </header>
+          <ul class="gig-list">
+            <li>31.12. b2b OKS @ Stidilä</li>
+            <li>31.12. Grotesk</li>
+            <li>15.11. Grotesk</li>
+            <li>7.11. b2b Jaan (EE) @ RADC Kekri / Post bar</li>
+            <li>5.11. Diffractive radio @ IDA, idaidaida.net</li>
+            <li>1.11. Compost / Cosy club</li>
+            <li>24.10. Grotesk</li>
+            <li>4.10. Stidilä, Helsinki</li>
+            <li>19.9. Bar Tÿpo, Helsinki</li>
+            <li>16.8. Swäg: Unordinary series: Up &amp; Under, Pinsiö</li>
+            <li>15.8. RADC @ Post bar</li>
+            <li>9.8. Ääniwalli</li>
+            <li>27.7. Grotesk</li>
+            <li>26.7. Kaiku</li>
+            <li>18.6. Grotesk</li>
+            <li>28.5. RADC: Momentum @ Post bar</li>
+            <li>23.5. Grotesk</li>
+            <li>30.4. HYTKY May Day</li>
+            <li>26.4. Grotesk</li>
+            <li>4.4. Bar Tÿpo</li>
+            <li>29.3. Grotesk</li>
+            <li>22.3. UG, Jyväskylä</li>
+            <li>7.3. b2b Jaan (EE) @ Stidilä</li>
+            <li>25.1. b2b Ojelma @ Post bar</li>
+            <li>17.1. b2b DJ JVS @ Stidilä</li>
+            <li>11.1. b2b Ojelma @ Firefest</li>
+            <li>1.1. b2b DJ JVS @ Post bar NYE</li>
+          </ul>
+        </details>
 
-    <section>
+        <details>
+          <summary>🌀2024</summary>
 
-      <h2>Upcoming</h2>
+          <ul class="gig-list">
+            <li>20.12. Bar Tÿpo</li>
+            <li>14.12. 10 years of Recover Laboratory</li>
+            <li>7.12. UG, Helsinki</li>
+            <li>5.12. OK Sound Pikkujoulut, Tanner</li>
+            <li>22.11. Incendiary @ Kammari, Kaiku</li>
+            <li>15.11. b2b Ojelma, Stidilä</li>
+            <li>28.9. UG, Helsinki</li>
+            <li>20.9. Insomnia festival kick off party, Tromsø, NO</li>
+            <li>6.9. Kammari, Kaiku</li>
+            <li>30.8. Paavli Kultuurivabrik, Tallinn, EST</li>
+            <li>9.8. Kammari w/ Otilia &amp; Ojelma, Kaiku</li>
+            <li>4.8. Canceled! Elokapina @ Espan lava</li>
+            <li>2.8. KULT</li>
+            <li>27.7. Summer League @ Post bar</li>
+            <li>25.7. Kaiku Residents, Kaiku</li>
+            <li>21.7. VUM, Ääniwalli</li>
+            <li>19.7. b2b Ojelma, Stidilä</li>
+            <li>17.7. RADC @ Post bar</li>
+            <li>13.7. Kaiku</li>
+            <li>12.7. Mitäs mitäs mitäs festival, Urjala</li>
+            <li>29.6. b2b Dj Aleksi, Bassline festival</li>
+            <li>28.6. Club Incendiary @ Ääniwalli</li>
+            <li>15.6. SWÄG 20 years, Tampere</li>
+            <li>14.6. Umbra: Dj Nobu @ Kaiku</li>
+            <li>14.6. Ida Radio @ bar typo</li>
+            <li>8.6. Canceled! Tumulus, Helsinki</li>
+            <li>25.5. UG, Helsinki</li>
+            <li>25.5. Arts + Erika Sirola</li>
+            <li>23.5. b2b Stella, Torjantai @ Kaiku</li>
+            <li>18.5. Open air, Helsinki</li>
+            <li>17.5. Red arctic desert cult @ KULT</li>
+            <li>15.5. Vuoden huiputus @ Greenpeace</li>
+            <li>10.5. Kult</li>
+            <li>4.5. Post bar</li>
+            <li>3.5. b2b DJ JVS, Kaiku</li>
+            <li>27.4. b2b HiToshi, Stidilä Afterhours</li>
+            <li>20.4. Private event</li>
+            <li>13.4. Cultish @ Kult</li>
+            <li>13.4. RADC @ Tanner</li>
+            <li>23.3. Stidilä, Helsinki</li>
+            <li>16.3. Ääniwalli</li>
+            <li>15.3. Post bar</li>
+            <li>1.3. Naastelkaar @ Chinastraat, Ghent, BE</li>
+            <li>10.2. Gomorra, UG, Helsinki</li>
+            <li>20.1. Katve, Tampere</li>
+            <li>12.1. Stidilä</li>
+          </ul>
+        </details>
 
-      <ul class="upcoming">
-        18.9. Grotesk
-5.9. Signature Dark label night, WHS
-15.8. Marski
-8.8. Æther
-      
+        <details>
+          <summary>🌀2023</summary>
 
-      </ul>
+          <ul class="gig-list">
+            <li>9.12. Post bar</li>
+            <li>24.11. Kaiku</li>
+            <li>18.11. Lorem Ipsum, UG</li>
+            <li>10.11. Post bar</li>
+            <li>20.10. Kaiku</li>
+            <li>6.10. Stidilä</li>
+            <li>23.9. Sumu</li>
+            <li>16.9. Post bar</li>
+            <li>2.9. Retriitti, Raasepori</li>
+            <li>19.8. Stidilä</li>
+            <li>11.8. Flow festival, RA Front yard</li>
+            <li>4.8. Kaiku</li>
+            <li>28.7. Kaista, Tampere</li>
+            <li>14.7. Mitäs mitäs mitäs festival, Urjala</li>
+            <li>8.7. Post bar</li>
+            <li>25.6. VUM</li>
+            <li>17.6. Liito, Rovaniemi</li>
+            <li>16.6. Varjo festival, Oulu</li>
+            <li>10.6. Paavli Kultuurivabrik opening, Tallinn, EST</li>
+            <li>2.6. Kaiku</li>
+            <li>31.5. Club Zero @ Kaiku</li>
+            <li>27.5. Post bar</li>
+            <li>19.5. Kaiku</li>
+            <li>29.4. Kaiku</li>
+            <li>21.4. Non-temporal, UG, Helsinki</li>
+            <li>1.4. Cyberspeed @ Kaiku</li>
+            <li>3.3. Post bar</li>
+            <li>25.2. Sumu</li>
+            <li>2.3. Stidilä</li>
+            <li>27.1. Kaiku</li>
+            <li>7.1. Loukku</li>
+          </ul>
+        </details>
 
-      <h2>Past</h2>
+        <details>
+          <summary>🌀2022</summary>
 
-      <details>
-        <summary>🌀2026</summary>
+          <ul class="gig-list">
+            <li>31.12. Post bar</li>
+            <li>10.12. Sumu</li>
+            <li>9.12. Stidilä</li>
+            <li>18.11. Kaiku</li>
+            <li>22.10. AUG</li>
+            <li>15.10. Clinic, UG</li>
+            <li>14.10. Post bar</li>
+            <li>8.10. Ihmevilla, UG</li>
+            <li>23.9. Stidilä</li>
+            <li>9.9. Kaiku</li>
+            <li>4.9. VUM closing</li>
+            <li>12.8. Kaiku</li>
+            <li>29.7. Private event</li>
+            <li>30.7. IDA radio</li>
+            <li>30.7. Post bar</li>
+            <li>15.7. Jackie’s</li>
+            <li>23.6. Solstice festival, Ruka</li>
+            <li>18.6. Katve, Tampere</li>
+            <li>17.6. Kontula Electronic</li>
+            <li>4.6. Post bar</li>
+            <li>27.5. Stidilä</li>
+            <li>14.5. Ääniwalli</li>
+            <li>11.5. Post bar</li>
+            <li>9.4. Sumu</li>
+            <li>8.4. Post bar</li>
+            <li>1.4. Stidilä</li>
+            <li>12.3. Jackie’s</li>
+            <li>4.3. Post bar</li>
+          </ul>
+        </details>
 
-        <ul>
-          31.7. Kaiku
-31.7. The Bull and the firm
-11.7. b2b Sakral i/o, Bar Tÿpo
-2.7. Grotesk
-              <li>27.6. Kääntöpöytä Open air</li>
-        <li>21.6. VUM</li>
-        <li>13.6. b2b Jeku @ Post bar</li>
-        <li>11.6. Grotesk</li>
-        <li>5.6. Kammari, Kaiku</li>
-        <li>29.5. Stidilä</li>
-        <li>22.5. b2b Una @ Cozy Night Inn 6 yrs</li>
-        <li>16.5. Kaiku</li>
-        <li>15.5. Grotesk</li>
-          <li>30.4. Darkroom @ Kuudeslinja</li>
-          <li>25.4. b2b Norri @ Stidilä</li>
-          <li>11.4. Kaiku</li>
-          <li>11.4. Signature dark label night @ WHS</li>
-          <li>3.4. Grotesk</li>
-          <li>21.3. b2b DJ JVS @ Post bar</li>
-          <li>20.3. Grotesk</li>
-          <li>14.3. Pause @ Cosy club</li>
-          <li>7.3. b2b HiToshi @ Bassiani x Kaiku</li>
-          <li>7.3. Private party</li>
-          <li>6.3. Bar Tÿpo</li>
-          <li>14.2. Grotesk</li>
-          <li>14.2. Valentine’s day dance @ Merkaba</li>
-          <li>13.2. Stidilä</li>
-          <li>10.2. Pearl rush @ IDA, idaidaida.net</li>
-          <li>29.1. Mini. @ IDA, idaidaida.net</li>
-          <li>23.1. b2b Jaan (EE) @ RADC / Post bar</li>
-          <li>6.1. Pause / Cosy club</li>
-        </ul>
-      </details>
+        <p class="note">
+          + more gigs &amp; details of events in RA
+        </p>
 
-      <details>
-        <summary>🌀2025</summary>
+      </section>
 
-        <ul>
-          <li>31.12. b2b OKS @ Stidilä</li>
-          <li>31.12. Grotesk</li>
-          <li>15.11. Grotesk</li>
-          <li>7.11. b2b Jaan (EE) @ RADC Kekri / Post bar</li>
-          <li>5.11. Diffractive radio @ IDA, idaidaida.net</li>
-          <li>1.11. Compost / Cosy club</li>
-          <li>24.10. Grotesk</li>
-          <li>4.10. Stidilä, Helsinki</li>
-          <li>19.9. Bar Tÿpo, Helsinki</li>
-          <li>16.8. Swäg: Unordinary series: Up & Under, Pinsiö</li>
-          <li>15.8. RADC @ Post bar</li>
-          <li>9.8. Ääniwalli</li>
-          <li>27.7. Grotesk</li>
-          <li>26.7. Kaiku</li>
-          <li>18.6. Grotesk</li>
-          <li>28.5. RADC: Momentum @ Post bar</li>
-          <li>23.5. Grotesk</li>
-          <li>30.4. HYTKY May Day</li>
-          <li>26.4. Grotesk</li>
-          <li>4.4. Bar Tÿpo</li>
-          <li>29.3. Grotesk</li>
-          <li>22.3. UG, Jyväskylä</li>
-          <li>7.3. b2b Jaan (EE) @ Stidilä</li>
-          <li>25.1. b2b Ojelma @ Post bar</li>
-          <li>17.1. b2b DJ JVS @ Stidilä</li>
-          <li>11.1. b2b Ojelma @ Firefest</li>
-          <li>1.1. b2b DJ JVS @ Post bar NYE</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>🌀2024</summary>
-
-        <ul>
-          <li>20.12. Bar Tÿpo, Helsinki</li>
-          <li>14.12. 10 years of Recover Laboratory, Helsinki</li>
-          <li>7.12. UG, Helsinki</li>
-          <li>5.12. OK Sound Pikkujoulut, Tanner</li>
-          <li>22.11. Incendiary @ Kammari, Kaiku</li>
-          <li>15.11. b2b Ojelma, Stidilä</li>
-          <li>28.9. UG, Helsinki</li>
-          <li>20.9. Insomnia festival kick off party, Tromsø, NO</li>
-          <li>6.9. Kammari, Kaiku, Helsinki</li>
-          <li>30.8. Paavli Kultuurivabrik, Tallinn, EST</li>
-          <li>9.8. Kammari w/ Otilia & Ojelma, Kaiku</li>
-          <li>4.8. Canceled! Elokapina @ Espan lava</li>
-          <li>2.8. KULT</li>
-          <li>27.7. Summer League @ Post bar</li>
-          <li>25.7. Kaiku Residents, Kaiku</li>
-          <li>21.7. VUM, Ääniwalli</li>
-          <li>19.7. b2b Ojelma, Stidilä</li>
-          <li>17.7. RADC @ Post bar</li>
-          <li>13.7. Kaiku, Helsinki</li>
-          <li>12.7. Mitäs mitäs mitäs festival, Urjala</li>
-          <li>29.6. b2b Dj Aleksi, Bassline festival</li>
-          <li>28.6. Club Incendiary @ Ääniwalli</li>
-          <li>15.6. SWÄG 20 years, Tampere</li>
-          <li>14.6. Umbra: Dj Nobu @ Kaiku</li>
-          <li>14.6. Ida Radio @ bar typo</li>
-          <li>8.6. Canceled! Tumulus, Helsinki</li>
-          <li>25.5. UG, Helsinki</li>
-          <li>25.5. Arts + Erika Sirola, Helsinki</li>
-          <li>23.5. b2b Stella, Torjantai @ Kaiku</li>
-          <li>18.5. Open air, Helsinki</li>
-          <li>17.5. Red arctic desert cult @ KULT</li>
-          <li>15.5. Vuoden huiputus @ Greenpeace, Helsinki</li>
-          <li>10.5. Kult</li>
-          <li>4.5. Post bar, Helsinki</li>
-          <li>3.5. b2b DJ JVS, Kaiku, Helsinki</li>
-          <li>27.4. b2b HiToshi, Stidilä Afterhours</li>
-          <li>20.4. Private event, Helsinki</li>
-          <li>13.4. Cultish @ Kult, Helsinki</li>
-          <li>13.4. RADC @ Tanner</li>
-          <li>23.3. Stidilä, Helsinki</li>
-          <li>16.3. Ääniwalli, Helsinki</li>
-          <li>15.3. Post bar, Helsinki</li>
-          <li>1.3. Naastelkaar @ Chinastraat, Ghent, BE</li>
-          <li>10.2. Gomorra, UG, Helsinki</li>
-          <li>20.1. Katve, Tampere</li>
-          <li>12.1. Stidilä, Helsinki</li>
-        </ul>
-      </details>
-
-      <p class="note">
-        + more gigs & details of events in RA
-      </p>
-
-    </section>
+    </main>
 
     <footer>
       Carlina Carpelan
