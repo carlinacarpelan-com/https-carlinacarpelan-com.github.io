@@ -7,10 +7,12 @@
 
   <title>DJ — Carlina Carpelan</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-
     :root {
       --black: #000000;
       --blue: #A6C3CE;
@@ -67,6 +69,8 @@
       height: auto;
     }
 
+    /* MENU */
+
     .menu {
       position: absolute;
       left: 92px;
@@ -93,10 +97,11 @@
       height: 52px;
       object-fit: contain;
       display: block;
-      transition: transform .6s ease;
+      transition: transform 0.6s ease;
     }
 
-    .menu-button:hover img {
+    .menu-button:hover img,
+    .menu-button:focus-visible img {
       transform: rotate(360deg);
     }
 
@@ -110,7 +115,7 @@
       display: none;
       overflow: hidden;
       padding: 8px 0 16px;
-      box-shadow: 0 14px 45px rgba(0,0,0,.3);
+      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
     }
 
     .dropdown a {
@@ -119,21 +124,28 @@
       text-decoration: none;
       padding: 17px 24px;
       font-size: 17px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .dropdown a:last-child {
       border-bottom: none;
     }
 
-    .dropdown a:hover {
+    .dropdown a:hover,
+    .dropdown a:focus-visible {
       background: var(--blue);
       color: var(--black);
     }
 
-    .menu:hover .dropdown {
+    .menu:hover .dropdown,
+    .menu:focus-within .dropdown {
       display: block;
     }
+
+    /* HERO RIGHT */
 
     .hero-right {
       width: 66%;
@@ -149,7 +161,10 @@
       max-width: 100%;
       display: block;
       height: auto;
+      background: transparent;
     }
+
+    /* SECTIONS */
 
     section {
       padding: 70px 40px;
@@ -161,10 +176,10 @@
     }
 
     h2 {
-      font-size: clamp(42px,6vw,82px);
-      line-height: .92;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.92;
       margin: 0 0 42px;
-      letter-spacing: -.05em;
+      letter-spacing: -0.05em;
       font-weight: 400;
     }
 
@@ -172,263 +187,451 @@
       font-size: 22px;
       max-width: 900px;
       margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.82);
       line-height: 1.45;
-      color: rgba(255,255,255,.82);
     }
 
     section:nth-of-type(even) p {
-      color: rgba(0,0,0,.82);
+      color: rgba(0, 0, 0, 0.82);
     }
 
     .bio {
       max-width: 940px;
     }
 
-    .about-buttons{
-      margin-top:40px;
+    /* GIGS BUTTON */
+
+    .about-buttons {
+      margin-top: 40px;
     }
 
-    .page-button{
-      display:inline-block;
-      padding:12px 24px;
-      border:2px solid var(--blue);
-      border-radius:999px;
-      color:var(--blue);
-      text-decoration:none;
-      font-size:20px;
-      transition:.2s;
+    .page-button {
+      display: inline-block;
+      padding: 12px 24px;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 20px;
+      border: 2px solid var(--blue);
+      border-radius: 999px;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .page-button:hover{
-      background:var(--blue);
-      color:var(--black);
+    .page-button:hover,
+    .page-button:focus-visible {
+      background: var(--blue);
+      color: var(--black);
     }
+
+    /* PHOTOS */
 
     .photo-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
     .photo-grid img {
-      width:100%;
-      height:620px;
-      object-fit:cover;
-      display:block;
-      transition:transform .35s ease;
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
     }
 
     .photo-grid img:hover {
-      transform:scale(1.015);
+      transform: scale(1.015);
     }
+
+    /* SOUND / VIDEO */
 
     .soundcloud iframe,
-    .video-grid iframe{
-      width:100%;
-      border:0;
+    .video-grid iframe {
+      width: 100%;
+      border: 0;
     }
 
-    .soundcloud iframe{
-      margin-bottom:28px;
+    .soundcloud iframe {
+      margin-bottom: 28px;
     }
 
-    .video-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
     }
 
-    .video-grid iframe{
-      aspect-ratio:16/9;
+    .video-grid iframe {
+      aspect-ratio: 16 / 9;
     }
 
-    .booking-box{
-      max-width:760px;
+    /* BOOKINGS */
+
+    .booking-box {
+      max-width: 760px;
     }
 
-    .booking-box p{
-      font-size:22px;
-      margin-bottom:16px;
+    .booking-box p {
+      font-size: 22px;
+      margin-bottom: 16px;
     }
 
-    .booking-email{
-      display:inline-block;
-      color:inherit;
-      text-decoration:none;
-      font-size:30px;
-      border-bottom:3px solid currentColor;
-      margin-bottom:40px;
-      transition:opacity .2s ease;
+    .booking-email {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      font-size: 30px;
+      border-bottom: 3px solid currentColor;
+      margin-bottom: 40px;
+      transition: opacity 0.2s ease;
     }
 
-    .booking-email:hover{
-      opacity:.65;
+    .booking-email:hover,
+    .booking-email:focus-visible {
+      opacity: 0.65;
     }
 
-    footer{
-      padding:36px 40px;
-      background:var(--blue);
-      color:var(--black);
-      font-size:18px;
+    footer {
+      padding: 36px 40px;
+      background: var(--blue);
+      color: var(--black);
+      font-size: 18px;
     }
 
-        <section id="about">
+    /* MOBILE */
 
-      <h2>About</h2>
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        min-height: auto;
+      }
 
-      <div class="bio">
+      .hero-left {
+        width: 100%;
+        min-height: 16vh;
+        padding: 22px 22px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        <p>
-          Snappy snares? You got it. Bad-to-the-bone analog techno bliss?
-          Look no further. Naughty tech grooves? They've got you covered.
-        </p>
+      .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
 
-        <p>
-          Carlina Carpelan is a Helsinki-based DJ deeply rooted in Finland’s underground dance music scene,
-          active for years within the local club circuit.
-        </p>
+      .logo {
+        position: static;
+        transform: none;
+        width: 250px;
+        max-width: 70vw;
+      }
 
-        <p>
-          Carlina has built a strong reputation for delivering high-energy sets that thrive on rhythm,
-          drive and raw physicality. Their sound explores the leftmost fields of electronic music:
-          analog-leaning, percussive and groove-focused, with a sharp ear for tension and release.
-        </p>
+      .menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 58px;
+        height: 58px;
+      }
 
-        <p>
-          Carlina’s sets are immersive journeys guided by instinct, flow and a clear connection to the dance floor.
-          Whether playing outdoor festival stages or sweaty late-morning basement hours,
-          they bring an unmistakable intensity and momentum to every slot.
-        </p>
+      .menu-button {
+        width: 58px;
+        height: 58px;
+      }
 
-        <p>
-          In recent years, Carlina has shared booths with international names such as
-          DJ Stingray, Wata Igarashi, Luke Slater and Jane Fitz,
-          while also taking their sound beyond Finland to booths abroad.
-        </p>
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 248px;
+      }
+
+      .dropdown a {
+        font-size: 15px;
+        padding: 14px 18px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 18px 22px;
+        justify-content: center;
+      }
+
+      .dj-title img {
+        width: 110px;
+      }
+
+      section {
+        padding: 56px 22px;
+      }
+
+      .photo-grid,
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid img {
+        height: auto;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      p,
+      .booking-box p {
+        font-size: 20px;
+      }
+
+      .page-button {
+        font-size: 18px;
+        padding: 11px 22px;
+      }
+
+      .booking-email {
+        font-size: 24px;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="hero">
+
+      <div class="hero-left">
+
+        <div class="mobile-brand">
+
+          <nav class="menu" aria-label="Main navigation">
+
+            <button
+              class="menu-button"
+              type="button"
+              aria-label="Open menu"
+            >
+              <img src="spiral.png" alt="">
+            </button>
+
+            <div class="dropdown">
+              <a href="index.html">Home</a>
+              <a href="dj.html">DJ</a>
+              <a href="gigs.html">Gigs</a>
+              <a href="events.html">Events</a>
+              <a href="contact.html">Contact</a>
+            </div>
+
+          </nav>
+
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
+
+        </div>
 
       </div>
 
-    </section>
+      <div class="hero-right">
 
-    <section id="photos">
-
-      <h2>Promo Photos</h2>
-
-      <div class="photo-grid">
-
-        <img src="promo4.jpeg" alt="Promo photo 4">
-        <img src="promo3.jpg" alt="Promo photo 3">
-        <img src="promo1-websafe.jpg" alt="Promo photo 1">
-        <img src="promo2.jpg" alt="Promo photo 2">
-        <img src="promo8-websafe.jpg" alt="Promo photo 8">
-        <img src="promo7.jpg" alt="Promo photo 7">
+        <div class="dj-title">
+          <img src="dj_transparent.png" alt="DJ">
+        </div>
 
       </div>
 
-    </section>
+    </header>
 
-    <section id="soundcloud">
+    <main>
 
-      <h2>SoundCloud</h2>
+      <section id="about">
 
-      <div class="soundcloud">
+        <h2>About</h2>
 
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan/hosselimix&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
-        </iframe>
+        <div class="bio">
 
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/elektorni/elektorniguestmix014-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
-        </iframe>
+          <p>
+            Snappy snares? You got it. Bad-to-the-bone analog techno bliss?
+            Look no further. Naughty tech grooves? They've got you covered.
+          </p>
 
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/naastelkaar-event/naastelkaar-mix-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
-        </iframe>
+          <p>
+            Carlina Carpelan is a Helsinki-based DJ deeply rooted in Finland’s
+            underground dance music scene, active for years within the local
+            club circuit.
+          </p>
 
-        <iframe
-          height="166"
-          scrolling="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nollanolla-collective/puffcast-031-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
-        </iframe>
+          <p>
+            Carlina has built a strong reputation for delivering high-energy
+            sets that thrive on rhythm, drive and raw physicality. Their sound
+            explores the leftmost fields of electronic music: analog-leaning,
+            percussive and groove-focused, with a sharp ear for tension and
+            release.
+          </p>
 
-      </div>
+          <p>
+            Carlina’s sets are immersive journeys guided by instinct, flow and
+            a clear connection to the dance floor. Whether playing outdoor
+            festival stages or sweaty late-morning basement hours, they bring
+            an unmistakable intensity and momentum to every slot.
+          </p>
 
-    </section>
+          <p>
+            In recent years, Carlina has shared booths with international names
+            such as DJ Stingray, Wata Igarashi, Luke Slater and Jane Fitz,
+            while also taking their sound beyond Finland to booths abroad.
+          </p>
 
-    <section id="videos">
+          <div class="about-buttons">
+            <a class="page-button" href="gigs.html">
+              Gigs
+            </a>
+          </div>
 
-      <h2>Videos</h2>
+        </div>
 
-      <div class="video-grid">
+      </section>
 
-        <iframe
-          src="https://www.youtube.com/embed/wS99neblvKQ"
-          title="Carlina Carpelan"
-          allowfullscreen>
-        </iframe>
+      <section id="photos">
 
-        <iframe
-          src="https://www.youtube.com/embed/i5eY34kWcso"
-          title="Diffractive Radio"
-          allowfullscreen>
-        </iframe>
+        <h2>Promo Photos</h2>
 
-        <iframe
-          src="https://www.youtube.com/embed/GdHF_Qa-MdU"
-          title="mini."
-          allowfullscreen>
-        </iframe>
+        <div class="photo-grid">
 
-        <iframe
-          src="https://www.youtube.com/embed/BkqUtkkKx5c"
-          title="Pearl Rush"
-          allowfullscreen>
-        </iframe>
+          <img src="promo4.jpeg" alt="Promo photo 4">
+          <img src="promo3.jpg" alt="Promo photo 3">
+          <img src="promo1-websafe.jpg" alt="Promo photo 1">
+          <img src="promo2.jpg" alt="Promo photo 2">
+          <img src="promo8-websafe.jpg" alt="Promo photo 8">
+          <img src="promo7.jpg" alt="Promo photo 7">
 
-      </div>
+        </div>
 
-    </section>
+      </section>
 
-    <section id="bookings">
+      <section id="soundcloud">
 
-      <h2>Bookings</h2>
+        <h2>SoundCloud</h2>
 
-      <div class="booking-box">
+        <div class="soundcloud">
 
-        <p>
-          Direct contact:
-        </p>
+          <iframe
+            height="166"
+            scrolling="no"
+            allow="autoplay"
+            title="Carlina Carpelan Hosselimix"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carlina-carpelan/hosselimix&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+          </iframe>
 
-        <a
-          class="booking-email"
-          href="mailto:contact@carlinacarpelan.com">
-          contact@carlinacarpelan.com
-        </a>
+          <iframe
+            height="166"
+            scrolling="no"
+            allow="autoplay"
+            title="Elektorni Guest Mix 014"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/elektorni/elektorniguestmix014-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+          </iframe>
 
-        <p>
-          Agency:
-        </p>
+          <iframe
+            height="166"
+            scrolling="no"
+            allow="autoplay"
+            title="Naastelkaar Mix"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/naastelkaar-event/naastelkaar-mix-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+          </iframe>
 
-        <a
-          class="booking-email"
-          href="https://signaturedark.fi/agency/"
-          target="_blank">
-          Signature Dark
-        </a>
+          <iframe
+            height="166"
+            scrolling="no"
+            allow="autoplay"
+            title="Puffcast 031"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nollanolla-collective/puffcast-031-carlina-carpelan&color=%2300a6ff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=false">
+          </iframe>
 
-      </div>
+        </div>
 
-    </section>
+      </section>
+
+      <section id="videos">
+
+        <h2>Videos</h2>
+
+        <div class="video-grid">
+
+          <iframe
+            src="https://www.youtube.com/embed/wS99neblvKQ"
+            title="Carlina Carpelan"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/i5eY34kWcso"
+            title="Diffractive Radio"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/GdHF_Qa-MdU"
+            title="mini."
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/BkqUtkkKx5c"
+            title="Pearl Rush"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+      </section>
+
+      <section id="bookings">
+
+        <h2>Bookings</h2>
+
+        <div class="booking-box">
+
+          <p>
+            Direct contact:
+          </p>
+
+          <a
+            class="booking-email"
+            href="mailto:contact@carlinacarpelan.com">
+            contact@carlinacarpelan.com
+          </a>
+
+          <p>
+            Agency:
+          </p>
+
+          <a
+            class="booking-email"
+            href="https://signaturedark.fi/agency/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Signature Dark
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
 
     <footer>
       Carlina Carpelan
