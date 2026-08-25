@@ -190,6 +190,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 32px;
+      align-items: start;
     }
 
     .event-card {
@@ -209,24 +210,29 @@
       opacity: 0.92;
     }
 
-    /*
-      Kuvia ei enää pakoteta neliöiksi.
-      Näin koko alkuperäinen kuva näkyy.
-    */
+    /* EVENT IMAGES */
 
     .event-image {
       width: 100%;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
       background: var(--black);
     }
 
     .event-image img {
-      width: 100%;
-      height: auto;
       display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 650px;
       object-fit: contain;
+      margin: 0 auto;
     }
 
-    /* TAPAHTUMAN TIEDOT */
+    /* EVENT INFO */
 
     .event-info {
       padding: 24px;
@@ -334,6 +340,15 @@
         font-size: 42px;
       }
 
+      .event-image {
+        min-height: 150px;
+      }
+
+      .event-image img {
+        max-width: 100%;
+        max-height: 520px;
+      }
+
       .event-info {
         padding: 18px;
       }
@@ -416,6 +431,7 @@
               <img
                 src="hoivainfo1.jpg"
                 alt="Hoiva Fest"
+                loading="lazy"
               >
             </div>
 
@@ -451,6 +467,7 @@
               <img
                 src="kaantopoyta.png"
                 alt="Kääntöpöytä Open Air"
+                loading="lazy"
               >
             </div>
 
@@ -471,6 +488,7 @@
               <img
                 src="virevare.jpeg"
                 alt="vire•väre"
+                loading="lazy"
               >
             </div>
 
@@ -491,6 +509,7 @@
               <img
                 src="helsinkiday.png"
                 alt="Urban! Folks! United!"
+                loading="lazy"
               >
             </div>
 
@@ -511,6 +530,7 @@
               <img
                 src="pause3flyer.jpg"
                 alt="Pause"
+                loading="lazy"
               >
             </div>
 
@@ -531,6 +551,7 @@
               <img
                 src="vinylworkshop.jpg"
                 alt="Vinyl Workshop"
+                loading="lazy"
               >
             </div>
 
@@ -551,6 +572,7 @@
               <img
                 src="recordsale.jpg"
                 alt="Record Sale"
+                loading="lazy"
               >
             </div>
 
@@ -571,6 +593,7 @@
               <img
                 src="umbra.jpg"
                 alt="Umbra"
+                loading="lazy"
               >
             </div>
 
