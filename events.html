@@ -167,7 +167,7 @@
     /* EVENTS */
 
     .events-section {
-      padding: 42px 40px 80px;
+      padding: 50px 40px 90px;
     }
 
     .upcoming {
@@ -181,7 +181,9 @@
     }
 
     .section-title {
-      margin: 0 0 42px;
+      width: 700px;
+      max-width: 100%;
+      margin: 0 auto 42px;
       font-size: clamp(42px, 6vw, 82px);
       font-weight: 400;
       line-height: 0.9;
@@ -189,17 +191,16 @@
     }
 
     /*
-      ONE COLUMN:
-      Events are displayed one below another.
+      SINGLE CENTERED COLUMN
     */
 
     .event-grid {
       width: 100%;
-      max-width: 1100px;
+      max-width: 700px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
     }
 
     .event-card {
@@ -230,9 +231,8 @@
     }
 
     /*
+      No cropping.
       Images keep their original aspect ratio.
-      Nothing is cropped.
-      No fixed height.
     */
 
     .event-image img {
@@ -246,12 +246,12 @@
     /* EVENT INFO */
 
     .event-info {
-      padding: 24px 28px;
+      padding: 20px 24px;
     }
 
     .event-info p {
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.45;
       opacity: 0.82;
     }
@@ -342,17 +342,19 @@
       }
 
       .events-section {
-        padding: 28px 22px 70px;
+        padding: 32px 22px 70px;
       }
 
       .section-title {
+        width: 100%;
+        margin-bottom: 34px;
         font-size: 42px;
       }
 
       .event-grid {
         width: 100%;
-        max-width: none;
-        gap: 34px;
+        max-width: 600px;
+        gap: 36px;
       }
 
       .event-image img {
@@ -361,16 +363,29 @@
       }
 
       .event-info {
-        padding: 18px;
+        padding: 17px 18px;
       }
 
       .event-info p {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       footer {
         padding: 28px 24px;
       }
+    }
+
+    @media (max-width: 600px) {
+
+      .events-section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .event-grid {
+        max-width: 100%;
+      }
+
     }
   </style>
 </head>
