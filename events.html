@@ -24,6 +24,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--black);
@@ -37,7 +41,9 @@
       min-height: 100vh;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
       width: 100%;
@@ -65,12 +71,14 @@
     }
 
     .logo img {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
     }
 
-    /* MENU */
+    /* =========================
+       MENU
+       ========================= */
 
     .menu {
       position: absolute;
@@ -94,9 +102,9 @@
     }
 
     .menu-button img {
+      display: block;
       width: 52px;
       height: 52px;
-      display: block;
       object-fit: contain;
       transition: transform 0.6s ease;
     }
@@ -146,7 +154,9 @@
       display: block;
     }
 
-    /* HERO RIGHT */
+    /* =========================
+       HERO RIGHT
+       ========================= */
 
     .hero-right {
       width: 66%;
@@ -158,16 +168,20 @@
     }
 
     .events-title img {
+      display: block;
       width: 240px;
       max-width: 100%;
       height: auto;
-      display: block;
     }
 
-    /* EVENTS */
+    /* =========================
+       EVENT SECTIONS
+       ========================= */
 
     .events-section {
-      padding: 50px 40px 90px;
+      position: relative;
+      padding: 58px 5vw 110px;
+      overflow: hidden;
     }
 
     .upcoming {
@@ -181,45 +195,78 @@
     }
 
     .section-title {
-      width: 350px;
-      max-width: 100%;
-      margin: 0 0 42px 0;
+      position: relative;
+      z-index: 3;
+      margin: 0 0 58px;
       font-size: clamp(42px, 6vw, 82px);
       font-weight: 400;
       line-height: 0.9;
       letter-spacing: -0.05em;
     }
 
-    /* SINGLE COLUMN — LEFT ALIGNED */
+    /* =========================
+       UPCOMING
+       ========================= */
 
-    .event-grid {
-      width: 350px;
-      max-width: 100%;
-      margin: 0;
+    .upcoming-wall {
+      width: 100%;
+      min-height: 500px;
       display: flex;
-      flex-direction: column;
-      gap: 42px;
+      align-items: flex-start;
     }
 
-    .event-card {
+    .upcoming-wall .event-card {
+      width: min(360px, 100%);
+      margin-left: 5vw;
+      transform: rotate(-1.2deg);
+    }
+
+    /* =========================
+       POSTER WALL
+       ========================= */
+
+    .poster-wall {
       width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: clamp(40px, 6vw, 100px);
+      row-gap: 90px;
+      align-items: start;
+      padding: 15px 15px 90px;
+    }
+
+    /*
+      Each card can have a different width,
+      vertical position and slight rotation.
+
+      Images are NOT cropped.
+    */
+
+    .event-card {
+      position: relative;
       display: block;
-      overflow: hidden;
       color: inherit;
       text-decoration: none;
-      border: 2px solid currentColor;
       transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+        transform 0.3s ease,
+        filter 0.3s ease;
+      transform-origin: center center;
     }
 
     .event-card:hover,
     .event-card:focus-visible {
-      transform: translateY(-4px);
-      opacity: 0.92;
+      z-index: 10;
+      filter: brightness(1.03);
     }
 
-    /* EVENT IMAGES */
+    .poster {
+      overflow: hidden;
+      background: var(--cream);
+      border: 2px solid currentColor;
+      box-shadow: 9px 11px 0 rgba(0, 0, 0, 0.08);
+    }
 
     .event-image {
       width: 100%;
@@ -236,28 +283,149 @@
       padding: 0;
     }
 
-    /* EVENT INFO */
-
     .event-info {
-      padding: 15px 16px;
+      padding: 14px 16px 16px;
+      background: var(--cream);
+      color: var(--black);
     }
 
     .event-info p {
       margin: 0;
       font-size: 15px;
-      line-height: 1.45;
-      opacity: 0.82;
+      line-height: 1.35;
     }
 
     .event-title {
       font-weight: 400;
     }
 
-    .past .event-info p {
-      color: rgba(0, 0, 0, 0.82);
+    /* =========================
+       INDIVIDUAL POSTER PLACEMENT
+       ========================= */
+
+    /* Kääntöpöytä — left column */
+
+    .card-kaantopoyta {
+      width: 88%;
+      justify-self: start;
+      margin-top: 35px;
+      transform: rotate(-2deg);
     }
 
-    /* FOOTER */
+    .card-kaantopoyta:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* vire•väre — middle column */
+
+    .card-virevare {
+      width: 78%;
+      justify-self: center;
+      margin-top: -10px;
+      transform: rotate(1.2deg);
+    }
+
+    .card-virevare:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* Urban — right column */
+
+    .card-urban {
+      width: 94%;
+      justify-self: end;
+      margin-top: 65px;
+      transform: rotate(2deg);
+    }
+
+    .card-urban:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* Pause — left column */
+
+    .card-pause {
+      width: 73%;
+      justify-self: center;
+      margin-top: -5px;
+      transform: rotate(1.5deg);
+    }
+
+    .card-pause:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* Vinyl workshop — middle */
+
+    .card-vinyl {
+      width: 91%;
+      justify-self: end;
+      margin-top: 70px;
+      transform: rotate(-1.5deg);
+    }
+
+    .card-vinyl:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* Record sale — right */
+
+    .card-recordsale {
+      width: 76%;
+      justify-self: start;
+      margin-top: 5px;
+      transform: rotate(1deg);
+    }
+
+    .card-recordsale:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* Umbra — third row, slightly offset */
+
+    .card-umbra {
+      width: 84%;
+      justify-self: center;
+      margin-top: -15px;
+      transform: rotate(-1deg);
+    }
+
+    .card-umbra:hover {
+      transform: rotate(0deg) scale(1.035);
+    }
+
+    /* =========================
+       SMALL BACKGROUND DETAILS
+       ========================= */
+
+    .past::before,
+    .past::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.35;
+      background: var(--blue);
+    }
+
+    .past::before {
+      width: 95px;
+      height: 65px;
+      top: 210px;
+      left: 42%;
+      transform: rotate(-4deg);
+    }
+
+    .past::after {
+      width: 65px;
+      height: 95px;
+      top: 620px;
+      right: 7%;
+      transform: rotate(5deg);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
 
     footer {
       padding: 36px 40px;
@@ -266,7 +434,36 @@
       font-size: 18px;
     }
 
-    /* MOBILE */
+    /* =========================
+       TABLET
+       ========================= */
+
+    @media (max-width: 1050px) {
+
+      .poster-wall {
+        column-gap: 35px;
+        row-gap: 70px;
+      }
+
+      .event-info p {
+        font-size: 14px;
+      }
+
+      .card-kaantopoyta,
+      .card-virevare,
+      .card-urban,
+      .card-pause,
+      .card-vinyl,
+      .card-recordsale,
+      .card-umbra {
+        width: 90%;
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 900px) {
 
@@ -335,49 +532,111 @@
       }
 
       .events-section {
-        padding: 32px 22px 70px;
+        padding: 36px 22px 75px;
       }
 
       .section-title {
-        width: 100%;
-        margin: 0 0 34px 0;
+        margin-bottom: 40px;
         font-size: 42px;
       }
 
-      .event-grid {
-        width: 350px;
-        max-width: 100%;
-        margin: 0;
-        gap: 34px;
+      .upcoming-wall {
+        min-height: auto;
       }
 
-      .event-image img {
-        width: 100%;
-        height: auto;
+      .upcoming-wall .event-card {
+        width: min(330px, 90%);
+        margin-left: 0;
       }
 
-      .event-info {
-        padding: 14px 15px;
+      /*
+        Two columns on tablet/mobile landscape
+      */
+
+      .poster-wall {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 30px;
+        row-gap: 55px;
+        padding: 10px 5px 50px;
       }
 
-      .event-info p {
-        font-size: 15px;
+      .card-kaantopoyta,
+      .card-virevare,
+      .card-urban,
+      .card-pause,
+      .card-vinyl,
+      .card-recordsale,
+      .card-umbra {
+        width: 88%;
+        margin-top: 0;
       }
 
-      footer {
-        padding: 28px 24px;
+      .card-virevare,
+      .card-pause,
+      .card-recordsale {
+        margin-top: 45px;
       }
+
     }
 
-    @media (max-width: 420px) {
+    /* =========================
+       SMALL MOBILE
+       ========================= */
+
+    @media (max-width: 600px) {
 
       .events-section {
         padding-left: 18px;
         padding-right: 18px;
       }
 
-      .event-grid {
-        width: 100%;
+      /*
+        One column on small phones,
+        but keep the playful poster-wall offsets.
+      */
+
+      .poster-wall {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .card-kaantopoyta,
+      .card-virevare,
+      .card-urban,
+      .card-pause,
+      .card-vinyl,
+      .card-recordsale,
+      .card-umbra {
+        width: min(330px, 88vw);
+        margin-top: 0;
+      }
+
+      .card-kaantopoyta,
+      .card-pause,
+      .card-recordsale {
+        justify-self: start;
+      }
+
+      .card-virevare,
+      .card-urban,
+      .card-vinyl,
+      .card-umbra {
+        justify-self: end;
+      }
+
+      .event-info {
+        padding: 12px 14px 14px;
+      }
+
+      .event-info p {
+        font-size: 14px;
+      }
+
+      .past::before,
+      .past::after {
+        display: none;
       }
 
     }
@@ -388,7 +647,9 @@
 
   <div class="container">
 
-    <!-- HERO -->
+    <!-- =====================
+         HERO
+         ===================== -->
 
     <header class="hero">
 
@@ -442,7 +703,9 @@
 
     <main>
 
-      <!-- UPCOMING EVENTS -->
+      <!-- =====================
+           UPCOMING EVENTS
+           ===================== -->
 
       <section class="events-section upcoming">
 
@@ -451,29 +714,31 @@
           Events
         </h2>
 
-        <div class="event-grid">
-
-          <!-- HOIVA FEST -->
+        <div class="upcoming-wall">
 
           <a
             class="event-card"
             href="hoivafest.html"
           >
 
-            <div class="event-image">
-              <img
-                src="hoivainfo1.jpg"
-                alt="Hoiva Fest"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Hoiva Fest
-                </span>
-                · 10.–11.10.2026 · Lapinlahti, Helsinki
-              </p>
+              <div class="event-image">
+                <img
+                  src="hoivainfo1.jpg"
+                  alt="Hoiva Fest"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Hoiva Fest
+                  </span>
+                  · 10.–11.10.2026 · Lapinlahti, Helsinki
+                </p>
+              </div>
+
             </div>
 
           </a>
@@ -482,7 +747,9 @@
 
       </section>
 
-      <!-- PAST EVENTS -->
+      <!-- =====================
+           PAST EVENTS
+           ===================== -->
 
       <section class="events-section past">
 
@@ -491,179 +758,213 @@
           Events
         </h2>
 
-        <div class="event-grid">
+        <div class="poster-wall">
 
-          <!-- KÄÄNTÖPÖYTÄ OPEN AIR -->
+          <!-- KÄÄNTÖPÖYTÄ -->
 
           <a
-            class="event-card"
+            class="event-card card-kaantopoyta"
             href="kaantopoytaopenair.html"
           >
 
-            <div class="event-image">
-              <img
-                src="kaantopoyta.png"
-                alt="Kääntöpöytä Open Air"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Kääntöpöytä Open Air
-                </span>
-                · 27 June 2026 · Helsinki
-              </p>
+              <div class="event-image">
+                <img
+                  src="kaantopoyta.png"
+                  alt="Kääntöpöytä Open Air"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Kääntöpöytä Open Air
+                  </span>
+                  · 27 June 2026 · Helsinki
+                </p>
+              </div>
+
             </div>
 
           </a>
+
 
           <!-- VIRE VÄRE -->
 
           <a
-            class="event-card"
+            class="event-card card-virevare"
             href="virevare.html"
           >
 
-            <div class="event-image">
-              <img
-                src="virevare.jpeg"
-                alt="vire•väre"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  vire•väre
-                </span>
-                · Omenapuutalo / Lapinlahti, Helsinki
-              </p>
+              <div class="event-image">
+                <img
+                  src="virevare.jpeg"
+                  alt="vire•väre"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    vire•väre
+                  </span>
+                  · Omenapuutalo / Lapinlahti, Helsinki
+                </p>
+              </div>
+
             </div>
 
           </a>
+
 
           <!-- URBAN! FOLKS! UNITED! -->
 
           <a
-            class="event-card"
+            class="event-card card-urban"
             href="urbanfolksunite.html"
           >
 
-            <div class="event-image">
-              <img
-                src="UFU_pics8.png"
-                alt="Urban! Folks! United!"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Urban! Folks! United!
-                </span>
-                · Kääntöpöytä / Helsinki Day 2026
-              </p>
+              <div class="event-image">
+                <img
+                  src="UFU_pics8.png"
+                  alt="Urban! Folks! United!"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Urban! Folks! United!
+                  </span>
+                  · Kääntöpöytä / Helsinki Day 2026
+                </p>
+              </div>
+
             </div>
 
           </a>
+
 
           <!-- PAUSE -->
 
           <a
-            class="event-card"
+            class="event-card card-pause"
             href="pause.html"
           >
 
-            <div class="event-image">
-              <img
-                src="pause3flyer.jpg"
-                alt="Pause"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Pause
-                </span>
-                · Cosy Club / Helsinki
-              </p>
+              <div class="event-image">
+                <img
+                  src="pause3flyer.jpg"
+                  alt="Pause"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Pause
+                  </span>
+                  · Cosy Club / Helsinki
+                </p>
+              </div>
+
             </div>
 
           </a>
+
 
           <!-- VINYL WORKSHOP -->
 
           <a
-            class="event-card"
+            class="event-card card-vinyl"
             href="hytkyrecordworkshop.html"
           >
 
-            <div class="event-image">
-              <img
-                src="vinylworkshop.jpg"
-                alt="Vinyl Workshop"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Vinyl Workshop
-                </span>
-                · HYTKY HQ / Helsinki
-              </p>
+              <div class="event-image">
+                <img
+                  src="vinylworkshop.jpg"
+                  alt="Vinyl Workshop"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Vinyl Workshop
+                  </span>
+                  · HYTKY HQ / Helsinki
+                </p>
+              </div>
+
             </div>
 
           </a>
+
 
           <!-- RECORD SALE -->
 
           <a
-            class="event-card"
+            class="event-card card-recordsale"
             href="recordsale.html"
           >
 
-            <div class="event-image">
-              <img
-                src="recordsale.jpg"
-                alt="Record Sale"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Record Sale
-                </span>
-                · Record Sale
-              </p>
+              <div class="event-image">
+                <img
+                  src="recordsale.jpg"
+                  alt="Record Sale"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Record Sale
+                  </span>
+                  · Record Sale
+                </p>
+              </div>
+
             </div>
 
           </a>
 
+
           <!-- UMBRA -->
 
           <a
-            class="event-card"
+            class="event-card card-umbra"
             href="umbra.html"
           >
 
-            <div class="event-image">
-              <img
-                src="umbra.jpg"
-                alt="Umbra"
-              >
-            </div>
+            <div class="poster">
 
-            <div class="event-info">
-              <p>
-                <span class="event-title">
-                  Umbra
-                </span>
-                · Kaiku Residency 2026
-              </p>
+              <div class="event-image">
+                <img
+                  src="umbra.jpg"
+                  alt="Umbra"
+                >
+              </div>
+
+              <div class="event-info">
+                <p>
+                  <span class="event-title">
+                    Umbra
+                  </span>
+                  · Kaiku Residency 2026
+                </p>
+              </div>
+
             </div>
 
           </a>
