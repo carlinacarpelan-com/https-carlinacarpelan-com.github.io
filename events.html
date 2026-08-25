@@ -2,108 +2,640 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Events – Carlina Carpelan</title>
+  <title>Events — Carlina Carpelan</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+    rel="stylesheet"
+  >
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #111111;
-        }
+  <style>
+    :root {
+      --black: #000000;
+      --blue: #A6C3CE;
+      --cream: #F3EFE6;
+      --white: #ffffff;
+    }
 
-        header {
-            padding: 30px;
-            text-align: center;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        nav {
-            margin-top: 20px;
-        }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Alata", sans-serif;
+      overflow-x: hidden;
+    }
 
-        nav a {
-            color: #111111;
-            text-decoration: none;
-            margin: 0 15px;
-        }
+    .container {
+      width: 100%;
+      min-height: 100vh;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    /* HERO */
 
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    .hero {
+      width: 100%;
+      min-height: 38vh;
+      display: flex;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .hero-left {
+      position: relative;
+      width: 34%;
+      min-height: 38vh;
+      overflow: visible;
+      background: var(--blue);
+    }
 
-        /* Esittelyteksti */
-        .intro {
-            font-size: 10px;
-            line-height: 1.5;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            text-align: center;
-        }
+    .logo {
+      position: absolute;
+      top: 42%;
+      left: 92px;
+      z-index: 2;
+      width: 390px;
+      max-width: calc(100% - 120px);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
 
-        /* Hoiva-kuva */
-        .event-image {
-            display: block;
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin: 0 auto;
-        }
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 12px;
-        }
-    </style>
+    /* MENU */
+
+    .menu {
+      position: absolute;
+      top: calc(42% + 4px);
+      left: 92px;
+      z-index: 9999;
+      width: 320px;
+      height: 220px;
+    }
+
+    .menu-button {
+      width: 62px;
+      height: 62px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-button img {
+      width: 52px;
+      height: 52px;
+      display: block;
+      object-fit: contain;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-button:hover img,
+    .menu-button:focus-visible img {
+      transform: rotate(360deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 300px;
+      padding: 8px 0 16px;
+      display: none;
+      overflow: hidden;
+      background: var(--black);
+      border-radius: 22px;
+      box-shadow: 0 14px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 17px 24px;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 17px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover,
+    .dropdown a:focus-visible {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .menu:hover .dropdown,
+    .menu:focus-within .dropdown {
+      display: block;
+    }
+
+    .hero-right {
+      width: 66%;
+      padding: 30px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: var(--cream);
+    }
+
+    .events-title img {
+      width: 240px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* INTRODUCTION */
+
+    .events-intro {
+      padding: 70px 40px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .events-intro p {
+      max-width: 980px;
+      margin: 0;
+      font-size: 10px;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    /* EVENTS */
+
+    .events-section {
+      padding: 42px 40px 80px;
+    }
+
+    .upcoming {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .past {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .section-title {
+      margin: 0 0 42px;
+      font-size: clamp(42px, 6vw, 82px);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .event-card {
+      display: block;
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      border: 2px solid currentColor;
+      transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+    }
+
+    .event-card:hover,
+    .event-card:focus-visible {
+      transform: translateY(-4px);
+      opacity: 0.92;
+    }
+
+    .event-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .event-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .event-name {
+      position: absolute;
+      inset: 0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.28);
+      color: var(--white);
+      text-align: center;
+      font-size: clamp(28px, 3vw, 52px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      backdrop-filter: blur(2px);
+    }
+
+    .event-info {
+      padding: 24px;
+    }
+
+    .event-info p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.45;
+      opacity: 0.82;
+    }
+
+    .past .event-info p {
+      color: rgba(0, 0, 0, 0.82);
+    }
+
+    footer {
+      padding: 36px 40px;
+      background: var(--blue);
+      color: var(--black);
+      font-size: 18px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .hero-left {
+        width: 100%;
+        min-height: 16vh;
+        padding: 22px 22px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        position: static;
+        width: 250px;
+        max-width: 70vw;
+        transform: none;
+      }
+
+      .menu {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu-button img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .dropdown {
+        width: 248px;
+      }
+
+      .dropdown a {
+        padding: 14px 18px;
+        font-size: 15px;
+      }
+
+      .hero-right {
+        width: 100%;
+        padding: 18px 22px;
+        justify-content: center;
+      }
+
+      .events-title img {
+        width: 170px;
+      }
+
+      .events-intro {
+        padding: 52px 22px;
+      }
+
+      .events-intro p {
+        font-size: 10px;
+      }
+
+      .events-section {
+        padding: 28px 22px 70px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .event-name {
+        font-size: 34px;
+      }
+
+      footer {
+        padding: 28px 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="gigs.html">Gigs</a>
-            <a href="events.html">Events</a>
-        </nav>
+  <div class="container">
+
+    <header class="hero">
+
+      <div class="hero-left">
+
+        <div class="mobile-brand">
+
+          <nav class="menu" aria-label="Main navigation">
+
+            <button
+              class="menu-button"
+              type="button"
+              aria-label="Open menu"
+            >
+              <img src="spiral.png" alt="">
+            </button>
+
+            <div class="dropdown">
+              <a href="index.html">Home</a>
+              <a href="dj.html">DJ</a>
+              <a href="gigs.html">Gigs</a>
+              <a href="events.html">Events</a>
+              <a href="contact.html">Contact</a>
+            </div>
+
+          </nav>
+
+          <div class="logo">
+            <img src="handwritten.png" alt="Carlina Carpelan">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-right">
+
+        <div class="events-title">
+          <img src="events_transparent.png" alt="Events">
+        </div>
+
+      </div>
+
     </header>
 
     <main>
 
-        <h1>Events</h1>
+      <section class="events-intro">
 
-        <p class="intro">
-            I am an event producer, studied cultural production at Metropolia University of Applied Sciences and have produced over a hundred events through both professional and voluntary work. Below are some of my most recent projects.
+        <p>
+          I am an event producer, studied cultural production at Metropolia University of Applied Sciences and have produced over a hundred events
+          through both professional and voluntary work. Below are some of my
+          most recent projects.
         </p>
 
-        <img
-            src="hoivainfo1.jpg"
-            alt="Hoiva event information"
-            class="event-image"
-        >
+      </section>
+
+      <section class="events-section upcoming">
+
+        <h2 class="section-title">
+          Upcoming<br>
+          Events
+        </h2>
+
+        <div class="event-grid">
+
+          <a class="event-card" href="hoivafest.html">
+
+            <div class="event-image">
+
+              <img src="hoivainfo1.jpg" alt="Hoiva Fest">
+
+              <div class="event-name">
+                Hoiva Fest
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>10.–11.10.2026 · Lapinlahti, Helsinki</p>
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+      <section class="events-section past">
+
+        <h2 class="section-title">
+          Past<br>
+          Events
+        </h2>
+
+        <div class="event-grid">
+
+          <a class="event-card" href="kaantopoytaopenair.html">
+
+            <div class="event-image">
+
+              <img
+                src="kaantopoyta.png"
+                alt="Kääntöpöytä Open Air"
+              >
+
+              <div class="event-name">
+                Kääntöpöytä Open Air
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>27 June 2026 · Helsinki</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="virevare.html">
+
+            <div class="event-image">
+
+              <img
+                src="virevare.jpeg"
+                alt="vire•väre"
+              >
+
+              <div class="event-name">
+                vire•väre
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>Omenapuutalo / Lapinlahti, Helsinki</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="urbanfolksunited.html">
+
+            <div class="event-image">
+
+              <img
+                src="helsinkiday.png"
+                alt="Urban! Folks! United!"
+              >
+
+              <div class="event-name">
+                Urban!<br>
+                Folks!<br>
+                United!
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>Kääntöpöytä / Helsinki Day 2026</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="pause.html">
+
+            <div class="event-image">
+
+              <img
+                src="pause3flyer.jpg"
+                alt="Pause"
+              >
+
+              <div class="event-name">
+                Pause
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>Cosy Club / Helsinki</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="recordworkshop.html">
+
+            <div class="event-image">
+
+              <img
+                src="vinylworkshop.jpg"
+                alt="Vinyl Workshop"
+              >
+
+              <div class="event-name">
+                Vinyl Workshop
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>HYTKY HQ / Helsinki</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="vinylsale.html">
+
+            <div class="event-image">
+
+              <img
+                src="recordsale.jpg"
+                alt="Record Sale"
+              >
+
+              <div class="event-name">
+                Record Sale
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>Record Sale</p>
+            </div>
+
+          </a>
+
+          <a class="event-card" href="umbra.html">
+
+            <div class="event-image">
+
+              <img
+                src="umbra.jpg"
+                alt="Umbra"
+              >
+
+              <div class="event-name">
+                Umbra
+              </div>
+
+            </div>
+
+            <div class="event-info">
+              <p>Kaiku Residency 2026</p>
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
 
     </main>
 
     <footer>
-        &copy; Carlina Carpelan
+      Carlina Carpelan
     </footer>
+
+  </div>
 
 </body>
 
