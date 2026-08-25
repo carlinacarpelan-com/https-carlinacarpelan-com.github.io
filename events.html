@@ -216,6 +216,7 @@
 
     .event-image {
       width: 100%;
+      height: 620px;
       margin: 0;
       padding: 0;
       overflow: hidden;
@@ -225,7 +226,9 @@
     .event-image img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       margin: 0;
       padding: 0;
     }
@@ -334,15 +337,22 @@
 
       .event-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .section-title {
         font-size: 42px;
       }
 
+      .event-image {
+        height: 520px;
+      }
+
       .event-image img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
 
       .event-info {
@@ -356,6 +366,14 @@
       footer {
         padding: 28px 24px;
       }
+    }
+
+    @media (max-width: 600px) {
+
+      .event-image {
+        height: 430px;
+      }
+
     }
   </style>
 </head>
@@ -391,7 +409,10 @@
           </nav>
 
           <div class="logo">
-            <img src="handwritten.png" alt="Carlina Carpelan">
+            <img
+              src="handwritten.png"
+              alt="Carlina Carpelan"
+            >
           </div>
 
         </div>
@@ -401,7 +422,10 @@
       <div class="hero-right">
 
         <div class="events-title">
-          <img src="events_transparent.png" alt="Events">
+          <img
+            src="events_transparent.png"
+            alt="Events"
+          >
         </div>
 
       </div>
@@ -423,7 +447,10 @@
 
           <!-- HOIVA FEST -->
 
-          <a class="event-card" href="hoivafest.html">
+          <a
+            class="event-card"
+            href="hoivafest.html"
+          >
 
             <div class="event-image">
               <img
@@ -434,7 +461,9 @@
 
             <div class="event-info">
               <p>
-                <span class="event-title">Hoiva Fest</span>
+                <span class="event-title">
+                  Hoiva Fest
+                </span>
                 · 10.–11.10.2026 · Lapinlahti, Helsinki
               </p>
             </div>
@@ -458,7 +487,10 @@
 
           <!-- KÄÄNTÖPÖYTÄ OPEN AIR -->
 
-          <a class="event-card" href="kaantopoytaopenair.html">
+          <a
+            class="event-card"
+            href="kaantopoytaopenair.html"
+          >
 
             <div class="event-image">
               <img
@@ -480,7 +512,10 @@
 
           <!-- VIRE VÄRE -->
 
-          <a class="event-card" href="virevare.html">
+          <a
+            class="event-card"
+            href="virevare.html"
+          >
 
             <div class="event-image">
               <img
@@ -502,7 +537,10 @@
 
           <!-- URBAN! FOLKS! UNITED! -->
 
-          <a class="event-card" href="urbanfolksunite.html">
+          <a
+            class="event-card"
+            href="urbanfolksunite.html"
+          >
 
             <div class="event-image">
               <img
@@ -524,7 +562,10 @@
 
           <!-- PAUSE -->
 
-          <a class="event-card" href="pause.html">
+          <a
+            class="event-card"
+            href="pause.html"
+          >
 
             <div class="event-image">
               <img
@@ -571,7 +612,10 @@
 
           <!-- RECORD SALE -->
 
-          <a class="event-card" href="recordsale.html">
+          <a
+            class="event-card"
+            href="recordsale.html"
+          >
 
             <div class="event-image">
               <img
@@ -593,7 +637,10 @@
 
           <!-- UMBRA -->
 
-          <a class="event-card" href="umbra.html">
+          <a
+            class="event-card"
+            href="umbra.html"
+          >
 
             <div class="event-image">
               <img
