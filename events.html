@@ -162,22 +162,6 @@
       display: block;
     }
 
-    /* INTRODUCTION */
-
-    .events-intro {
-      padding: 70px 40px;
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .events-intro p {
-      max-width: 980px;
-      margin: 0;
-      font-size: 10px;
-      line-height: 1.5;
-      letter-spacing: 0;
-    }
-
     /* EVENTS */
 
     .events-section {
@@ -225,36 +209,24 @@
       opacity: 0.92;
     }
 
+    /*
+      Kuvia ei enää pakoteta neliöiksi.
+      Näin koko alkuperäinen kuva näkyy.
+    */
+
     .event-image {
-      position: relative;
       width: 100%;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
       background: var(--black);
     }
 
     .event-image img {
       width: 100%;
-      height: 100%;
+      height: auto;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
     }
 
-    .event-name {
-      position: absolute;
-      inset: 0;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.28);
-      color: var(--white);
-      text-align: center;
-      font-size: clamp(28px, 3vw, 52px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      backdrop-filter: blur(2px);
-    }
+    /* TAPAHTUMAN TIEDOT */
 
     .event-info {
       padding: 24px;
@@ -265,6 +237,10 @@
       font-size: 20px;
       line-height: 1.45;
       opacity: 0.82;
+    }
+
+    .event-title {
+      font-weight: 400;
     }
 
     .past .event-info p {
@@ -281,6 +257,7 @@
     /* MOBILE */
 
     @media (max-width: 900px) {
+
       .hero {
         flex-direction: column;
         min-height: auto;
@@ -345,14 +322,6 @@
         width: 170px;
       }
 
-      .events-intro {
-        padding: 52px 22px;
-      }
-
-      .events-intro p {
-        font-size: 10px;
-      }
-
       .events-section {
         padding: 28px 22px 70px;
       }
@@ -365,8 +334,12 @@
         font-size: 42px;
       }
 
-      .event-name {
-        font-size: 34px;
+      .event-info {
+        padding: 18px;
+      }
+
+      .event-info p {
+        font-size: 17px;
       }
 
       footer {
@@ -426,15 +399,7 @@
 
     <main>
 
-      <section class="events-intro">
-
-        <p>
-          I am an event producer, studied cultural production at Metropolia University of Applied Sciences and have produced over a hundred events
-          through both professional and voluntary work. Below are some of my
-          most recent projects.
-        </p>
-
-      </section>
+      <!-- UPCOMING EVENTS -->
 
       <section class="events-section upcoming">
 
@@ -448,17 +413,17 @@
           <a class="event-card" href="hoivafest.html">
 
             <div class="event-image">
-
-              <img src="hoivainfo1.jpg" alt="Hoiva Fest">
-
-              <div class="event-name">
-                Hoiva Fest
-              </div>
-
+              <img
+                src="hoivainfo1.jpg"
+                alt="Hoiva Fest"
+              >
             </div>
 
             <div class="event-info">
-              <p>10.–11.10.2026 · Lapinlahti, Helsinki</p>
+              <p>
+                <span class="event-title">Hoiva Fest</span>
+                · 10.–11.10.2026 · Lapinlahti, Helsinki
+              </p>
             </div>
 
           </a>
@@ -466,6 +431,8 @@
         </div>
 
       </section>
+
+      <!-- PAST EVENTS -->
 
       <section class="events-section past">
 
@@ -476,151 +443,142 @@
 
         <div class="event-grid">
 
+          <!-- KÄÄNTÖPÖYTÄ OPEN AIR -->
+
           <a class="event-card" href="kaantopoytaopenair.html">
 
             <div class="event-image">
-
               <img
                 src="kaantopoyta.png"
                 alt="Kääntöpöytä Open Air"
               >
-
-              <div class="event-name">
-                Kääntöpöytä Open Air
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>27 June 2026 · Helsinki</p>
+              <p>
+                <span class="event-title">Kääntöpöytä Open Air</span>
+                · 27 June 2026 · Helsinki
+              </p>
             </div>
 
           </a>
+
+          <!-- VIRE VÄRE -->
 
           <a class="event-card" href="virevare.html">
 
             <div class="event-image">
-
               <img
                 src="virevare.jpeg"
                 alt="vire•väre"
               >
-
-              <div class="event-name">
-                vire•väre
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>Omenapuutalo / Lapinlahti, Helsinki</p>
+              <p>
+                <span class="event-title">vire•väre</span>
+                · Omenapuutalo / Lapinlahti, Helsinki
+              </p>
             </div>
 
           </a>
+
+          <!-- URBAN FOLKS UNITED -->
 
           <a class="event-card" href="urbanfolksunited.html">
 
             <div class="event-image">
-
               <img
                 src="helsinkiday.png"
                 alt="Urban! Folks! United!"
               >
-
-              <div class="event-name">
-                Urban!<br>
-                Folks!<br>
-                United!
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>Kääntöpöytä / Helsinki Day 2026</p>
+              <p>
+                <span class="event-title">Urban! Folks! United!</span>
+                · Kääntöpöytä / Helsinki Day 2026
+              </p>
             </div>
 
           </a>
+
+          <!-- PAUSE -->
 
           <a class="event-card" href="pause.html">
 
             <div class="event-image">
-
               <img
                 src="pause3flyer.jpg"
                 alt="Pause"
               >
-
-              <div class="event-name">
-                Pause
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>Cosy Club / Helsinki</p>
+              <p>
+                <span class="event-title">Pause</span>
+                · Cosy Club / Helsinki
+              </p>
             </div>
 
           </a>
+
+          <!-- VINYL WORKSHOP -->
 
           <a class="event-card" href="recordworkshop.html">
 
             <div class="event-image">
-
               <img
                 src="vinylworkshop.jpg"
                 alt="Vinyl Workshop"
               >
-
-              <div class="event-name">
-                Vinyl Workshop
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>HYTKY HQ / Helsinki</p>
+              <p>
+                <span class="event-title">Vinyl Workshop</span>
+                · HYTKY HQ / Helsinki
+              </p>
             </div>
 
           </a>
+
+          <!-- RECORD SALE -->
 
           <a class="event-card" href="vinylsale.html">
 
             <div class="event-image">
-
               <img
                 src="recordsale.jpg"
                 alt="Record Sale"
               >
-
-              <div class="event-name">
-                Record Sale
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>Record Sale</p>
+              <p>
+                <span class="event-title">Record Sale</span>
+                · Record Sale
+              </p>
             </div>
 
           </a>
 
+          <!-- UMBRA -->
+
           <a class="event-card" href="umbra.html">
 
             <div class="event-image">
-
               <img
                 src="umbra.jpg"
                 alt="Umbra"
               >
-
-              <div class="event-name">
-                Umbra
-              </div>
-
             </div>
 
             <div class="event-info">
-              <p>Kaiku Residency 2026</p>
+              <p>
+                <span class="event-title">Umbra</span>
+                · Kaiku Residency 2026
+              </p>
             </div>
 
           </a>
