@@ -40,7 +40,9 @@
       background: var(--blue);
     }
 
-    /* DESKTOP LAYOUT */
+    /* =========================
+       DESKTOP LAYOUT
+       ========================= */
 
     .hero-text {
       width: 50%;
@@ -66,6 +68,11 @@
       height: auto;
       display: block;
     }
+
+
+    /* =========================
+       MENU
+       ========================= */
 
     .menu {
       position: absolute;
@@ -100,6 +107,11 @@
       transform: rotate(360deg);
     }
 
+
+    /* =========================
+       MAIN DROPDOWN
+       ========================= */
+
     .dropdown {
       position: absolute;
       top: 58px;
@@ -113,30 +125,178 @@
       box-shadow: 0 14px 45px rgba(0,0,0,0.3);
     }
 
-    .dropdown a {
+    .menu:hover .dropdown,
+    .menu:focus-within .dropdown {
+      display: block;
+    }
+
+
+    /* Normal menu links */
+
+    .dropdown > a {
       display: block;
       color: var(--blue);
       text-decoration: none;
       padding: 17px 24px;
       font-size: 17px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
+
       transition:
         background 0.2s ease,
         color 0.2s ease;
     }
 
-    .dropdown a:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown a:hover {
+    .dropdown > a:hover {
       background: var(--blue);
       color: var(--black);
     }
 
-    .menu:hover .dropdown {
+    .dropdown > a:last-child {
+      border-bottom: none;
+    }
+
+
+    /* =========================
+       DJ MENU
+       ========================= */
+
+    .dj-menu {
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .dj-row {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .dj-link {
+      flex: 1;
+      display: flex;
+      align-items: center;
+
+      color: var(--blue);
+      text-decoration: none;
+
+      padding: 17px 24px;
+
+      font-size: 17px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .dj-link:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+
+    /* Arrow button */
+
+    .submenu-toggle {
+      width: 55px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: none;
+
+      background: transparent;
+      color: var(--blue);
+
+      font-family: 'Alata', sans-serif;
+      font-size: 22px;
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .submenu-toggle:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+    .submenu-toggle span {
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+
+
+    /* Rotate arrow */
+
+    .dj-menu:hover .submenu-toggle span,
+    .dj-menu.open .submenu-toggle span {
+      transform: rotate(90deg);
+    }
+
+
+    /* =========================
+       GIGS SUBMENU
+       ========================= */
+
+    .submenu {
+      display: none;
+
+      width: 100%;
+
+      background: rgba(166, 195, 206, 0.12);
+    }
+
+
+    /* Desktop hover */
+
+    .dj-menu:hover .submenu {
       display: block;
     }
+
+
+    /* Keyboard / mobile */
+
+    .dj-menu:focus-within .submenu,
+    .dj-menu.open .submenu {
+      display: block;
+    }
+
+
+    /* Gigs link */
+
+    .submenu a {
+      display: block;
+
+      color: var(--blue);
+      text-decoration: none;
+
+      padding:
+        14px
+        24px
+        14px
+        46px;
+
+      font-size: 15px;
+
+      border-top: 1px solid rgba(255,255,255,0.06);
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .submenu a:hover {
+      background: var(--blue);
+      color: var(--black);
+    }
+
+
+    /* =========================
+       HERO IMAGE
+       ========================= */
 
     .hero-image {
       width: 50%;
@@ -152,7 +312,10 @@
       display: block;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 900px) {
 
@@ -164,33 +327,46 @@
       .hero-text {
         width: 100%;
         min-height: 18vh;
+
         padding:
           28px
           22px
           8px;
+
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      /* MOBILE: LOGO + SPIRAL SIDE BY SIDE */
+
+      /* Logo + spiral side by side */
+
       .mobile-brand {
         display: flex;
         align-items: center;
         gap: 10px;
       }
 
+
+      /* Logo */
+
       .logo {
         position: static;
         transform: none;
+
         width: 270px;
         max-width: 72vw;
       }
 
+
+      /* Menu */
+
       .menu {
         position: relative;
+
         left: auto;
         top: auto;
+
         width: 58px;
         height: 58px;
       }
@@ -205,14 +381,52 @@
         height: 48px;
       }
 
+
+      /* Dropdown */
+
       .dropdown {
         width: 248px;
       }
 
-      .dropdown a {
+      .dropdown > a {
         font-size: 15px;
-        padding: 14px 18px;
+
+        padding:
+          14px
+          18px;
       }
+
+
+      /* DJ */
+
+      .dj-link {
+        font-size: 15px;
+
+        padding:
+          14px
+          18px;
+      }
+
+      .submenu-toggle {
+        width: 48px;
+        font-size: 20px;
+      }
+
+
+      /* Gigs */
+
+      .submenu a {
+        font-size: 14px;
+
+        padding:
+          13px
+          18px
+          13px
+          36px;
+      }
+
+
+      /* Image */
 
       .hero-image {
         width: 100%;
@@ -231,61 +445,194 @@
 
 </head>
 
+
 <body>
 
   <div class="container">
 
     <header class="hero">
 
+
+      <!-- =====================
+           LEFT SIDE
+           ===================== -->
+
       <div class="hero-text">
 
         <div class="mobile-brand">
 
+
+          <!-- MENU -->
+
           <nav class="menu">
 
-            <button class="menu-button" type="button">
-              <img src="spiral.png" alt="Menu">
+            <button
+              class="menu-button"
+              type="button"
+              aria-label="Menu"
+            >
+
+              <img
+                src="spiral.png"
+                alt="Menu"
+              >
+
             </button>
 
+
+            <!-- DROPDOWN -->
+
             <div class="dropdown">
+
+
+              <!-- HOME -->
 
               <a href="index.html">
                 Home
               </a>
 
-              <a href="dj.html">
-                DJ
-              </a>
+
+              <!-- =====================
+                   DJ + GIGS
+                   ===================== -->
+
+              <div class="dj-menu">
+
+
+                <div class="dj-row">
+
+
+                  <!-- DJ PAGE -->
+
+                  <a
+                    href="dj.html"
+                    class="dj-link"
+                  >
+                    DJ
+                  </a>
+
+
+                  <!-- OPEN SUBMENU -->
+
+                  <button
+                    class="submenu-toggle"
+                    type="button"
+                    aria-label="Open Gigs submenu"
+                    aria-expanded="false"
+                  >
+
+                    <span>›</span>
+
+                  </button>
+
+
+                </div>
+
+
+                <!-- GIGS SUBMENU -->
+
+                <div class="submenu">
+
+                  <a href="gigs.html">
+                    Gigs
+                  </a>
+
+                </div>
+
+
+              </div>
+
+
+              <!-- EVENTS -->
 
               <a href="events.html">
                 Events
               </a>
 
+
+              <!-- CONTACT -->
+
               <a href="contact.html">
                 Contact
               </a>
+
 
             </div>
 
           </nav>
 
+
+          <!-- LOGO -->
+
           <div class="logo">
-            <img src="handwritten.png" alt="Carlina Carpelan">
+
+            <img
+              src="handwritten.png"
+              alt="Carlina Carpelan"
+            >
+
           </div>
+
 
         </div>
 
       </div>
 
+
+      <!-- =====================
+           RIGHT SIDE IMAGE
+           ===================== -->
+
       <div class="hero-image">
 
-        <img src="promo7.jpg" alt="Carlina Carpelan">
+        <img
+          src="promo7.jpg"
+          alt="Carlina Carpelan"
+        >
 
       </div>
+
 
     </header>
 
   </div>
+
+
+  <!-- =========================
+       SUBMENU JAVASCRIPT
+       ========================= -->
+
+  <script>
+
+    const submenuToggle =
+      document.querySelector('.submenu-toggle');
+
+    const djMenu =
+      document.querySelector('.dj-menu');
+
+
+    submenuToggle.addEventListener(
+      'click',
+      function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        djMenu.classList.toggle('open');
+
+        const isOpen =
+          djMenu.classList.contains('open');
+
+        submenuToggle.setAttribute(
+          'aria-expanded',
+          isOpen
+        );
+
+      }
+    );
+
+  </script>
+
 
 </body>
 
