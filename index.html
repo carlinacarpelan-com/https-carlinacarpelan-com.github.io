@@ -79,7 +79,7 @@
       left: 92px;
       top: calc(43% + 12px);
       width: 320px;
-      height: 320px;
+      height: 380px;
       z-index: 9999;
     }
 
@@ -131,7 +131,9 @@
     }
 
 
-    /* Normal menu links */
+    /* =========================
+       NORMAL MENU LINKS
+       ========================= */
 
     .dropdown > a {
       display: block;
@@ -157,7 +159,7 @@
 
 
     /* =========================
-       DJ MENU
+       DJ + GIGS
        ========================= */
 
     .dj-menu {
@@ -194,7 +196,7 @@
     }
 
 
-    /* Arrow button */
+    /* DJ arrow */
 
     .submenu-toggle {
       width: 55px;
@@ -228,9 +230,6 @@
       transition: transform 0.25s ease;
     }
 
-
-    /* Rotate arrow */
-
     .dj-menu:hover .submenu-toggle span,
     .dj-menu.open .submenu-toggle span {
       transform: rotate(90deg);
@@ -243,29 +242,22 @@
 
     .submenu {
       display: none;
-
       width: 100%;
-
-      background: rgba(166, 195, 206, 0.12);
+      background: #111111;
     }
 
-
-    /* Desktop hover */
+    /* Desktop: show Gigs when hovering DJ */
 
     .dj-menu:hover .submenu {
       display: block;
     }
 
+    /* Mobile / keyboard */
 
-    /* Keyboard / mobile */
-
-    .dj-menu:focus-within .submenu,
-    .dj-menu.open .submenu {
+    .dj-menu.open .submenu,
+    .dj-menu:focus-within .submenu {
       display: block;
     }
-
-
-    /* Gigs link */
 
     .submenu a {
       display: block;
@@ -273,15 +265,11 @@
       color: var(--blue);
       text-decoration: none;
 
-      padding:
-        14px
-        24px
-        14px
-        46px;
+      padding: 14px 24px 14px 46px;
 
       font-size: 15px;
 
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255,255,255,0.08);
 
       transition:
         background 0.2s ease,
@@ -339,7 +327,7 @@
       }
 
 
-      /* Logo + spiral side by side */
+      /* MOBILE: LOGO + SPIRAL SIDE BY SIDE */
 
       .mobile-brand {
         display: flex;
@@ -347,26 +335,17 @@
         gap: 10px;
       }
 
-
-      /* Logo */
-
       .logo {
         position: static;
         transform: none;
-
         width: 270px;
         max-width: 72vw;
       }
 
-
-      /* Menu */
-
       .menu {
         position: relative;
-
         left: auto;
         top: auto;
-
         width: 58px;
         height: 58px;
       }
@@ -381,30 +360,18 @@
         height: 48px;
       }
 
-
-      /* Dropdown */
-
       .dropdown {
         width: 248px;
       }
 
       .dropdown > a {
         font-size: 15px;
-
-        padding:
-          14px
-          18px;
+        padding: 14px 18px;
       }
-
-
-      /* DJ */
 
       .dj-link {
         font-size: 15px;
-
-        padding:
-          14px
-          18px;
+        padding: 14px 18px;
       }
 
       .submenu-toggle {
@@ -412,21 +379,10 @@
         font-size: 20px;
       }
 
-
-      /* Gigs */
-
       .submenu a {
         font-size: 14px;
-
-        padding:
-          13px
-          18px
-          13px
-          36px;
+        padding: 13px 18px 13px 36px;
       }
-
-
-      /* Image */
 
       .hero-image {
         width: 100%;
@@ -452,11 +408,6 @@
 
     <header class="hero">
 
-
-      <!-- =====================
-           LEFT SIDE
-           ===================== -->
-
       <div class="hero-text">
 
         <div class="mobile-brand">
@@ -471,12 +422,7 @@
               type="button"
               aria-label="Menu"
             >
-
-              <img
-                src="spiral.png"
-                alt="Menu"
-              >
-
+              <img src="spiral.png" alt="Menu">
             </button>
 
 
@@ -492,17 +438,13 @@
               </a>
 
 
-              <!-- =====================
-                   DJ + GIGS
-                   ===================== -->
+              <!-- =========================
+                   DJ + GIGS SUBMENU
+                   ========================= -->
 
               <div class="dj-menu">
 
-
                 <div class="dj-row">
-
-
-                  <!-- DJ PAGE -->
 
                   <a
                     href="dj.html"
@@ -511,25 +453,19 @@
                     DJ
                   </a>
 
-
-                  <!-- OPEN SUBMENU -->
-
                   <button
                     class="submenu-toggle"
                     type="button"
                     aria-label="Open Gigs submenu"
                     aria-expanded="false"
                   >
-
                     <span>›</span>
-
                   </button>
-
 
                 </div>
 
 
-                <!-- GIGS SUBMENU -->
+                <!-- GIGS -->
 
                 <div class="submenu">
 
@@ -538,7 +474,6 @@
                   </a>
 
                 </div>
-
 
               </div>
 
@@ -573,15 +508,12 @@
 
           </div>
 
-
         </div>
 
       </div>
 
 
-      <!-- =====================
-           RIGHT SIDE IMAGE
-           ===================== -->
+      <!-- RIGHT SIDE IMAGE -->
 
       <div class="hero-image">
 
@@ -592,47 +524,37 @@
 
       </div>
 
-
     </header>
 
   </div>
 
 
   <!-- =========================
-       SUBMENU JAVASCRIPT
+       GIGS SUBMENU SCRIPT
        ========================= -->
 
   <script>
 
-    const submenuToggle =
-      document.querySelector('.submenu-toggle');
+    const submenuToggle = document.querySelector('.submenu-toggle');
+    const djMenu = document.querySelector('.dj-menu');
 
-    const djMenu =
-      document.querySelector('.dj-menu');
+    submenuToggle.addEventListener('click', function(event) {
 
+      event.preventDefault();
+      event.stopPropagation();
 
-    submenuToggle.addEventListener(
-      'click',
-      function(event) {
+      djMenu.classList.toggle('open');
 
-        event.preventDefault();
-        event.stopPropagation();
+      const isOpen = djMenu.classList.contains('open');
 
-        djMenu.classList.toggle('open');
+      submenuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
 
-        const isOpen =
-          djMenu.classList.contains('open');
-
-        submenuToggle.setAttribute(
-          'aria-expanded',
-          isOpen
-        );
-
-      }
-    );
+    });
 
   </script>
-
 
 </body>
 
